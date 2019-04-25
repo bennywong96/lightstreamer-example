@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../override.css" type="text/css"><meta name="keywords" content="VisualTable,com.lightstreamer.as_client.VisualTable,COMMAND,CONNECTING,DISCONNECTED,DISTINCT,ITEM_IS_KEY,MERGE,POLLING,RAW,STALLED,STREAMING,UNORDERED_MESSAGES,UPDATE_IS_KEY,adapterSet,binary,binary,binary,bufferedStreamingHandled,connectionTimeout,contentLength,controlPort,controlProtocol,dataAdapter,dataAdapter,dataAdapter,groupString,groupString,groupString,idleTimeout,mode,mode,mode,password,port,protocol,requestedBufferSize,requestedBufferSize,requestedBufferSize,requestedKeepaliveInterval,requestedMaxFrequency,requestedMaxFrequency,requestedMaxFrequency,requestedPollingInterval,retryTimeout,schemaString,schemaString,schemaString,selector,selector,selector,sequence,server,snapshotRequired,snapshotRequired,snapshotRequired,timeoutForReconnect,timeoutForStalled,user,canMakeRequest,closeConnection,getRangeEnd,getRangeEnd,getRangeEnd,getRangeStart,getRangeStart,getRangeStart,getServerKeepaliveInterval,getServerPollingInterval,getStatus,incMadTest,openConnection,openPollingConnection,reset,sendMessage,setCommandLogic,setItemRange,setItemRange,setItemRange,setKeyPolicy,setMaxBandwidth,setMultiMetapush,subscribeTable,unsubscribeTable"><title>com.lightstreamer.as_client.VisualTable</title></head><body><script language="javascript" type="text/javascript" src="../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'VisualTable - Lightstreamer Flex client 2.2.1 API';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Lightstreamer Flex client 2.2.1 API</td><td class="titleTableTopNav" align="right"><a href="../../../package-summary.html" onclick="loadClassListFrame('../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../class-summary.html" onclick="loadClassListFrame('../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../all-index-A.html" onclick="loadClassListFrame('../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../index.html?com/lightstreamer/as_client/VisualTable.html&amp;com/lightstreamer/as_client/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">VisualTable</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a>&nbsp;| <a href="#constantSummary">Constants</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("VisualTable"); titleBar_setSubNav(true,true,false,false,false,false,true,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.lightstreamer.as_client</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  VisualTable</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">VisualTable  <img src="../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> mx.collections.ArrayCollection</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td> <a href="../../../com/lightstreamer/as_client/Table.html">Table</a></td></tr></table><p></p><p></p><p></p>
+               <p>A data table that will be fed with real-time data delivered by Lightstreamer
+   Server and that can be set as the "dataProvider" property to any instance
+   of mx.controls.listClasses.ListBase (or subclasses).
+   The class contains the subscription details and event handlers
+   that can be used to furtherly process the real-time data.</p>
+               <p>This data table can also be used as a non-visual object,
+   (that is, with no association with a mx.controls.listClasses.ListBase instance),
+   as an alternative to NonVisualTable, in order to take advantage
+   of the features of the underlying mx.collections.ArrayCollection,
+   such as caching of the current values.</p>
+   
+            <p></p><p><span class="classHeaderTableLabel">Default MXML Property</span><code>source</code></p><p><span class="classHeaderTableLabel">See also</span></p><div class="seeAlso">mx.collections.ArrayCollection<br/><a href="http://livedocs.adobe.com/flex/3/langref/mx/collections/ArrayCollection.html" target="mm_external">http://livedocs.adobe.com/flex/3/langref/mx/collections/ArrayCollection.html</a><br/>mx.controls.listClasses.ListBase<br/><a href="http://livedocs.adobe.com/flex/3/langref/mx/controls/listClasses/ListBase.html" target="mm_external">http://livedocs.adobe.com/flex/3/langref/mx/controls/listClasses/ListBase.html</a><br/><a href="NonVisualTable.html" target="">com.lightstreamer.as_client.NonVisualTable</a></div><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#binary" class="signatureLink">binary</a> : Boolean<div class="summaryTableDescription">[read-only] 
+     The requested encoding for the field values.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#dataAdapter" class="signatureLink">dataAdapter</a> : String<div class="summaryTableDescription">
+     The name of the Data Adapter (within the Adapter Set used by the current session)
+     that supplies all the items in the Group.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#groupString" class="signatureLink">groupString</a> : String<div class="summaryTableDescription">[read-only] 
+     The subscribed group of items, as requested to the Server.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#mode" class="signatureLink">mode</a> : String<div class="summaryTableDescription">[read-only] 
+     The subscription mode for the items.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#requestedBufferSize" class="signatureLink">requestedBufferSize</a> : *<div class="summaryTableDescription">
+     The length of Lightstreamer Server's buffer for the internal queueing of
+     updates for each item in the data table.
+     A queueing buffer is used by the Server to accumulate a burst of updates for an item, 
+     so that they can all be sent to the Client, despite bandwidth or frequency limits.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#requestedMaxFrequency" class="signatureLink">requestedMaxFrequency</a> : *<div class="summaryTableDescription">
+     The maximum update frequency to be requested to Lightstreamer Server for all the items in the data table.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#schemaString" class="signatureLink">schemaString</a> : String<div class="summaryTableDescription">[read-only] 
+     The subscription schema for the items, as requested to the Server.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#selector" class="signatureLink">selector</a> : String<div class="summaryTableDescription">
+     The selector name for all the items in the data table, or null if no selector is needed.
+     The selector is a filter on the updates received.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#snapshotRequired" class="signatureLink">snapshotRequired</a> : *<div class="summaryTableDescription">
+     Setter method that enables/disables snapshot delivery request 
+     Indicates whether or not to request snapshot delivery for the items in the data table.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#VisualTable()" class="signatureLink">VisualTable</a>(group:*, schema:*, mode:String, binary:Boolean = false)</div><div class="summaryTableDescription">
+     Creates an object to be used to describe a data table whose values should be displayed into ListBase controls throug a dataProvider assignment.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getRangeEnd()" class="signatureLink">getRangeEnd</a>():uint</div><div class="summaryTableDescription">
+     Recalls the final index, if a range of items has been set.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getRangeStart()" class="signatureLink">getRangeStart</a>():uint</div><div class="summaryTableDescription">
+     Recalls the starting index, if a range of items has been set.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setItemRange()" class="signatureLink">setItemRange</a>(start:uint, end:uint):void</div><div class="summaryTableDescription">
+     Setter method that sets a range of items within the specified group.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setKeyPolicy()" class="signatureLink">setKeyPolicy</a>(type:*, commandFieldOrLimit:* = null):void</div><div class="summaryTableDescription">
+     Setter method that sets the policy in use on the model during update receipt.</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setMultiMetapush()" class="signatureLink">setMultiMetapush</a>(underlyingSchema:*, underlyingDataAdapter:String, underlyingBinary:Boolean = false):void</div><div class="summaryTableDescription">
+     Only effective if "COMMAND logic" behaviour has been configured
+     in setKeyPolicy().</div></td><td class="summaryTableOwnerCol">VisualTable</td></tr></table></div><a name="eventSummary"></a><div class="summarySection"><div class="summaryTableTitle">Events</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableEvent"><tr><th>&nbsp;</th><th colspan="2">Event</th><th> Summary </th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:CollectionEvent" class="signatureLink">CollectionEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification of an update of the values for an item in the table.</td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:EndOfSnapshotEvent" class="signatureLink">EndOfSnapshotEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification that no more snapshot events are coming for an item.</td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:LostUpdatesEvent" class="signatureLink">LostUpdatesEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification of one or more updates that were suppressed in the Server because of internal memory limitations.</td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:SubscriptionErrorEvent" class="signatureLink">SubscriptionErrorEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification of a Server error in response to a subscription request.</td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:SubscriptionEvent" class="signatureLink">SubscriptionEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification of the accomplished subscription of all the items in the table.</td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:UnsubscriptionEvent" class="signatureLink">UnsubscriptionEvent</a></div></td><td class="summaryTableDescription summaryTableCol">Notification of the unsubscription of all the items in the table.</td><td class="summaryTableOwnerCol">VisualTable</td></tr></table></div><a name="constantSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Constants</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableConstant"><tr><th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#ITEM_IS_KEY" class="signatureLink">ITEM_IS_KEY</a> : int = -1<div class="summaryTableDescription">[static] 
+     Constant that can be used with the setKeyPolicy method
+     </div></td><td class="summaryTableOwnerCol">VisualTable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#UPDATE_IS_KEY" class="signatureLink">UPDATE_IS_KEY</a> : int = -2<div class="summaryTableDescription">[static] 
+     Constant that can be used with the setKeyPolicy method
+     </div></td><td class="summaryTableOwnerCol">VisualTable</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="binary"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">binary</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>binary:Boolean</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The requested encoding for the field values. It can be defined only at object creation.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get binary():Boolean</code><br/></div><a name="propertyDetail"></a><a name="dataAdapter"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">dataAdapter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>dataAdapter:String</code><p></p><p></p><p>
+     <p>The name of the Data Adapter (within the Adapter Set used by the current session)
+     that supplies all the items in the Group.
+     If not set, the "DEFAULT" name is used.</p>
+     <p>The Data Adapter name is configured on the server side through
+     the "name" attribute of the "data_provider" element,
+     in the "adapters.xml" file which defines the Adapter Set.
+     Omitting the attribute configures the "DEFAULT" name.</p>
+     <p>Note: If more than one Data Adapter is needed to supply all the
+     items in a set of items, then it is not possible to group all the
+     items of the set in a single Table. Multiple tables
+     have to be defined.</p>
+     
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get dataAdapter():String</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set dataAdapter(value:String):void</code><br/></div><a name="propertyDetail"></a><a name="groupString"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">groupString</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>groupString:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The subscribed group of items, as requested to the Server.
+     The group can be defined only at object creation,
+     as either an Array of item names or a String group identifier.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get groupString():String</code><br/></div><a name="propertyDetail"></a><a name="mode"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">mode</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>mode:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The subscription mode for the items. It can be defined only at object creation.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get mode():String</code><br/></div><a name="propertyDetail"></a><a name="requestedBufferSize"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">requestedBufferSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>requestedBufferSize:*</code><p></p><p></p><p>
+     <p>The length of Lightstreamer Server's buffer for the internal queueing of
+     updates for each item in the data table.</p>
+     <p>A queueing buffer is used by the Server to accumulate a burst of updates for an item, 
+     so that they can all be sent to the Client, despite bandwidth or frequency limits. 
+     It can be used only when the subscription mode is MERGE or DISTINCT and unfiltered 
+     dispatching has not been requested.</p>
+     <p>Note that the Server may pose an upper limit on the size of its internal buffers. 
+     If a 0 value or the string "unlimited" is set, then the buffer length is decided by the Server.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get requestedBufferSize():*</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set requestedBufferSize(value:any):void</code><br/><br/><span class="label"> Throws </span><br/><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter is being set.
+     
+     </td></tr></table></div><a name="propertyDetail"></a><a name="requestedMaxFrequency"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">requestedMaxFrequency</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>requestedMaxFrequency:*</code><p></p><p></p><p>
+     <p>The maximum update frequency to be requested to Lightstreamer Server for all the items in the data table. 
+     It can be used only if the subscription mode is MERGE, DISTINCT or COMMAND (in the latter case, the 
+     frequency limitation applies to the UPDATE events for each single key). Note that frequency limits 
+     on the items can also be set on the server side and this request can only be issued in order to further 
+     reduce the frequency, not to rise it beyond these limits.</p>
+     <p>This property can also be used to request unfiltered dispatching for the items in the data table,
+     if the string "unfiltered" is set. However, unfiltered dispatching requests may be refused
+     if any frequency limit is posed on the server side for some item.
+     If a 0 value or the string "unlimited" is set, then the update frequency is decided by the Server.</p>
+     
+     <p><b>Edition Note</b>: A further global frequency limit could also be imposed by the Server, depending on Edition
+     and License Type; this specific limit also applies to RAW mode and to unfiltered dispatching.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get requestedMaxFrequency():*</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set requestedMaxFrequency(value:any):void</code><br/><br/><span class="label"> Throws </span><br/><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter is being set.
+     
+     </td></tr></table></div><a name="propertyDetail"></a><a name="schemaString"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">schemaString</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>schemaString:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The subscription schema for the items, as requested to the Server.
+     The schema can be defined only at object creation,
+     as either an Array of field names or a String schema identifier.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get schemaString():String</code><br/></div><a name="propertyDetail"></a><a name="selector"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">selector</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>selector:String</code><p></p><p></p><p>
+     <p>The selector name for all the items in the data table, or null if no selector is needed.</p>
+     <p>The selector is a filter on the updates received. It is executed on the Server and implemented by the 
+     Metadata Adapter.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get selector():String</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set selector(value:String):void</code><br/></div><a name="propertyDetail"></a><a name="snapshotRequired"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">snapshotRequired</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>snapshotRequired:*</code><p></p><p></p><p>
+     <p>Setter method that enables/disables snapshot delivery request 
+     Indicates whether or not to request snapshot delivery for the items in the data table.
+     The snapshot can be requested only if the subscription mode is MERGE, DISTINCT or COMMAND.</p>
+     <p>If the subscription mode is DISTINCT, instead of true, it is also possible to supply
+     a number, to specify the requested length (depth) of the 
+     snapshot (though the length of the received snapshot may be less than requested, because of insufficient 
+     data or server side limits); specifying true means that the snapshot length should be determined only by the 
+     Server.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get snapshotRequired():*</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set snapshotRequired(value:any):void</code><br/><br/><span class="label"> Throws </span><br/><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter is being set.
+     
+     </td></tr></table></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="VisualTable()"></a><a name="VisualTable(any,any,String,Boolean)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">VisualTable</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function VisualTable(group:*, schema:*, mode:String, binary:Boolean = false)</code><p></p><p>
+     Creates an object to be used to describe a data table whose values should be displayed into ListBase controls throug a dataProvider assignment. 
+     The object can be supplied to LSClient.subscribeTable() and LSClient.unsubscribeTable(), in order to 
+     subscribe/unsubscribe it to the server.
+     
+     </p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">group</span>:*</code> &mdash; An Array of item names or a String group identifier.
+     In the first case items can be accessed by name during event dispatching;
+     however, a LiteralBasedProvider or equivalent Metadata Adapter is needed
+     on the Server in order to understand the subscription request. Note
+     that item names can't be empty or null and can't contain spaces.
+     
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">schema</span>:*</code> &mdash; An Array of field names or a String schema identifier.
+     In the first case fields can be accessed by name during event dispatching
+     and, if associated with a control field, names should be used to pair field
+     and "column". On the contrary, if group name is specified, the pairing
+     should be done with field indexes. However, in the first case,
+     a LiteralBasedProvider or equivalent Metadata Adapter is needed
+     on the Server in order to understand the subscription request. Note
+     that field names can't be empty or null and can't contain spaces.
+     
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">mode</span>:String</code> &mdash; the subscription mode for the items, required by Lightstreamer Server. 
+     It could be one of the following: "MERGE", "DISTINCT", "COMMAND", "RAW".
+     
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">binary</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If true, the values received for all the subscribed fields
+     are interpreted as binary AMF representations of objects;
+     they have to be supplied in that form by the Data Adapter, for all the
+     subscribed items.
+     The objects obtained through the deserialization of the received
+     AMF representations are inserted in the underlying ArrayCollection.
+     Only in case mode is "COMMAND", the special "key" and "command" fields
+     (which can only be supplied as strings by the Data Adapter) are managed
+     as text values.
+     <p>Note that items suitable for subscription in binary form are not
+     suitable for subscription in non-binary (i.e. text) form and vice-versa.</p>
+     <p>The parameter is optional and the default value is false, which means
+     that all fields are managed as text values.</p>
+     
+     </td></tr></table><br/><span class="label">Throws</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter was given
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="LSClient.html#subscribeTable()" target="">com.lightstreamer.as_client.LSClient.subscribeTable()</a><br/><a href="LSClient.html#unsubscribeTable()" target="">com.lightstreamer.as_client.LSClient.unsubscribeTable()</a></div></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="getRangeEnd()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getRangeEnd</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function getRangeEnd():uint</code><p></p><p></p><p>
+     Recalls the final index, if a range of items has been set.
+      
+     </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>uint</code> &mdash; a 1-based index or 0 if no range has been set.
+     </td></tr></table></div><a name="getRangeStart()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getRangeStart</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getRangeStart():uint</code><p></p><p></p><p>
+     Recalls the starting index, if a range of items has been set.
+      
+     </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>uint</code> &mdash; a 1-based index or 0 if no range has been set.
+     </td></tr></table></div><a name="setItemRange()"></a><a name="setItemRange(uint,uint)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setItemRange</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setItemRange(start:uint, end:uint):void</code><p></p><p></p><p>
+     <p>Setter method that sets a range of items within the specified group. 
+     Items outside of this range are not subscribed to. The support for ranges allows the front-end to use generic 
+     group identifiers as group descriptors, yet being able to subscribe to subsets of such groups or even to 
+     single items from such groups, without the need to introduce more specific group identifiers.</p>
+     <p>Moreover, this method allows for continually resubscribing different item subsets without the need 
+     for creating different data table objects.</p>
+     
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">start</span>:uint</code> &mdash; 1-based index of the first item in the group that has to be subscribed to.
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">end</span>:uint</code> &mdash; 1-based index of the last item in the group that has to be subscribed to.
+     </td></tr></table></p><br/><span class="label">Throws</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter was specified.
+     
+     </td></tr></table></div><a name="setKeyPolicy()"></a><a name="setKeyPolicy(any,any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setKeyPolicy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setKeyPolicy(type:*, commandFieldOrLimit:* = null):void</code><p></p><p></p><p>
+     Setter method that sets the policy in use on the model during update receipt.
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">type</span>:*</code> &mdash; The policy type:
+     <p>If ITEM_IS_KEY is specified, then each update pertaining to an item will override the update previously 
+     received for the same item (if any) except for unchanged fields. The first update per each item will add
+     a new row to the model. This is the default policy if MERGE or RAW was specified on the constructor.</p>
+     <p>If UPDATE_IS_KEY is specified, then each new update, regardless the pertaining item, will occupy a new
+     row on the model.  This is the default policy if DISTINCT was specified on the constructor.</p>
+     <p>If none of the previous was specified this parameter should represent the field name or index for the
+     key field on the table. In this case, the rows are managed according
+     to ADD, UPDATE and DELETE commands received as pushed values,
+     which instruct the table to add a row, just modify values on a row
+     or delete a row, where each row is identified by the value of the key field.
+     We call this a "COMMAND logic" behaviour. This is the default policy
+     if COMMAND was specified on the constructor (in such case the used value is "key" if an array of items was 
+     given in the constructor, 1 otherwise).</p>
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">commandFieldOrLimit</span>:*</code> (default = <code>null</code>)<code></code> &mdash; Help param for some policy types.
+     <p>If UPDATE_IS_KEY was used as policy type, then this parameter represent the max number of rows the model
+     can contain. When the limit is reached oldest values are discarded. Use null or a 0 value to set no limits.
+     Default is 0.</p>
+     <p>If none of ITEM_IS_KEY and UPDATE_IS_KEY was used as policy type, then this field represent the command
+     field for this table. The default value is "command" if an array of items was given in the constructor, 
+     2 otherwise.</p>
+     </td></tr></table></p><br/><span class="label">Throws</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../com/lightstreamer/as_client/errors/ConfigurationError.html">ConfigurationError</a> </code> &mdash; An invalid parameter was given 
+     </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="VisualTable.html#ITEM_IS_KEY" target="">ITEM_IS_KEY</a><br/><a href="VisualTable.html#UPDATE_IS_KEY" target="">UPDATE_IS_KEY</a></div></div><a name="setMultiMetapush()"></a><a name="setMultiMetapush(any,String,Boolean)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setMultiMetapush</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setMultiMetapush(underlyingSchema:*, underlyingDataAdapter:String, underlyingBinary:Boolean = false):void</code><p></p><p></p><p>
+     Only effective if "COMMAND logic" behaviour has been configured
+     in setKeyPolicy(). It enables a two-level extension of this behaviour,
+     in which the values for each row are provided:
+     <ul>
+     <li>in part through the ADD and UPDATE commands;</li>
+     <li>in part through a second-level, or "underlying" item, determined by
+     the row key, which defines an implicit row-like data table, automatically
+     created and managed according to the row lifecycle.</li>
+     </ul>
+     <p>In synthesis, each time a new row is created, an underlying data table is also created 
+     and subscribed automatically to feed fields not handled by the first-level
+     updates. This table is a mono-item table, where the item name that is used
+     is the key value associated to the row. The item is subscribed to in
+     "MERGE" mode, with snapshot request and with the same maximum frequency
+     setting as for the first-level items (including the "unfiltered" case).
+     All other subscription properties are left as the default.
+     When the row is deleted, the underlying data table is also removed.</p>
+     <p>We call this a "MultiMetapush logic" behaviour.</p>
+            
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">underlyingSchema</span>:*</code> &mdash; An Array of field names or a String schema identifier,
+     which identifies the fields provided by the second-level items.
+     In the first case, a LiteralBasedProvider or equivalent Metadata Adapter is needed
+     on the Server in order to understand the subscription request.     
+     <p>If field names are specified, fields can be accessed by name
+     during event dispatching and, if associated with a control field,
+     names should be used to pair field and "column". The second-level
+     field names should better be different from the first-level field
+     names, so that no name conflict can arise. In case of name conflicts,
+     a "$" character must be preponed to the second-level field name.</p>
+     <p>On the contrary, if group name is specified, the pairing
+     should be done with field indexes. In this case, the field
+     position indexes to be used should start from the highest position of
+     the first-level schema + 1.</p>
+     <p>Note that the first-level and second-level schemas must be declared
+     in the same way, i.e. both through an Array of field names of both
+     through a schema identifier.</p>
+            
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">underlyingDataAdapter</span>:String</code> &mdash; the name of a Data Adapter (within the
+     Adapter Set used by the current session), which identifies the
+     underlying Data Adapter, which supplies all the second-level items;
+     the parameter is optional and the default is the "DEFAULT" name. All the possible second-level
+     items should be supplied in "MERGE" mode with snapshot available.
+     <p>The Data Adapter name is configured on the server side through
+     the "name" attribute of the "data_provider" element, in the
+     "adapters.xml" file that defines the Adapter Set (a missing attribute
+     configures the "DEFAULT" name).</p>
+        
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">underlyingBinary</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If true, the values received for all the
+     second-level subscribed fields are interpreted as binary AMF
+     representations of objects; they have to be supplied in that form
+     by the Data Adapter, for all the possible second-level items.
+     The objects obtained through the deserialization of the received
+     AMF representations are inserted in the underlying ArrayCollection.
+     <p>Note that items suitable for subscription in binary form are not
+     suitable for subscription in non-binary (i.e. text) form and vice-versa.</p>
+     <p>The parameter is optional and the default value is false, which means
+     that all fields are managed as text values.</p>
+     
+     </td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso"><a href="VisualTable.html#setKeyPolicy()" target="">setKeyPolicy()</a></div></div><div class="detailSectionHeader"> Event Detail </div><a name="event:CollectionEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">CollectionEvent</td><td class="detailHeaderType"> Event </td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><code>mx.events.CollectionEvent</code><br/><span class="label">CollectionEvent.type property = </span><code>mx.events.CollectionEvent.COLLECTION_CHANGE</code><br/><p></p><p></p><p>
+   Notification of an update of the values for an item in the table.
+   </p><p><span class="label">See also</span></p><div class="seeAlso">mx.events.CollectionEvent<br/><a href="http://livedocs.adobe.com/flex/3/langref/mx/events/CollectionEvent.html" target="mm_external">http://livedocs.adobe.com/flex/3/langref/mx/events/CollectionEvent.html</a></div></div><a name="event:EndOfSnapshotEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">EndOfSnapshotEvent</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../../com/lightstreamer/as_client/events/EndOfSnapshotEvent.html"><code>com.lightstreamer.as_client.events.EndOfSnapshotEvent</code></a><br/><span class="label">EndOfSnapshotEvent.type property = </span><a href="../../../com/lightstreamer/as_client/events/EndOfSnapshotEvent.html#END_OF_SNAPSHOT"><code>com.lightstreamer.as_client.events.EndOfSnapshotEvent.END_OF_SNAPSHOT</code></a><br/><p></p><p></p><p>
+   Notification that no more snapshot events are coming for an item. 
+   This notification is always received once, when the item is subscribed in DISTINCT or COMMAND mode 
+   and the snapshot is requested.
+   </p>
+		 Define the value of the type property of a EndOfSnapshot event object.
+		 </div><a name="event:LostUpdatesEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">LostUpdatesEvent</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../../com/lightstreamer/as_client/events/LostUpdatesEvent.html"><code>com.lightstreamer.as_client.events.LostUpdatesEvent</code></a><br/><span class="label">LostUpdatesEvent.type property = </span><a href="../../../com/lightstreamer/as_client/events/LostUpdatesEvent.html#LOST_UPDATES"><code>com.lightstreamer.as_client.events.LostUpdatesEvent.LOST_UPDATES</code></a><br/><p></p><p></p><p>
+   Notification of one or more updates that were suppressed in the Server because of internal memory limitations. 
+   The notification can be sent if the subscription mode is RAW or COMMAND. It can also be sent if the 
+   subscription mode is MERGE or DISTINCT and unfiltered dispatching has been requested. 
+   In all these cases, an update loss may be unacceptable for the client (in filtered COMMAND mode, 
+   this applies to "add" and "delete" events only).
+   </p>
+		 Define the value of the type property of a LostUpdates event object.
+		 </div><a name="event:SubscriptionErrorEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">SubscriptionErrorEvent</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../../com/lightstreamer/as_client/events/SubscriptionErrorEvent.html"><code>com.lightstreamer.as_client.events.SubscriptionErrorEvent</code></a><br/><span class="label">SubscriptionErrorEvent.type property = </span><a href="../../../com/lightstreamer/as_client/events/SubscriptionErrorEvent.html#SUBSCRIPTION_ERROR"><code>com.lightstreamer.as_client.events.SubscriptionErrorEvent.SUBSCRIPTION_ERROR</code></a><br/><p></p><p></p><p>
+   Notification of a Server error in response to a subscription request.
+   </p>
+		 Define the value of the type property of a SubscriptionError event object.
+		 </div><a name="event:SubscriptionEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">SubscriptionEvent</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../../com/lightstreamer/as_client/events/SubscriptionEvent.html"><code>com.lightstreamer.as_client.events.SubscriptionEvent</code></a><br/><span class="label">SubscriptionEvent.type property = </span><a href="../../../com/lightstreamer/as_client/events/SubscriptionEvent.html#SUBSCRIPTION"><code>com.lightstreamer.as_client.events.SubscriptionEvent.SUBSCRIPTION</code></a><br/><p></p><p></p><p>
+   Notification of the accomplished subscription of all the items in the table.
+   The notification is sent before any notification related with the updates.
+   </p> 
+		 Define the value of the type property of a Subscription event object.
+		 </div><a name="event:UnsubscriptionEvent"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">UnsubscriptionEvent</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../../com/lightstreamer/as_client/events/UnsubscriptionEvent.html"><code>com.lightstreamer.as_client.events.UnsubscriptionEvent</code></a><br/><span class="label">UnsubscriptionEvent.type property = </span><a href="../../../com/lightstreamer/as_client/events/UnsubscriptionEvent.html#UNSUBSCRIPTION"><code>com.lightstreamer.as_client.events.UnsubscriptionEvent.UNSUBSCRIPTION</code></a><br/><p></p><p></p><p>
+   Notification of the unsubscription of all the items in the table. 
+   The unsubscription may be subsequent to an unsubscribeTable call or to the closure of the connection.
+   </p>
+		 Define the value of the type property of a Unsubscription event object.
+		 </div><div class="detailSectionHeader">Constant Detail</div><a name="constantDetail"></a><a name="ITEM_IS_KEY"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">ITEM_IS_KEY</td><td class="detailHeaderType">Constant</td></tr></table><div class="detailBody"><code>public static const ITEM_IS_KEY:int = -1</code><p></p><p></p><p>
+     Constant that can be used with the setKeyPolicy method
+     </p><p><span class="label">See also</span></p><div class="seeAlso"><a href="VisualTable.html#setKeyPolicy()" target="">setKeyPolicy()</a></div></div><a name="constantDetail"></a><a name="UPDATE_IS_KEY"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">UPDATE_IS_KEY</td><td class="detailHeaderType">Constant</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public static const UPDATE_IS_KEY:int = -2</code><p></p><p></p><p>
+     Constant that can be used with the setKeyPolicy method
+     </p><p><span class="label">See also</span></p><div class="seeAlso"><a href="VisualTable.html#setKeyPolicy()" target="">setKeyPolicy()</a></div></div><br/><br/><hr><br/><p></p><center class="copyright"><footer>Lightstreamer Flex client 2.2.1 API</footer><br/> </center></div></body></html><!--Lightstreamer Flex client 2.2.1 API<br/> -->

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.lightstreamer.server</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>%LS_HOME%/bin/unix-like/LS.sh</string>
+		<string>run</string>
+	</array>
+	<key>QueueDirectories</key>
+	<array/>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>WatchPaths</key>
+	<array/>
+	<key>WorkingDirectory</key>
+	<string>%LS_HOME%/bin/unix-like</string>
+	<key>UserName</key>
+	<string>%LS_USER%</string>
+</dict>
+</plist>

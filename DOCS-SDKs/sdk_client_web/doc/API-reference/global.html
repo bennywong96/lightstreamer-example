@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Global</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+    
+        
+    
+    
+    
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+        
+        <dl>
+                
+<dt>
+
+
+    <h4 class="name" id="ChangedFieldCallback"><span class="type-signature"></span>ChangedFieldCallback<span class="signature">(field, value)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Callback for <a href="VisualUpdate.html#forEachChangedField">VisualUpdate#forEachChangedField</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of the involved changed field.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the new value for the field. See <a href="VisualUpdate.html#getChangedFieldValue">VisualUpdate#getChangedFieldValue</a> for details.
+Note that changes to the values made through <a href="VisualUpdate.html#setCellValue">VisualUpdate#setCellValue</a> calls will not be reflected
+by the iterator, as they don't affect the model.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+<dt>
+
+
+    <h4 class="name" id="CustomParserFunction"><span class="type-signature"></span>CustomParserFunction<span class="signature">(fieldValue, key)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Callback for <a href="Chart.html#setXAxis">Chart#setXAxis</a> and <a href="Chart.html#addYAxis">Chart#addYAxis</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fieldValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the field value to be parsed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the key associated with the given value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    a valid number to be plotted or null if the value has to be considered unchanged
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            
+                
+<dt>
+
+
+    <h4 class="name" id="FunctionLogConsumer"><span class="type-signature"></span>FunctionLogConsumer<span class="signature">(message)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Callback for <a href="FunctionAppender.html">FunctionAppender</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the log message to be consumed. If a more detailed insight
+on the message details is required it is suggested to implement a custom <a href="SimpleLogAppender.html">SimpleLogAppender</a>.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+<dt>
+
+
+    <h4 class="name" id="ItemUpdateChangedFieldCallback"><span class="type-signature"></span>ItemUpdateChangedFieldCallback<span class="signature">(fieldName, fieldPos, value)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Callback for <a href="ItemUpdate.html#forEachChangedField">ItemUpdate#forEachChangedField</a> and <a href="ItemUpdate.html#forEachField">ItemUpdate#forEachField</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fieldName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">of the involved changed field. If the related Subscription was
+initialized using a "Field Schema" it will be null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fieldPos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">1-based position of the field within
+the "Field List" or "Field Schema".</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the value for the field. See <a href="ItemUpdate.html#getValue">ItemUpdate#getValue</a> for details.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                
+<dt>
+
+
+    <h4 class="name" id="LabelsFormatter"><span class="type-signature"></span>LabelsFormatter<span class="signature">(value)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Callback for <a href="Chart.html#setXLabels">Chart#setXLabels</a> and <a href="ChartLine.html#setYLabels">ChartLine#setYLabels</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the value to be formatted before being print in a label.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the String to be set as content for the label.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            </dl>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:04 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

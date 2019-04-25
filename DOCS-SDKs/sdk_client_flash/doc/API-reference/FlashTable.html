@@ -1,0 +1,964 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+FlashTable
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="FlashTable";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD COLSPAN=3 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">  <A HREF="overview-summary-lsjavascriptbridge.as.html"><FONT CLASS="NavBarFont1"><B>File</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev">&nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <!--TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"-->    <!--A HREF="deprecated-list.html"--><!--FONT CLASS="NavBarFont1">Deprecated</FONT--><!--/A--><!--&nbsp;</TD-->
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"--><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<B>Flash Client 1.3</B>
+</EM>
+</TD
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<B>PREV CLASS</B><!-- 
+   NEXT CLASS 
+-->
+&nbsp;<A HREF="FlashUpdateItemInfo.html"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html" TARGET="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="FlashTable.html" TARGET="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;
+<SCRIPT>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>Class FlashTable</H2>
+<PRE>Object
+   |
+   +--<b>FlashTable</b>
+</PRE>
+
+
+<HR>
+<DL>
+   <!-- Class definition -->
+   <DT>class 
+   <B>FlashTable</B>
+   
+
+</DL>
+   
+   <P>
+   <BR/>Represents a data table that can be fed with real-time data
+ (delivered by Lightstreamer Server). It contains the subscription details and 
+ the event handlers needed to process the real-time data. When a FlashTable object 
+ is added to a <a href="JavaScriptBridge.html#">JavaScriptBridge</a> object, through the <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>
+ method, its state becomes "running". This means that the underlying LightstreamerClient activates a subscription
+ to the required items through Lightstreamer Server and the data-table object begins to 
+ receive real-time events.<BR/><I>Defined in <a href='overview-summary-lsjavascriptbridge.as.html'>lsjavascriptbridge.as</a></I><BR/><BR/>
+   </P>
+   
+   <HR>
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<!-- ======== END NESTED CLASS SUMMARY ======== -->
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="FlashTable.html#FlashTable()">FlashTable</A> 
+	 </B>
+	 (&lt;String&gt; _group,&lt;String&gt; _schema,&lt;String&gt; _mode)
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Creates an object to be used to describe a data table.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onClearSnapshot">onClearSnapshot</A></B>(&lt;Number&gt; itemPos,&lt;String&gt; itemName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Event handler that is called by Lightstreamer each time a request
+ to clear the snapshot pertaining to an item in the data table has been
+ received from the Server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onEndOfSnapshot">onEndOfSnapshot</A></B>(&lt;Number&gt; itemPos,&lt;String&gt; itemName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Event handler that is called by Lightstreamer to notify that all
+ snapshot events for an item in the data table have been received,
+ so that real time events are now going to be received.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onItemUpdate">onItemUpdate</A></B>(&lt;Number&gt; itemPos,&lt;<a href="FlashUpdateItemInfo.html">FlashUpdateItemInfo</a>&gt; updateInfo,&lt;String&gt; itemName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Event handler that is called by Lightstreamer each time an update
+ pertaining to an item in the data table has been received from the
+ Server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onLostUpdates">onLostUpdates</A></B>(&lt;Number&gt; itemPos,&lt;Number&gt; lostUpdates,&lt;String&gt; itemName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Event handler that is called by Lightstreamer to notify that, due to
+ internal resource limitations, Lightstreamer Server dropped one or more
+ updates for an item in the data table.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onStart">onStart</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Event handler that is called by Lightstreamer to notify that a data
+ table has been successfully subscribed to through the Server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setDataAdapter">setDataAdapter</A></B>(&lt;String&gt; adapter)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that sets the name of the Data Adapter
+ (within the Adapter Set used by the current session)
+ that supplies all the items in the Group.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setItemsRange">setItemsRange</A></B>(&lt;Number&gt; _start,&lt;Number&gt; _end)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that sets a range of items within the specified group.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setRequestedBufferSize">setRequestedBufferSize</A></B>(&lt;Number&gt; buffSize)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that sets the length to be requested to Lightstreamer
+ Server for the internal queueing buffers for the items in the data
+ table.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setRequestedMaxFrequency">setRequestedMaxFrequency</A></B>(&lt;String&gt; maxFreq)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that sets the maximum update frequency to be requested to
+ Lightstreamer Server for all the items in the data table.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setSelector">setSelector</A></B>(&lt;String&gt; selector)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that sets the selector name for all the items in the
+ data table.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setSnapshotRequired">setSnapshotRequired</A></B>(&lt;boolean&gt; required)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Setter method that enables/disables snapshot delivery request for the
+ items in the data table.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="FlashTable()"><!-- --></A><H3>
+FlashTable</H3>
+<PRE><B>FlashTable</B>(&lt;String&gt; _group,&lt;String&gt; _schema,&lt;String&gt; _mode)</PRE>
+
+
+<UL>
+   Creates an object to be used to describe a data table.
+ The object can be supplied to <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a> and <a href="JavaScriptBridge.html#removeTable">JavaScriptBridge.removeTable()</a>, in order to bring the data table to "running"
+ or back to "inactive" state.
+</UL>
+
+
+
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>_group</CODE> -  a String group identifier, which  identifies the items that provide values for the data table rows.  <BR>An Array of String with the names of the items in the group can also  be used directly, instead of a group identifier; the items will be assigned  position numbers accordingly; numbers should not be used as field names.  However, in this case, a LiteralBasedProvider or equivalent Metadata Adapter  is needed on the Server in order to understand the subscription request.  
+     </UL>
+   
+     <UL><CODE>_schema</CODE> -  a String schema identifier, which  identifies the fields that represent the data table columns.  <BR>An Array of String with the names of the fields in the schema can also  be used directly, instead of a schema identifier; the fields will be assigned  position numbers accordingly; numbers should not be used as field names.  However, in this case, a LiteralBasedProvider or equivalent Metadata Adapter  is needed on the Server in order to understand the subscription request.  
+     </UL>
+   
+     <UL><CODE>_mode</CODE> -  the subscription mode for the  items, required by Lightstreamer Server. Permitted values are:  <ul>  <li>MERGE</li>  <li>DISTINCT</li>  <li>RAW</li>  <li>COMMAND</li>  </ul>   
+     </UL>
+   
+   
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="onClearSnapshot"><!-- --></A>
+   <H3>onClearSnapshot</H3>
+   <PRE>void <B>onClearSnapshot</B>(&lt;Number&gt; itemPos,&lt;String&gt; itemName)</PRE>
+   
+      <UL>Event handler that is called by Lightstreamer each time a request
+ to clear the snapshot pertaining to an item in the data table has been
+ received from the Server.
+ More precisely, this kind of request can occur in two cases:
+ <ul>
+ <li>For an item delivered in COMMAND mode, to notify that the state
+ of the item becomes empty; this is equivalent to receiving an update
+ carrying a DELETE command once for each key that is currently active.</li>
+ <li>For an item delivered in DISTINCT mode, to notify that all the
+ previous updates received for the item should be considered as obsolete;
+ hence, if the page were showing a list of recent updates for the item,
+ it should clear the list in order to keep a coherent view.</li>
+ </ul>
+
+ </ul>
+ <ul><b>Default implementation:</b> do nothing (which may not be correct,
+ depending on the actual implementation of <a href="#onItemUpdate">onItemUpdate()</a>).</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>itemPos</CODE> -  1-based index of the item within the group.  
+      </UL> 
+   
+     <UL><CODE>itemName</CODE> -  name of the item or null, depending on the way  the group was identified in the <a href="FlashTable.html#">FlashTable</a> constructor. In case  an Array of item names was supplied, the name is available; otherwise  null is passed. 	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onEndOfSnapshot"><!-- --></A>
+   <H3>onEndOfSnapshot</H3>
+   <PRE>void <B>onEndOfSnapshot</B>(&lt;Number&gt; itemPos,&lt;String&gt; itemName)</PRE>
+   
+      <UL>Event handler that is called by Lightstreamer to notify that all
+ snapshot events for an item in the data table have been received,
+ so that real time events are now going to be received. The received
+ snapshot could be empty.
+ Such notifications are sent only if the items are delivered in
+ DISTINCT or COMMAND subscription mode and snapshot information was
+ indeed requested for the items.
+ By setting a custom handler it is possible to perform actions which
+ require that all data table initial values have been received.
+
+ </ul>
+ <ul><b>Default implementation:</b> do nothing</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>itemPos</CODE> -  1-based index of the item within the group.  
+      </UL> 
+   
+     <UL><CODE>itemName</CODE> -  name of the item or null, depending on the way  the group was identified in the <a href="FlashTable.html#">FlashTable</a> constructor. In case  an Array of item names was supplied, the name is available; otherwise  null is passed.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#setSnapshotRequired">setSnapshotRequired()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onItemUpdate"><!-- --></A>
+   <H3>onItemUpdate</H3>
+   <PRE>void <B>onItemUpdate</B>(&lt;Number&gt; itemPos,&lt;<a href="FlashUpdateItemInfo.html">FlashUpdateItemInfo</a>&gt; updateInfo,&lt;String&gt; itemName)</PRE>
+   
+      <UL>Event handler that is called by Lightstreamer each time an update
+ pertaining to an item in the data table has been received from the
+ Server. 
+ 
+ </ul>
+ <ul><b>Default implementation:</b> do nothing</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>itemPos</CODE> -  1-based index of the item within the group.  
+      </UL> 
+   
+     <UL><CODE>updateInfo</CODE> -  a value object containinig the  updated values for all the fields, together with the old values for  the fields.  
+      </UL> 
+   
+     <UL><CODE>itemName</CODE> -  name of the item or null, depending on the way  the group was identified in the <a href="FlashTable.html#">FlashTable</a> constructor. In case  an Array of item names was supplied, the name is available; otherwise  null is passed.  	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onLostUpdates"><!-- --></A>
+   <H3>onLostUpdates</H3>
+   <PRE>void <B>onLostUpdates</B>(&lt;Number&gt; itemPos,&lt;Number&gt; lostUpdates,&lt;String&gt; itemName)</PRE>
+   
+      <UL>Event handler that is called by Lightstreamer to notify that, due to
+ internal resource limitations, Lightstreamer Server dropped one or more
+ updates for an item in the data table. Such notifications are sent only
+ if the items are delivered in an unfiltered mode; this occurs if the
+ subscription mode is:
+ <ul>
+ <li>RAW</li>
+ <li>MERGE or DISTINCT, with unfiltered dispatching specified</li>
+ <li>COMMAND, with unfiltered dispatching specified</li>
+ <li>COMMAND, without unfiltered dispatching specified (in this case,
+ notifications apply to ADD and DELETE events only)</li>
+ </ul>
+ By setting a custom handler it is possible to perform recovery actions.
+ 
+ </ul>
+ <ul><b>Default implementation:</b> do nothing</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>itemPos</CODE> -  1-based index of the item within the group.  
+      </UL> 
+   
+     <UL><CODE>lostUpdates</CODE> -  The number of consecutive updates dropped  for the item.  
+      </UL> 
+   
+     <UL><CODE>itemName</CODE> -  name of the item or null, depending on the way  the group was identified in the <a href="FlashTable.html#">FlashTable</a> constructor. In case  an Array of item names was supplied, the name is available; otherwise  null is passed.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#setRequestedMaxFrequency">setRequestedMaxFrequency()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onStart"><!-- --></A>
+   <H3>onStart</H3>
+   <PRE>void <B>onStart</B>()</PRE>
+   
+      <UL>Event handler that is called by Lightstreamer to notify that a data
+ table has been successfully subscribed to through the Server.
+ This can happen multiple times in the life of a data table, in case
+ the data table subscription is performed multiple times through <a href="JavaScriptBridge.html#removeTable">JavaScriptBridge.removeTable()</a> and <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>. This can also
+ happen multiple times in case of automatic recovery after a connection
+ restart.
+ <BR>This notification is always issued before the other ones related
+ to the same subscription. It invalidates all data that has been received
+ previously.
+
+ </ul>
+ <ul><b>Default implementation:</b> do nothing</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setDataAdapter"><!-- --></A>
+   <H3>setDataAdapter</H3>
+   <PRE>void <B>setDataAdapter</B>(&lt;String&gt; adapter)</PRE>
+   
+      <UL>Setter method that sets the name of the Data Adapter
+ (within the Adapter Set used by the current session)
+ that supplies all the items in the Group.
+ <BR>The Data Adapter name is configured on the server side through
+ the "name" attribute of the "data_provider" element, in the
+ "adapters.xml" file that defines the Adapter Set (a missing attribute
+ configures the "DEFAULT" name).
+ <BR>Note: If more than one Data Adapter is needed to supply all the
+ items in a set of items, then it is not possible to group all the
+ items of the set in a single logical table. Multiple logical tables
+ have to be defined.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> "DEFAULT".</ul>
+ <ul><b>Lifecycle:</b> The Data Adapter name can be set and changed while
+ the data table is in "inactive" state. Each time the data table is
+ brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the Data Adapter name is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>adapter</CODE> -  the name of the Data Adapter. A null value   is equivalent to the "DEFAULT" name. 	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setItemsRange"><!-- --></A>
+   <H3>setItemsRange</H3>
+   <PRE>void <B>setItemsRange</B>(&lt;Number&gt; _start,&lt;Number&gt; _end)</PRE>
+   
+      <UL>Setter method that sets a range of items within the specified group.
+ Items outside of this range are not subscribed.
+ The support for ranges allows the front-end to use generic group
+ identifiers as group descriptors, yet being able to subscribe to
+ subsets of such groups or even to single items from such groups,
+ without the need to introduce more specific group identifiers.
+ <BR>Moreover, this method allows for continually resubscribing
+ different item subsets without the need for creating different data
+ table objects.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> all the items in the specified group.</ul>
+ <ul><b>Lifecycle:</b> The items range can be set and changed while
+ the data table is in "inactive" state. Each time the data table is
+ brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the items range is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>_start</CODE> -  1-based index of the first item in the group that  has to be subscribed.   
+      </UL> 
+   
+     <UL><CODE>_end</CODE> -  1-based index of the last item in the group that  has to be subscribed.  	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setRequestedBufferSize"><!-- --></A>
+   <H3>setRequestedBufferSize</H3>
+   <PRE>void <B>setRequestedBufferSize</B>(&lt;Number&gt; buffSize)</PRE>
+   
+      <UL>Setter method that sets the length to be requested to Lightstreamer
+ Server for the internal queueing buffers for the items in the data
+ table. A Queueing buffer is used by the Server to accumulate a burst
+ of updates for an item, so that they can all be sent to the client,
+ despite of bandwidth or frequency limits. It can be used only when the
+ subscription mode is MERGE or DISTINCT and unfiltered dispatching has
+ not been requested. Note that the Server may pose an upper limit on the
+ size of its internal buffers.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> 1 if the subscription mode is MERGE;
+ "unlimited" otherwise</ul>
+ <ul><b>Lifecycle:</b> The buffer size can be set and changed while
+ the data table is in "inactive" state. Each time the data table is
+ brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the buffer size is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>buffSize</CODE> -  The length of the internal queueing buffers to be  used in the Server. If a 0 value or the string "unlimited" is supplied,  then the buffer length is decided by the Server.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#setRequestedMaxFrequency">setRequestedMaxFrequency()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setRequestedMaxFrequency"><!-- --></A>
+   <H3>setRequestedMaxFrequency</H3>
+   <PRE>void <B>setRequestedMaxFrequency</B>(&lt;String&gt; maxFreq)</PRE>
+   
+      <UL>Setter method that sets the maximum update frequency to be requested to
+ Lightstreamer Server for all the items in the data table. It can
+ be used only if the subscription mode is MERGE, DISTINCT or
+ COMMAND (in the latter case, the frequency limitation applies to the
+ UPDATE events for each single key).
+ Note that frequency limits on the items can also be set on the
+ server side and this request can only be issued in order to furtherly
+ reduce the frequency, not to rise it beyond these limits.
+ <BR>This method can also be used to request unfiltered dispatching
+ for the items in the data table. However, unfiltered dispatching
+ requests may be refused if any frequency limit is posed on the server
+ side for some item.
+ <BR><B>Edition Note:</B>A further global frequency limit could also be imposed
+ by the Server, depending on Edition and License Type; this specific limit
+ also applies to RAW mode and to unfiltered dispatching.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> "unlimited"</ul>
+ <ul><b>Lifecycle:</b> The maximum frequency can be set and changed as
+ long as the data table is in "inactive" state. Each time the data table
+ is brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the maximum frequency is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>maxFreq</CODE> -  The maximum update frequency (expressed in updates  per second) for each item in the data table. If a 0 value or the string  "unlimited" is supplied, then the maximum frequency is decided  by the Server. It is also possible to supply the string "unfiltered",  to ask for unfiltered dispatching, if it is allowed for the items. 	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setSelector"><!-- --></A>
+   <H3>setSelector</H3>
+   <PRE>void <B>setSelector</B>(&lt;String&gt; selector)</PRE>
+   
+      <UL>Setter method that sets the selector name for all the items in the
+ data table. The selector is a filter on the updates received. It is
+ executed on the Server and implemented by the Metadata Adapter.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> null (no selector).</ul>
+ <ul><b>Lifecycle:</b> The selector can be set and changed while
+ the data table is in "inactive" state. Each time the data table is
+ brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the selector is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>selector</CODE> -  name of a selector, to be recognized by the  Metadata Adapter, or null to unset the selector. 	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setSnapshotRequired"><!-- --></A>
+   <H3>setSnapshotRequired</H3>
+   <PRE>void <B>setSnapshotRequired</B>(&lt;boolean&gt; required)</PRE>
+   
+      <UL>Setter method that enables/disables snapshot delivery request for the
+ items in the data table. The snapshot can be requested only if the
+ subscription mode is MERGE, DISTINCT or COMMAND.
+
+ </ul>
+ <ul><b>Invocation:</b> optional.</ul>
+ <ul><b>Default value:</b> false</ul>
+ <ul><b>Lifecycle:</b> The snapshot request can be set and changed as
+ long as the data table is in "inactive" state. Each time the data table
+ is brought to "running" state through <a href="JavaScriptBridge.html#addTable">JavaScriptBridge.addTable()</a>,
+ the snapshot request is specified in the subscription request.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>required</CODE> -  true/false to request/not request snapshot  delivery. If the subscription mode is DISTINCT, instead of true, it is  also possible to supply a number, to specify the requested length of  the snapshot (though the length of the received snapshot may be less  than requested, because of insufficient data or server side limits);  passing true means that the snapshot length should be determined  only by the Server. 	   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD COLSPAN=3 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">  <A HREF="overview-summary-lsjavascriptbridge.as.html"><FONT CLASS="NavBarFont1"><B>File</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="overview-tree.html"><FONT CLASS="NavBarFont1"><b>Tree</b></FONT></A>&nbsp;</TD>
+  <!--TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"-->    <!--A HREF="deprecated-list.html"--><!--FONT CLASS="NavBarFont1">Deprecated</FONT--><!--/A--><!--&nbsp;</TD-->
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+<B>Flash Client 1.3</B>
+</EM>
+</TD
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<B>PREV CLASS</B><!-- 
+   NEXT CLASS 
+-->
+&nbsp;<A HREF="FlashUpdateItemInfo.html"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="index.html" TARGET="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="FlashTable.html" TARGET="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;
+<SCRIPT>
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+<A HREF="allclasses-noframe.html" TARGET=""><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+Lightstreamer Flash Client
+</FONT>
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Wed Dec  6 11:31:34 2017</div>
+</BODY>
+</HTML>

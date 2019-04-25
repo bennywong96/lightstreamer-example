@@ -1,0 +1,6249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Subscription</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: Subscription</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Subscription</h2>
+        
+            <div class="class-description">Class representing a Subscription to be submitted to a Lightstreamer
+Server. It contains subscription details and the listeners needed to process the
+real-time data. 
+<BR>After the creation, a Subscription object is in the "inactive"
+state. When a Subscription object is subscribed to on a <a href="LightstreamerClient.html">LightstreamerClient</a> 
+object, through the <a href="LightstreamerClient.html#subscribe">LightstreamerClient#subscribe</a> method, its state 
+becomes "active". This means that the client activates a subscription to the 
+required items through Lightstreamer Server and the Subscription object begins 
+to receive real-time events.
+
+<BR>A Subscritpion can be configured to use either an Item Group or an Item List to 
+specify the items to be subscribed to and using either a Field Schema or Field List
+to specify the fields.
+<BR>"Item Group" and "Item List" are defined as follows:
+<ul>
+<li>"Item Group": an Item Group is a String identifier representing a list of items.
+Such Item Group has to be expanded into a list of items by the getItems method of the
+MetadataProvider of the associated Adapter Set. When using an Item Group, items in the 
+subscription are identified by their 1-based index within the group.
+<BR>It is possible to configure the Subscription to use an "Item Group" using the <a href="Subscription.html#setItemGroup">Subscription#setItemGroup</a>
+method.
+</li> 
+<li>"Item List": an Item List is an array of Strings each one representing an item.
+For the Item List to be correctly interpreted a LiteralBasedProvider or a MetadataProvider
+with a compatible implementation of getItems has to be configured in the associated Adapter Set.
+<BR>Note that no item in the list can be empty, can contain spaces or can 
+be a number. 
+<BR>When using an Item List, items in the subscription are identified by their name or by
+their 1-based index within the list.
+<BR>It is possible to configure the Subscription to use an "Item List" using the <a href="Subscription.html#setItems">Subscription#setItems</a>
+method or by specifying it in the constructor.
+</li> 
+</ul>
+<BR>"Field Schema" and "Field List" are defined as follows:
+<ul>
+<li>"Field Schema": a Field Schema is a String identifier representing a list of fields.
+Such Field Schema has to be expanded into a list of fields by the getFields method of the
+MetadataProvider of the associated Adapter Set. When using a Field Schema, fields in the 
+subscription are identified by their 1-based index within the schema.
+<BR>It is possible to configure the Subscription to use a "Field Schema" using the <a href="Subscription.html#setFieldSchema">Subscription#setFieldSchema</a>
+method.
+</li>
+<li>"Field List": a Field List is an array of Strings each one representing a field.
+For the Field List to be correctly interpreted a LiteralBasedProvider or a MetadataProvider
+with a compatible implementation of getFields has to be configured in the associated Adapter Set.
+<BR>Note that no field in the list can be empty or can contain spaces. 
+<BR>When using a Field List, fields in the subscription are identified by their name or by
+their 1-based index within the list.
+<BR>It is possible to configure the Subscription to use a "Field List" using the <a href="Subscription.html#setFields">Subscription#setFields</a>
+method or by specifying it in the constructor.
+</li> 
+</ul></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="Subscription"><span class="type-signature"></span>new Subscription<span class="signature">(subscriptionMode, items, fields)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Creates an object to be used to describe a Subscription that is going
+to be subscribed to through Lightstreamer Server.
+The object can be supplied to <a href="LightstreamerClient.html#subscribe">LightstreamerClient#subscribe</a> and
+<a href="LightstreamerClient.html#unsubscribe">LightstreamerClient#unsubscribe</a>, in order to bring the Subscription to
+"active" or back to "inactive" state.
+<BR>Note that all of the methods used to describe the subscription to the server
+can only be called while the instance is in the "inactive" state; the only
+exception is <a href="Subscription.html#setRequestedMaxFrequency">Subscription#setRequestedMaxFrequency</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>subscriptionMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the subscription mode for the
+items, required by Lightstreamer Server. Permitted values are:
+<ul>
+<li>MERGE</li>
+<li>DISTINCT</li>
+<li>RAW</li>
+<li>COMMAND</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>items</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">an array of Strings containing a list of items to
+be subscribed to through the server. In case of a single-item subscription the String
+containing the item name can be passed in place of the array; both of the 
+following examples represent a valid subscription:
+<BR><code>new Subscription(mode,"item1",fieldList);</code>
+<BR><code>new Subscription(mode,["item1","item2"],fieldList);</code>
+<BR>It is also possible to pass null (or nothing) and specify the
+"Item List" or "Item Group" later through <a href="Subscription.html#setItems">Subscription#setItems</a> and
+<a href="Subscription.html#setItemGroup">Subscription#setItemGroup</a>. In this case the fields parameter must not be specified.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of Strings containing a list of fields 
+for the items to be subscribed to through Lightstreamer Server.
+<BR>It is also possible to pass null (or nothing) and specify the
+"Field List" or "Field Schema" later through <a href="Subscription.html#setFields">Subscription#setFields</a> and
+<a href="Subscription.html#setFieldSchema">Subscription#setFieldSchema</a>. In this case the items parameter must not be specified.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If no or invalid subscription mode is 
+passed.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the list of items is specified while
+the list of fields is not, or viceversa.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        If the specified "Item List" or "Field List"
+is not valid; see <a href="Subscription.html#setItems">Subscription#setItems</a> and <a href="Subscription.html#setFields">Subscription#setFields</a> for details.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#addListener" class="addListener">addListener</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Adds a listener that will receive events from the Subscription 
+instance.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getCommandPosition" class="getCommandPosition">getCommandPosition</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Returns the position of the "command" field in a COMMAND Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getCommandSecondLevelDataAdapter" class="getCommandSecondLevelDataAdapter">getCommandSecondLevelDataAdapter</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the second-level Data 
+Adapter name configured through <a href="Subscription.html#setCommandSecondLevelDataAdapter">Subscription#setCommandSecondLevelDataAdapter</a>.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getCommandSecondLevelFields" class="getCommandSecondLevelFields">getCommandSecondLevelFields</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the "Field List" specified for 
+second-level Subscriptions.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getCommandSecondLevelFieldSchema" class="getCommandSecondLevelFieldSchema">getCommandSecondLevelFieldSchema</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the "Field Schema" specified for 
+second-level Subscriptions.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getCommandValue" class="getCommandValue">getCommandValue</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Returns the latest value received for the specified item/key/field combination.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getDataAdapter" class="getDataAdapter">getDataAdapter</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the name of the Data Adapter 
+specified for this Subscription through <a href="Subscription.html#setDataAdapter">Subscription#setDataAdapter</a>.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getFields" class="getFields">getFields</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the "Field List" specified for this
+Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getFieldSchema" class="getFieldSchema">getFieldSchema</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the field schema specified for this
+Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getItemGroup" class="getItemGroup">getItemGroup</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the item group specified for this
+Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getItems" class="getItems">getItems</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the "Item List" specified for this
+Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getKeyPosition" class="getKeyPosition">getKeyPosition</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Returns the position of the "key" field in a COMMAND Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getListeners" class="getListeners">getListeners</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Returns an array containing the <a href="SubscriptionListener.html">SubscriptionListener</a> instances that
+were added to this client.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getMode" class="getMode">getMode</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the mode specified for this
+Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getRequestedBufferSize" class="getRequestedBufferSize">getRequestedBufferSize</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the buffer size, configured though
+<a href="Subscription.html#setRequestedBufferSize">Subscription#setRequestedBufferSize</a>, to be requested to the Server for
+this Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getRequestedMaxFrequency" class="getRequestedMaxFrequency">getRequestedMaxFrequency</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the max frequency, configured
+through <a href="Subscription.html#setRequestedMaxFrequency">Subscription#setRequestedMaxFrequency</a>, to be requested to the Server for
+this Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getRequestedSnapshot" class="getRequestedSnapshot">getRequestedSnapshot</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the snapshot preferences, configured
+through <a href="Subscription.html#setRequestedSnapshot">Subscription#setRequestedSnapshot</a>, to be requested to the Server for
+this Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getSelector" class="getSelector">getSelector</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that can be used to read the selctor name  
+specified for this Subscription through <a href="Subscription.html#setSelector">Subscription#setSelector</a>.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#getValue" class="getValue">getValue</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Returns the latest value received for the specified item/field pair.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#isActive" class="isActive">isActive</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that checks if the Subscription is currently "active" or not.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#isSubscribed" class="isSubscribed">isSubscribed</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that checks if the Subscription is currently subscribed to
+through the server or not.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#removeListener" class="removeListener">removeListener</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Removes a listener from the Subscription instance so that it
+will not receive events anymore.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setCommandSecondLevelDataAdapter" class="setCommandSecondLevelDataAdapter">setCommandSecondLevelDataAdapter</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the name of the second-level Data Adapter (within 
+the Adapter Set used by the current session) that supplies all the 
+second-level items.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setCommandSecondLevelFields" class="setCommandSecondLevelFields">setCommandSecondLevelFields</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Field List" to be subscribed to through 
+Lightstreamer Server for the second-level items.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setCommandSecondLevelFieldSchema" class="setCommandSecondLevelFieldSchema">setCommandSecondLevelFieldSchema</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Field Schema" to be subscribed to through 
+Lightstreamer Server for the second-level items.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setDataAdapter" class="setDataAdapter">setDataAdapter</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the name of the Data Adapter
+(within the Adapter Set used by the current session)
+that supplies all the items for this Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setFields" class="setFields">setFields</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Field List" to be subscribed to through 
+Lightstreamer Server.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setFieldSchema" class="setFieldSchema">setFieldSchema</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Field Schema" to be subscribed to through 
+Lightstreamer Server.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setItemGroup" class="setItemGroup">setItemGroup</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Item Group" to be subscribed to through 
+Lightstreamer Server.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setItems" class="setItems">setItems</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the "Item List" to be subscribed to through 
+Lightstreamer Server.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setRequestedBufferSize" class="setRequestedBufferSize">setRequestedBufferSize</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the length to be requested to Lightstreamer
+Server for the internal queueing buffers for the items in the Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setRequestedMaxFrequency" class="setRequestedMaxFrequency">setRequestedMaxFrequency</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the maximum update frequency to be requested to
+Lightstreamer Server for all the items in the Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setRequestedSnapshot" class="setRequestedSnapshot">setRequestedSnapshot</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that enables/disables snapshot delivery request for the
+items in the Subscription.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="Subscription.html#setSelector" class="setSelector">setSelector</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that sets the selector name for all the items in the
+Subscription.</dd>
+  
+  
+ 
+        </dl>
+    
+    
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="addListener"><span class="type-signature"></span>addListener<span class="signature">(listener)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Adds a listener that will receive events from the Subscription 
+instance.
+<BR>The same listener can be added to several different Subscription 
+instances.
+
+<p class="lifecycle"><b>Lifecycle:</b> a listener can be added at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="SubscriptionListener.html">SubscriptionListener</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An object that will receive the events
+as shown in the <a href="SubscriptionListener.html">SubscriptionListener</a> interface.
+<BR>Note that the given instance does not have to implement all of the 
+methods of the SubscriptionListener interface. In fact it may also 
+implement none of the interface methods and still be considered a valid 
+listener. In the latter case it will obviously receive no events.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCommandPosition"><span class="type-signature"></span>getCommandPosition<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Returns the position of the "command" field in a COMMAND Subscription.
+<BR>This method can only be used if the Subscription mode is COMMAND
+and the Subscription was initialized using a "Field Schema".
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not 
+COMMAND or if the <a href="SubscriptionListener.html#onSubscription">SubscriptionListener#onSubscription</a> event for this Subscription
+was not yet fired.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the 1-based position of the "command" field within the "Field Schema".
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCommandSecondLevelDataAdapter"><span class="type-signature"></span>getCommandSecondLevelDataAdapter<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the second-level Data 
+Adapter name configured through <a href="Subscription.html#setCommandSecondLevelDataAdapter">Subscription#setCommandSecondLevelDataAdapter</a>.
+ 
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the name of the second-level Data Adapter.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCommandSecondLevelFields"><span class="type-signature"></span>getCommandSecondLevelFields<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the "Field List" specified for 
+second-level Subscriptions.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the second-level of
+this Subscription has been initialized using a "Field List"  
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with a field schema or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the list of fields to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCommandSecondLevelFieldSchema"><span class="type-signature"></span>getCommandSecondLevelFieldSchema<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the "Field Schema" specified for 
+second-level Subscriptions.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the second-level of
+this Subscription has been initialized using a "Field Schema".
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with a "Field List" or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the "Field Schema" to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCommandValue"><span class="type-signature"></span>getCommandValue<span class="signature">(itemIdentifier, keyValue, fieldIdentifier)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Returns the latest value received for the specified item/key/field combination.
+This method can only be used if the Subscription mode is COMMAND.
+Subscriptions with two-level behavior are also supported, hence the specified
+field can be either a first-level or a second-level one.
+<BR>It is suggested to consume real-time data by implementing and adding
+a proper <a href="SubscriptionListener.html">SubscriptionListener</a> rather than probing this method.
+<BR>Note that internal data is cleared when the Subscription is 
+unsubscribed from. 
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time; if called 
+to retrieve a value that has not been received yet, then it will return null.
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>itemIdentifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a String representing an item in the 
+configured item list or a Number representing the 1-based position of the item
+in the specified item group. (In case an item list was specified, passing 
+the item position is also possible).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>keyValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a String containing the value of a key received
+on the COMMAND subscription.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fieldIdentifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a String representing a field in the 
+configured field list or a Number representing the 1-based position of the field
+in the specified field schema. (In case a field list was specified, passing
+the field position is also possible).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if an invalid item name or field
+name is specified or if the specified item position or field position is
+out of bounds.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not 
+COMMAND.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the current value for the specified field of the specified
+key within the specified item (possibly null), or null if the specified
+key has not been added yet (note that it might have been added and eventually deleted).
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getDataAdapter"><span class="type-signature"></span>getDataAdapter<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the name of the Data Adapter 
+specified for this Subscription through <a href="Subscription.html#setDataAdapter">Subscription#setDataAdapter</a>.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the name of the Data Adapter; returns null if no name
+has been configured, so that the "DEFAULT" Adapter Set is used.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getFields"><span class="type-signature"></span>getFields<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the "Field List" specified for this
+Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the Subscription has
+been initialized using a "Field List". 
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with a "Field Schema" or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the "Field List" to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getFieldSchema"><span class="type-signature"></span>getFieldSchema<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the field schema specified for this
+Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the Subscription has
+been initialized using a "Field Schema" 
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with a "Field List" or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the "Field Schema" to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getItemGroup"><span class="type-signature"></span>getItemGroup<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the item group specified for this
+Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the Subscription has
+been initialized using an "Item Group"
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with an "Item List" or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the "Item Group" to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getItems"><span class="type-signature"></span>getItems<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the "Item List" specified for this
+Subscription.
+<BR>Note that if a single item was specified in the constructor, this method
+will return an array of length 1 containing such item.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called if the Subscription has
+been initialized with an "Item List".
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription was initialized
+with an "Item Group" or was not initialized at all.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the "Item List" to be subscribed to through the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getKeyPosition"><span class="type-signature"></span>getKeyPosition<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Returns the position of the "key" field in a COMMAND Subscription.
+<BR>This method can only be used if the Subscription mode is COMMAND
+and the Subscription was initialized using a "Field Schema".
+ 
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not 
+COMMAND or if the <a href="SubscriptionListener.html#onSubscription">SubscriptionListener#onSubscription</a> event for this Subscription
+was not yet fired.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the 1-based position of the "key" field within the "Field Schema".
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getListeners"><span class="type-signature"></span>getListeners<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Returns an array containing the <a href="SubscriptionListener.html">SubscriptionListener</a> instances that
+were added to this client.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    an Array containing the listeners that were added to this client.
+Listeners added multiple times are included multiple times in the array.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getMode"><span class="type-signature"></span>getMode<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the mode specified for this
+Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the Subscription mode specified in the constructor.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getRequestedBufferSize"><span class="type-signature"></span>getRequestedBufferSize<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the buffer size, configured though
+<a href="Subscription.html#setRequestedBufferSize">Subscription#setRequestedBufferSize</a>, to be requested to the Server for
+this Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the buffer size to be requested to the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getRequestedMaxFrequency"><span class="type-signature"></span>getRequestedMaxFrequency<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the max frequency, configured
+through <a href="Subscription.html#setRequestedMaxFrequency">Subscription#setRequestedMaxFrequency</a>, to be requested to the Server for
+this Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the max frequency to be requested to the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getRequestedSnapshot"><span class="type-signature"></span>getRequestedSnapshot<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the snapshot preferences, configured
+through <a href="Subscription.html#setRequestedSnapshot">Subscription#setRequestedSnapshot</a>, to be requested to the Server for
+this Subscription.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the snapshot preference to be requested to the server.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getSelector"><span class="type-signature"></span>getSelector<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that can be used to read the selctor name  
+specified for this Subscription through <a href="Subscription.html#setSelector">Subscription#setSelector</a>.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the name of the selector.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getValue"><span class="type-signature"></span>getValue<span class="signature">(itemIdentifier, fieldIdentifier)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Returns the latest value received for the specified item/field pair.
+<BR>It is suggested to consume real-time data by implementing and adding
+a proper <a href="SubscriptionListener.html">SubscriptionListener</a> rather than probing this method.
+In case of COMMAND Subscriptions, the value returned by this
+method may be misleading, as in COMMAND mode all the keys received, being
+part of the same item, will overwrite each other; for COMMAND Subscriptions,
+use <a href="Subscription.html#getCommandValue">Subscription#getCommandValue</a> instead.
+<BR>Note that internal data is cleared when the Subscription is 
+unsubscribed from. 
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time; if called 
+to retrieve a value that has not been received yet, then it will return null. 
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>itemIdentifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a String representing an item in the 
+configured item list or a Number representing the 1-based position of the item
+in the specified item group. (In case an item list was specified, passing 
+the item position is also possible).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fieldIdentifier</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a String representing a field in the 
+configured field list or a Number representing the 1-based position of the field
+in the specified field schema. (In case a field list was specified, passing 
+the field position is also possible).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if an invalid item name or field
+name is specified or if the specified item position or field position is
+out of bounds.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the current value for the specified field of the specified item
+(possibly null), or null if no value has been received yet.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="isActive"><span class="type-signature"></span>isActive<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that checks if the Subscription is currently "active" or not.
+Most of the Subscription properties cannot be modified if a Subscription is "active".
+<BR>The status of a Subscription is changed to "active" through the  
+<a href="LightstreamerClient.html#subscribe">LightstreamerClient#subscribe</a> method and back to "inactive" through the
+<a href="LightstreamerClient.html#unsubscribe">LightstreamerClient#unsubscribe</a> one.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="LightstreamerClient.html#subscribe">LightstreamerClient#subscribe</a></li>
+        
+            <li><a href="LightstreamerClient.html#unsubscribe">LightstreamerClient#unsubscribe</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true/false if the Subscription is "active" or not.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="isSubscribed"><span class="type-signature"></span>isSubscribed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that checks if the Subscription is currently subscribed to
+through the server or not.
+<BR>This flag is switched to true by server sent Subscription events, and 
+back to false in case of client disconnection, 
+<a href="LightstreamerClient.html#unsubscribe">LightstreamerClient#unsubscribe</a> calls and server sent unsubscription
+events. 
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can be called at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true/false if the Subscription is subscribed to
+through the server or not.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="removeListener"><span class="type-signature"></span>removeListener<span class="signature">(listener)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Removes a listener from the Subscription instance so that it
+will not receive events anymore.
+
+<p class="lifecycle"><b>Lifecycle:</b> a listener can be removed at any time.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>listener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="SubscriptionListener.html">SubscriptionListener</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The listener to be removed.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCommandSecondLevelDataAdapter"><span class="type-signature"></span>setCommandSecondLevelDataAdapter<span class="signature">(dataAdapter)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the name of the second-level Data Adapter (within 
+the Adapter Set used by the current session) that supplies all the 
+second-level items.
+All the possible second-level items should be supplied in "MERGE" mode 
+with snapshot available. 
+The Data Adapter name is configured on the server side through the 
+"name" attribute of the &lt;data_provider&gt; element, in the "adapters.xml" 
+file that defines the Adapter Set (a missing attribute configures the 
+"DEFAULT" name).
+
+<p class="default-value"><b>Default value:</b> The default Data Adapter for the Adapter Set,
+configured as "DEFAULT" on the Server.</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dataAdapter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of the Data Adapter. A null value 
+is equivalent to the "DEFAULT" name.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Subscription.html#setCommandSecondLevelFields">Subscription#setCommandSecondLevelFields</a></li>
+        
+            <li><a href="Subscription.html#setCommandSecondLevelFieldSchema">Subscription#setCommandSecondLevelFieldSchema</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not "COMMAND".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCommandSecondLevelFields"><span class="type-signature"></span>setCommandSecondLevelFields<span class="signature">(fields)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Field List" to be subscribed to through 
+Lightstreamer Server for the second-level items. It can only be used on
+COMMAND Subscriptions.
+<BR>Any call to this method will override any "Field List" or "Field Schema"
+previously specified for the second-level.
+<BR>Calling this method enables the two-level behavior:
+<BR>in synthesis, each time a new key is received on the COMMAND Subscription, 
+the key value is treated as an Item name and an underlying Subscription for
+this Item is created and subscribed to automatically, to feed fields specified
+by this method. This mono-item Subscription is specified through an "Item List"
+containing only the Item name received. As a consequence, all the conditions
+provided for subscriptions through Item Lists have to be satisfied. The item is 
+subscribed to in "MERGE" mode, with snapshot request and with the same maximum
+frequency setting as for the first-level items (including the "unfiltered" 
+case). All other Subscription properties are left as the default. When the 
+key is deleted by a DELETE command on the first-level Subscription, the 
+associated second-level Subscription is also unsubscribed from. 
+<BR>Specifying null as parameter will disable the two-level behavior.
+      
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of Strings containing a list of fields to
+be subscribed to through the server.
+<BR>Ensure that no name conflict is generated between first-level and second-level
+fields. In case of conflict, the second-level field will not be accessible
+by name, but only by position.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Subscription.html#setCommandSecondLevelFieldSchema">Subscription#setCommandSecondLevelFieldSchema</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the given object is not null nor 
+an array.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if any of the field names in the "Field List"
+contains a space or is empty/null.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not "COMMAND".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCommandSecondLevelFieldSchema"><span class="type-signature"></span>setCommandSecondLevelFieldSchema<span class="signature">(schemaName)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Field Schema" to be subscribed to through 
+Lightstreamer Server for the second-level items. It can only be used on
+COMMAND Subscriptions.
+<BR>Any call to this method will override any "Field List" or "Field Schema"
+previously specified for the second-level.
+<BR>Calling this method enables the two-level behavior:
+<BR>in synthesis, each time a new key is received on the COMMAND Subscription, 
+the key value is treated as an Item name and an underlying Subscription for
+this Item is created and subscribed to automatically, to feed fields specified
+by this method. This mono-item Subscription is specified through an "Item List"
+containing only the Item name received. As a consequence, all the conditions
+provided for subscriptions through Item Lists have to be satisfied. The item is 
+subscribed to in "MERGE" mode, with snapshot request and with the same maximum
+frequency setting as for the first-level items (including the "unfiltered" 
+case). All other Subscription properties are left as the default. When the 
+key is deleted by a DELETE command on the first-level Subscription, the 
+associated second-level Subscription is also unsubscribed from. 
+<BR>Specify null as parameter will disable the two-level behavior.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>schemaName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A String to be expanded into a field list by the
+Metadata Adapter.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Subscription.html#setCommandSecondLevelFields">Subscription#setCommandSecondLevelFields</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription mode is not "COMMAND".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setDataAdapter"><span class="type-signature"></span>setDataAdapter<span class="signature">(dataAdapter)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the name of the Data Adapter
+(within the Adapter Set used by the current session)
+that supplies all the items for this Subscription.
+<BR>The Data Adapter name is configured on the server side through
+the "name" attribute of the "data_provider" element, in the
+"adapters.xml" file that defines the Adapter Set (a missing attribute
+configures the "DEFAULT" name).
+<BR>Note that if more than one Data Adapter is needed to supply all the
+items in a set of items, then it is not possible to group all the
+items of the set in a single Subscription. Multiple Subscriptions
+have to be defined.
+
+<p class="default-value"><b>Default value:</b> The default Data Adapter for the Adapter Set,
+configured as "DEFAULT" on the Server.</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dataAdapter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of the Data Adapter. A null value 
+is equivalent to the "DEFAULT" name.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ConnectionDetails.html#setAdapterSet">ConnectionDetails#setAdapterSet</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setFields"><span class="type-signature"></span>setFields<span class="signature">(fields)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Field List" to be subscribed to through 
+Lightstreamer Server.
+<BR>Any call to this method will override any "Field List" or "Field Schema"
+previously specified.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of Strings containing a list of fields to
+be subscribed to through the server.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the given object is not an array.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if any of the field names in the list
+contains a space or is empty/null.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setFieldSchema"><span class="type-signature"></span>setFieldSchema<span class="signature">(schemaName)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Field Schema" to be subscribed to through 
+Lightstreamer Server.
+<BR>Any call to this method will override any "Field List" or "Field Schema"
+previously specified.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>schemaName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A String to be expanded into a field list by the
+Metadata Adapter.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setItemGroup"><span class="type-signature"></span>setItemGroup<span class="signature">(groupName)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Item Group" to be subscribed to through 
+Lightstreamer Server.
+<BR>Any call to this method will override any "Item List" or "Item Group"
+previously specified.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>groupName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A String to be expanded into an item list by the
+Metadata Adapter.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setItems"><span class="type-signature"></span>setItems<span class="signature">(items)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the "Item List" to be subscribed to through 
+Lightstreamer Server.
+<BR>Any call to this method will override any "Item List" or "Item Group"
+previously specified.
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>items</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of Strings containing an "Item List" to
+be subscribed to through the server.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the given object is not an array.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if any of the item names in the "Item List"
+contains a space or is a number or is empty/null.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setRequestedBufferSize"><span class="type-signature"></span>setRequestedBufferSize<span class="signature">(size)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the length to be requested to Lightstreamer
+Server for the internal queueing buffers for the items in the Subscription.
+A Queueing buffer is used by the Server to accumulate a burst
+of updates for an item, so that they can all be sent to the client,
+despite of bandwidth or frequency limits. It can be used only when the
+subscription mode is MERGE or DISTINCT and unfiltered dispatching has
+not been requested. Note that the Server may pose an upper limit on the
+size of its internal buffers.
+
+<p class="default-value"><b>Default value:</b> null, meaning to lean
+on the Server default based on the subscription mode. This means that
+the buffer size will be 1 for MERGE subscriptions and "unlimited" for
+DISTINCT subscriptions. See the "General Concepts" document for further details.</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>size</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The length of the internal queueing buffers to be
+used in the Server. If the string "unlimited" is supplied, then no buffer
+size limit is requested (the check is case insensitive). It is also possible
+to supply a null value to stick to the Server default (which currently
+depends on the subscription mode).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Subscription.html#setRequestedMaxFrequency">Subscription#setRequestedMaxFrequency</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the specified value is not
+null nor  "unlimited" nor a valid positive integer number.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setRequestedMaxFrequency"><span class="type-signature"></span>setRequestedMaxFrequency<span class="signature">(freq)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the maximum update frequency to be requested to
+Lightstreamer Server for all the items in the Subscription. It can
+be used only if the Subscription mode is MERGE, DISTINCT or
+COMMAND (in the latter case, the frequency limitation applies to the
+UPDATE events for each single key).
+Note that frequency limits on the items can also be set on the
+server side and this request can only be issued in order to furtherly
+reduce the frequency, not to rise it beyond these limits.
+<BR>This method can also be used to request unfiltered dispatching
+for the items in the Subscription. However, unfiltered dispatching
+requests may be refused if any frequency limit is posed on the server
+side for some item.
+
+<ALLEGRO_EDITION_NOTE><p class="edition-note"><B>Edition Note:</B> A further global frequency limit could also
+be imposed by the Server, depending on Edition and License Type; this specific limit also applies to RAW mode
+and to unfiltered dispatching.
+To know what features are enabled by your license, please see the License tab of the
+Monitoring Dashboard (by default, available at /dashboard).</p></ALLEGRO_EDITION_NOTE>
+
+<p class="default-value"><b>Default value:</b> null, meaning to lean on the Server
+default based on the subscription mode. This consists, for all modes, in not applying
+any frequency limit to the subscription (the same as "unlimited");
+see the "General Concepts" document for further details.</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can can be called at any time with some
+differences based on the Subscription status:
+<ul>
+<li>If the Subscription instance is in its "inactive" state then
+this method can be called at will.</li>
+<li>If the Subscription instance is in its "active" state then the method
+can still be called unless the current value is "unfiltered" or the
+supplied value is "unfiltered" or null.
+If the Subscription instance is in its "active" state and the
+connection to the server is currently open, then a request
+to change the frequency of the Subscription on the fly is sent to the server.</li>
+</ul>
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>freq</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The maximum update frequency (expressed in updates
+per second) for each item in the Subscription; for instance, with a setting
+of 0.5, for each single item, no more than one update every 2 seconds
+will be received. If the string "unlimited" is supplied, then no frequency
+limit is requested. It is also possible to supply the string 
+"unfiltered", to ask for unfiltered dispatching, if it is allowed for the 
+items, or a null value to stick to the Server default (which currently
+corresponds to "unlimited").
+The check for the string constants is case insensitive.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active" and the current value of this property is "unfiltered".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active" and the given parameter is null or "unfiltered".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the specified value is not
+null nor one of the special "unlimited" and "unfiltered" values nor
+a valid positive number.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setRequestedSnapshot"><span class="type-signature"></span>setRequestedSnapshot<span class="signature">(required)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that enables/disables snapshot delivery request for the
+items in the Subscription. The snapshot can be requested only if the
+Subscription mode is MERGE, DISTINCT or COMMAND.
+
+<p class="default-value"><b>Default value:</b> "yes" if the Subscription mode is not "RAW",
+null otherwise.</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>required</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">"yes"/"no" to request/not request snapshot
+delivery (the check is case insensitive). If the Subscription mode is 
+DISTINCT, instead of "yes", it is also possible to supply a number, 
+to specify the requested length of the snapshot (though the length of 
+the received snapshot may be less than requested, because of insufficient 
+data or server side limits);
+passing "yes"  means that the snapshot length should be determined
+only by the Server. Null is also a valid value; if specified no snapshot 
+preference will be sent to the server that will decide itself whether
+or not to send any snapshot.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ItemUpdate.html#isSnapshot">ItemUpdate#isSnapshot</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the specified value is not
+"yes" nor "no" nor null nor a valid integer positive number.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the specified value is not
+compatible with the mode of the Subscription: 
+<ul>
+ <li>In case of a RAW Subscription only null is a valid value;</li>
+ <li>In case of a non-DISTINCT Subscription only null "yes" and "no" are
+ valid values.</li>
+</ul>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setSelector"><span class="type-signature"></span>setSelector<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that sets the selector name for all the items in the
+Subscription. The selector is a filter on the updates received. It is
+executed on the Server and implemented by the Metadata Adapter.
+
+<p class="default-value"><b>Default value:</b> null (no selector).</p>
+
+<p class="lifecycle"><b>Lifecycle:</b> This method can only be called while the Subscription
+instance is in its "inactive" state.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of a selector, to be recognized by the
+Metadata Adapter, or null to unset the selector.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the Subscription is currently 
+"active".
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalStateException.html">IllegalStateException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:07 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

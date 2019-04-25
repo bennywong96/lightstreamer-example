@@ -1,0 +1,125 @@
+IMPORTANT SECURITY NOTES FOR PRODUCTION DEPLOYMENTS
+===================================================
+
+When deploying a Lightstreamer Server instance in production environments,
+please go through the following check list, to make sure that private
+information on the Server operations are not accessible to unauthorized people.
+
+
+1) Restrict access to the Monitoring Dashboard.
+
+   The embedded Monitoring Dashboard is a handy tool to watch the status
+   of Lightstreamer Server in real time and to administer Lightstreamer
+   Server via the embedded JMX web client. To prevent unauthorized people
+   to access the dashboard, edit the <dashboard> element
+   in "lightstreamer_conf.xml" as follows:
+
+   - set <public> to N
+
+   - define at least a user id and a password
+
+   - for further restrictions, you may want to:
+
+     a) Isolate the Monitoring Dashboard to a different listening port
+        and/or different NIC than those used for the external operations.
+        Set <available_on_all_servers> to N and define the server that
+        should serve the dashboard requests (servers are defined via the
+        <http_server> and <https_server> elements at the beginning of
+        "lightstreamer_conf.xml".
+
+     b) Change the default dashboard URI, through <dashboard_url_path>.
+
+   IMPORTANT: If your Lightstreamer Server edition supports SSL/TLS,
+   make sure that the Monitoring Dashboard is available on an HTTPS
+   server only, to protect passwords from being intercepted.
+
+
+2) Restrict access to JMX.
+
+   The Java Management Extensions (JMX) interfaces provide a
+   standard means to monitor and administer Lightstreamer Server.
+   You should protect the connectors as follows:
+
+   a) Ensure that <public> inside the <rmi_connector> block in
+      "lightstreamer_conf.xml" is set to N;
+      then define at least a user id and a password within <rmi_connector>.
+
+   b) Restrict access to the following JMX TCP ports
+      (configured in "lightstreamer_conf.xml") through your firewall:
+      - <port> (inside the <rmi_connector> block) (8888 by default)
+      - <data_port> (inside the <rmi_connector> block) (unused by default)
+      - <port> (inside the <jmxmp_connector> block) (unset by default)
+
+
+3) Configure cross-origin policies.
+
+   By default, the Server is configured to allow access from any page
+   even on foreign hosts by having the <use_protected_js> element set
+   to N and <cross_domain_policy> containing an "allow all" rule.
+   You might want to restrict access by reconfiguring such elements.
+   Note anyway that those rules only apply to browser-based JavaScript
+   client connections and do not prevent in any way accesses from
+   other kinds of clients.
+
+
+4) If you use HTTPS, make it stronger.
+
+   a) Install the 256-bit cipher suites in the Java Virtual Machine,
+      as in some countries such cipher suites need to be downloaded
+      separately from Oracle/SUN site (search for "JCE Unlimited
+      Strength Jurisdiction Policy Files").
+
+   b) Disable support for low encryption ciphers (that is, usually,
+      those with key length smaller than 128 bits):
+
+      - Set the "LightstreamerLogger.connections.ssl" logger in
+        "lightstreamer_log_conf.xml" to DEBUG and look in the log
+        file for all the enabled cipher suites. Decide which should
+        be disabled, based on your own security policy.
+
+      - Leverage the <remove_cipher_suites> elements in
+        "lightstreamer_conf.xml" and configure the cipher suites to
+        disable. Note that the multiple lines are allowed; keeping
+        the currently preconfigured lines is also advisable.
+
+   c) Disable support for weak protocols (for instance, the SSLv3
+      protocol is considered a weak one; note that it is already
+      disabled by the supplied factory configuration):
+
+      - Set the "LightstreamerLogger.connections.ssl" logger in
+        "lightstreamer_log_conf.xml" to DEBUG and look in the log
+        file for all the enabled protocols. Decide which should
+        be disabled, based on your own security policy.
+
+      - Leverage the <remove_protocols> elements in
+        "lightstreamer_conf.xml" and configure the protocols to
+        disable. Note that multiple lines are allowed; keeping
+        the currently preconfigured line is advisable.
+        You may choose to express the same restrictions by
+        leveraging the <allow_protocol> elements instead of the
+        <remove_protocols> ones.
+
+
+5) Remove the demos.
+
+   You might not want to show any demo pages in production.
+   Delete the "index.html" file and "welcome_res" folder within the
+   "pages" folder.
+
+   Furthermore, as it is recommended to host your pages on an
+   external Web server, you can completely disable the Lightstreamer
+   internal Web server by setting <enabled> to N within the
+   <web_server> element in "lightstreamer_conf.xml".
+
+   Delete the "welcome_res" folder inside the "adapters" folder, to
+   remove the pre-installed WELCOME Adapter Set.
+
+
+6) Disable Server version information disclosure.
+
+   By default, the Server, when identifying itself to the clients
+   (for instance through the "Server" HTTP response header) includes
+   information on its current version and build.
+   This may not be compliant with your security policies.
+   In this case, you can suppress the inclusion of version information
+   through the <server_tokens> configuration element.

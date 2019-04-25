@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR .NET PCL CLIENTS - EXAMPLES
+=================================================
+
+Browse examples with full source code at:
+
+http://demos.lightstreamer.com/?p=lightstreamer&t=client&a=pclclient
+

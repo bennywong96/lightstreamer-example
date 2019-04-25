@@ -1,0 +1,2 @@
+Lightstreamer Adapter Remoting Infrastructure version 1.8.1 build 84
+Compatible with Lightstreamer Server since version 7.0

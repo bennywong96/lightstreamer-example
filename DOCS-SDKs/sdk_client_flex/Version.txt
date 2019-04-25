@@ -1,0 +1,2 @@
+Lightstreamer Flex Client API version 2.2.1 build 105
+Compatible with Lightstreamer Server since version 6.0

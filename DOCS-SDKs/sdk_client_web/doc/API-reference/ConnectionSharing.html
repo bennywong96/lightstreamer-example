@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ConnectionSharing</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: ConnectionSharing</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>ConnectionSharing</h2>
+        
+            <div class="class-description">Data object that contains informations about if and how the connection
+is shared between different <a href="LightstreamerClient.html">LightstreamerClient</a> instances possibly
+living on different html pages.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="ConnectionSharing"><span class="type-signature"></span>new ConnectionSharing<span class="signature">(shareName, sharePolicyOnFound, sharePolicyOnNotFound, preventCrossWindowShare, shareRef)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Data object describing the sharing policies to be used by a LightstreamerClient
+instance.
+If the front-end includes more than one LightstreamerClient instance that
+need to subscribe to the same server, it is advised that such instances
+share the same connection to avoid saturating the client connection pool and
+to open fewer sessions on the Lightstreamer Server.
+Note that sharing is also possible between clients living in different
+HTML pages, provided that they come from the same host. Note that Browser
+capabilities and/or restrictions might prevent the sharing.
+If sharing is enabled some Cookies or values on the Web Storage may
+be used to exchange preliminary informations across windows. The used keys
+are prefixed with the "Lightstreamer_" string. Specifying true on the
+preventCrossWindowShare parameter it is possible to prevent the
+Cookies/Web Storage usage.
+<BR>When different LightstreamerClient share the same connection, the one
+actually holding the connection is also known as the current "Master" client.
+Whenever possible, the Master LightstreamerClient should be hosted by a permanent page.
+<BR>If the current Master, for any reason, disappears, then the connection to
+Lightstreamer Server has to be reestablished: the election algorithm will
+choose a new Master among the surviving LightstreamerClient instances and
+will restore the same status that was in place before the previous Master
+disappeared.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>shareName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A unique alphanumeric name for the shared
+connection. The name can be used by different LightstreamerClient in order to
+recognize a compatible shared connection. Two LightstreamerClient instances
+should use the same shareName for their enableSharing calls only if they are
+going to configure the connection in the same way to connect to the same
+server.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sharePolicyOnFound</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The action to be taken in case a client
+sharing a connection using the same shareName and coming from the same
+host is found in the browser (i.e. an active Master is found).
+<BR>Can be one of the following:
+<ul>
+<li>"ATTACH" the client will try to become a Slave to the found Master.
+<BR>Note that this policy can only be used on clients living inside a
+browser window (i.e. no web workers nor non-browser environments).
+Also the "ATTACH" policy might not work as expected if the involved clients
+are instantiated in HTML pages loaded from the file system rather than
+downloaded from a web server.
+<BR>Note that it is an application responsibility to ensure that the
+configuration of the Master client (the user credentials, for instance)
+is consistent with the configuration required by the new instance of the
+application front-end. In particular, note that the allocated bandwidth
+would be shared among the two (or more) LightstreamerClient instances as
+well.
+<BR>Note that a connection, to be correctly shared between different
+pages, has to be created in the &lt;BODY&gt; part of the page.
+If this condition is not met, on some browsers, slave clients may
+waste some extra time before being able to access the shared connection.
+<BR>Sharing the connection also enables the so called "Master election"
+feature. If the Master client is closed and other clients share the
+connection with it, then one of the existing clients will be automatically
+chosen as the new Master; this client will restore the status and
+configuration of the previous Master client as it was before its death.
+<BR>Note that there may be cases in which the library is not able to
+determine whether a shared connection is currently active. Moreover,
+there may be cases in which the library is not able to obtain a reference
+to a currently active Master client.
+</li>
+<li>"ATTACH:FAST" same as "ATTACH" but the client will take some risks
+of making a popup appear in order to speed up things.</li>
+<li>"IGNORE" the found Master will be ignored and the sharePolicyOnNotFound
+behavior will be applied.</li>
+<li>"ABORT" the client will give up in the search of an active shared
+connection and will neither try to create its own; the
+<a href="ClientListener.html#onShareAbort">ClientListener#onShareAbort</a> event will be fired.
+<BR>This policy may be useful in order to avoid that multiple streaming
+connections are open (note that the browser may have a limited pool of
+connections) or that multiple sessions for the same user are open.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sharePolicyOnNotFound</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The action to be taken in case a client
+sharing a connection using the same shareName and coming from the same
+host is not found in the browser (i.e. no active Master is found).
+<BR>Can be one of the following:
+<ul>
+<li>"CREATE" the client will create its own connection.</li>
+<li>"ABORT" the client will give up in the search of an active shared
+connection and will neither try to create its own; the
+<a href="ClientListener.html#onShareAbort">ClientListener#onShareAbort</a> event will be fired.</li>
+<li>"WAIT" the client will wait until it finds a connection using the same
+shareName and coming from the same host; then the sharePolicyOnFound
+behavior will be applied.</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preventCrossWindowShare</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><b>[optional]</b> Flag to enable/disable the sharing
+of a connection that belongs to a LightstreamerClient instances living
+in a different html page.
+<BR>Note that cross-window sharing might be impossible in certain circumstances.
+<BR>If this flag is set to true, a Master living on a different window will
+not trigger the sharePolicyOnFound policy; hence, only sharing with another
+LightstreamerClient instance belonging to the same page will be possible.
+<BR>The parameter is optional; if not supplied, the default value is false.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shareRef</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Window</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><b>[optional]</b> If known, the reference to a Window containing a
+shared connection can be passed. For the passed reference to be used, "ATTACH"
+or "ATTACH:FAST" should be used as sharePolicyOnFound.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="LightstreamerClient.html#enableSharing">LightstreamerClient#enableSharing</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if the sharename is not specified or
+is invalid.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if a non-existent policy was specified
+or if the specified policy is not compatible with the current environment.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="ConnectionSharing.html#getShareName" class="getShareName">getShareName</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that returns the share name configured in this instance.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ConnectionSharing.html#isPossible" class="isPossible">isPossible</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Connection sharing is possible only if the environment supports SharedWorkers or the user requested a local sharing.</dd>
+  
+  
+ 
+        </dl>
+    
+    
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="getShareName"><span class="type-signature"></span>getShareName<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that returns the share name configured in this instance.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="LightstreamerClient.html#enableSharing">LightstreamerClient#enableSharing</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The configured share name.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="isPossible"><span class="type-signature"></span>isPossible<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Connection sharing is possible only if the environment supports SharedWorkers or the user requested a local sharing.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:05 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR NODE.JS ADAPTERS - EXAMPLES
+=================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-nodejs-adapter/1.4.2/
+

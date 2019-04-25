@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR iOS CLIENTS (UNIFIED API) - DOCUMENTATION
+===============================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-ios-client/4.1.0/
+

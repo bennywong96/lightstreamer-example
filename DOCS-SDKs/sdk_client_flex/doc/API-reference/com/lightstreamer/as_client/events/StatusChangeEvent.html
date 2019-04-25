@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="StatusChangeEvent,com.lightstreamer.as_client.events.StatusChangeEvent,CONNECTION_DROP,CONTROL_CONNECTION_ERROR,DATA_ERROR,END_OF_SNAPSHOT,LOST_UPDATES,NON_VISUAL_ITEM_UPDATE,SEND_MESSAGE_ABORT,SEND_MESSAGE_ERROR,SEND_MESSAGE_PROCESSED,SERVER_ERROR,STATUS_CHANGE,SUBSCRIPTION,SUBSCRIPTION_ERROR,UNSUBSCRIPTION,client,endCause,error,errorCode,errorCode,errorCode,errorEvent,errorMessage,errorMessage,errorMessage,item,item,key,key,key,lostUpdates,messageProg,numFields,originalMessage,previousStatus,sessionId,sessionServerAddress,sessionServerName,status,table"><title>com.lightstreamer.as_client.events.StatusChangeEvent</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'StatusChangeEvent - Lightstreamer Flex client 2.2.1 API';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Lightstreamer Flex client 2.2.1 API</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?com/lightstreamer/as_client/events/StatusChangeEvent.html&amp;com/lightstreamer/as_client/events/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">StatusChangeEvent</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#constantSummary">Constants</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("StatusChangeEvent"); titleBar_setSubNav(true,true,false,false,false,false,false,false,false,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.lightstreamer.as_client.events</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  StatusChangeEvent</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">StatusChangeEvent  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> <a href="../../../../com/lightstreamer/as_client/events/LSClientEvent.html">LSClientEvent</a> <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.Event</td></tr></table><p></p><p></p><p></p>
+               <p>Dispatched whenever the connection status changes. A status change
+   may be originated either by a custom action (e.g. by calling
+   "openConnection") or by an internal action.</p>
+               <p>The normal cases are the following:</p>
+               <ul>
+                  <li>After issuing "openConnection" or "openPollingConnection",
+   the status switches to CONNECTING first; as soon as the new session is
+   established, it will switch to STREAMING or POLLING respectively.</li>
+                  <li>After issuing "closeConnection", the status always switches
+   to DISCONNECTED.</li>
+                  <li>In case of a server connection refusal, the status may switch from
+   CONNECTING directly to DISCONNECTED. Before that, however,
+   a ServerErrorEvent would be received.</li>
+               </ul>
+   Possible special cases are the following:
+   <ul>
+                  <li>In case of Server unavailability during streaming, the status may
+   switch from STREAMING to STALLED.
+   If the unavailability ceases, the status will switch back to STREAMING;
+   otherwise, if the unavailability persists,
+   the status will switch to CONNECTING and eventually to STREAMING.</li>
+                  <li>In case the connection or the whole session is forcibly closed
+   by the Server, the status may switch from STREAMING or POLLING
+   directly to DISCONNECTED. Before that, however, a ConnectionDropEvent
+   would be received.</li>
+                  <li>In case the streaming connection is broken, the status may switch
+   from STREAMING to CONNECTING and eventually to STREAMING.
+   The same may happen for the POLLING status because of any problem
+   during an intermediate poll.</li>
+                  <li>Because of the Stream-sense algorithm, the status may switch from
+   CONNECTING to POLLING even in case "openConnection" was issued.
+   Then, depending on the ConnectionPolicy.setBufferedStreamingHandled
+   setting, it might directly switch to STREAMING.</li>
+               </ul>
+   Note the following caveats:
+   <ul>
+                  <li>In case of connection problems while the status is CONNECTING,
+   connection retries may occur with no change in the status.</li>
+                  <li>If "openConnection" or "openPollingConnection" is issued
+   when the current status is CONNECTING, no status change is notified.
+   The same holds when "closeConnection" is issued and the current status
+   is DISCONNECTED.</li>
+                  <li>If "openConnection" is issued and a session is active, it is closed
+   first, even if it is already a streaming session; anyway, the status
+   switches directly to CONNECTING. A similar consideration holds for
+   "openPollingConnection".</li>
+                  <li>As soon as a successful streaming connection can be established,
+   the Stream-sense algorithm is disabled for future connection attempts.</li>
+               </ul>
+   
+               <p>By setting a custom handler it is possible to perform
+   actions related to connection and disconnection occurrences.
+   Such actions can be issued directly inside a handler (e.g. to
+   prevent an automatic reconnection attempt).</p>
+   
+            <p></p><p><span class="classHeaderTableLabel">See also</span></p><div class="seeAlso"><a href="../../../../com/lightstreamer/as_client/LSClient.html#DISCONNECTED" target="">com.lightstreamer.as_client.LSClient.DISCONNECTED</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#CONNECTING" target="">com.lightstreamer.as_client.LSClient.CONNECTING</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#STREAMING" target="">com.lightstreamer.as_client.LSClient.STREAMING</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#STALLED" target="">com.lightstreamer.as_client.LSClient.STALLED</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#POLLING" target="">com.lightstreamer.as_client.LSClient.POLLING</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#openConnection()" target="">com.lightstreamer.as_client.LSClient.openConnection()</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#openPollingConnection()" target="">com.lightstreamer.as_client.LSClient.openPollingConnection()</a><br/><a href="../../../../com/lightstreamer/as_client/LSClient.html#closeConnection()" target="">com.lightstreamer.as_client.LSClient.closeConnection()</a><br/><a href="ServerErrorEvent.html" target="">com.lightstreamer.as_client.events.ServerErrorEvent</a><br/><a href="ConnectionDropEvent.html" target="">com.lightstreamer.as_client.events.ConnectionDropEvent</a><br/><a href="../../../../com/lightstreamer/as_client/ConnectionPolicy.html#timeoutForStalled" target="">com.lightstreamer.as_client.ConnectionPolicy.timeoutForStalled</a><br/><a href="../../../../com/lightstreamer/as_client/ConnectionPolicy.html#timeoutForReconnect" target="">com.lightstreamer.as_client.ConnectionPolicy.timeoutForReconnect</a><br/><a href="../../../../com/lightstreamer/as_client/ConnectionPolicy.html#bufferedStreamingHandled" target="">com.lightstreamer.as_client.ConnectionPolicy.bufferedStreamingHandled</a></div><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><div class="showHideLinks"><div id="hideInheritedProperty" class="hideInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(false,'Property');"><img class="showHideLinkImage" src="../../../../images/expanded.gif"> Hide Inherited Public Properties</a></div><div id="showInheritedProperty" class="showInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(true,'Property');"><img class="showHideLinkImage" src="../../../../images/collapsed.gif"> Show Inherited Public Properties</a></div></div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class="hideInheritedProperty"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><a href="../../../../com/lightstreamer/as_client/events/LSClientEvent.html#client" class="signatureLink">client</a> : <a href="../../../../com/lightstreamer/as_client/LSClient.html">LSClient</a><div class="summaryTableDescription">[read-only] 
+		 The LSClient which this event is related to.</div></td><td class="summaryTableOwnerCol"><a href="../../../../com/lightstreamer/as_client/events/LSClientEvent.html">LSClientEvent</a></td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#previousStatus" class="signatureLink">previousStatus</a> : String<div class="summaryTableDescription">[read-only] 
+     The previous status of the connection.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#sessionId" class="signatureLink">sessionId</a> : String<div class="summaryTableDescription">[read-only] 
+     The id of the current session.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#sessionServerAddress" class="signatureLink">sessionServerAddress</a> : String<div class="summaryTableDescription">[read-only] 
+     The hostname to be used to issue all requests related to the current 
+     session.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#sessionServerName" class="signatureLink">sessionServerName</a> : String<div class="summaryTableDescription">[read-only] 
+     The instance name of the Server which is serving the current session.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#status" class="signatureLink">status</a> : String<div class="summaryTableDescription">[read-only] 
+     The actual status of the connection.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr></table></div><a name="constantSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Constants</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableConstant"><tr><th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#STATUS_CHANGE" class="signatureLink">STATUS_CHANGE</a> : String = statusChange<div class="summaryTableDescription">[static] 
+     Define the value of the type property of a StatusChange event object.</div></td><td class="summaryTableOwnerCol">StatusChangeEvent</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="previousStatus"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">previousStatus</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>previousStatus:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The previous status of the connection.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get previousStatus():String</code><br/></div><a name="propertyDetail"></a><a name="sessionId"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sessionId</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>sessionId:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The id of the current session. This property has a valid value only 
+     if the status value is STREAMING, POLLING or STALLED, otherwise it is null.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sessionId():String</code><br/></div><a name="propertyDetail"></a><a name="sessionServerAddress"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sessionServerAddress</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>sessionServerAddress:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     <p>The hostname to be used to issue all requests related to the current 
+     session. In fact, when a Server cluster is in place, the Server 
+     hostname specified through the Connection instance can identify 
+     various Server instances; in order to ensure that all requests related 
+     to a session are issued to the same Server instance, the Server can 
+     answer to the session opening request by providing a hostname which 
+     uniquely identifies its own instance. When this is the case, this 
+     property is valued as such hostname; otherwise, null is returned.</p>
+     <p>This property has a valid value only if the status value is
+     STREAMING, POLLING or STALLED, otherwise it is null.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sessionServerAddress():String</code><br/></div><a name="propertyDetail"></a><a name="sessionServerName"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sessionServerName</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>sessionServerName:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     <p>The instance name of the Server which is serving the current session.
+     To be more precise, each answering port configured on a Server instance 
+     (through a &lt;http_server> or &lt;https_server> element in the Server configuration file) 
+     can be given a different name; the name related to the port to which the 
+     session opening request has been issued is returned.</p>
+     <p>Note that in case of polling or in case rebind requests are needed, 
+     subsequent requests related to the same session may be issued to a port 
+     different than the one used for the first request; the names configured 
+     for those ports would not be reported. This, however, can only happen when 
+     a Server cluster is in place and particular configurations for the 
+     load balancer are used.</p>
+     <p>This property has a valid value only if the status value is
+     STREAMING, POLLING or STALLED, otherwise it is null.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sessionServerName():String</code><br/></div><a name="propertyDetail"></a><a name="status"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">status</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>status:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     The actual status of the connection.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get status():String</code><br/></div><div class="detailSectionHeader">Constant Detail</div><a name="constantDetail"></a><a name="STATUS_CHANGE"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">STATUS_CHANGE</td><td class="detailHeaderType">Constant</td></tr></table><div class="detailBody"><code>public static const STATUS_CHANGE:String = statusChange</code><p></p><p></p><p>
+     Define the value of the type property of a StatusChange event object.
+     </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer>Lightstreamer Flex client 2.2.1 API</footer><br/> </center></div></body></html><!--Lightstreamer Flex client 2.2.1 API<br/> -->

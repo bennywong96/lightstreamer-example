@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: SimpleChartListener</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: SimpleChartListener</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>SimpleChartListener</h2>
+        
+            <div class="class-description">Simple implementation of the <a href="ChartListener.html">ChartListener</a> interface that can
+be used to automatically adjust the axis of a <a href="Chart.html">Chart</a> to center the lines on 
+the Chart.
+<BR>In case of an X overflow the X axis limits will shift by half
+of their total length meaning that the next point falls in the middle of the
+visible area so that the shifting is not continuous for each new value 
+of X.
+<BR>In case of an Y overflow the Y axis limits are stretched
+in such a way that the new point falls on the visible part of the Y
+axis.
+<BR>Note that in case of an Y overflow all of the ChartLine instances of the
+listened Chart will be stretched with the same values to keep the view consistent.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="SimpleChartListener"><span class="type-signature"></span>new SimpleChartListener<span class="signature">(xSpan<span class="signature-attributes">opt</span>, yPerc<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Creates an object that will handle the positioning of the X axis and Y axis of 
+a <a href="Chart.html">Chart</a> based on a few simple configuration parameters.
+<BR>Note that this listener expects to listen to only one Chart but can 
+correctly handle different lines as long as they can be represented on the
+same scale.
+<BR>Methods from the <a href="ChartListener.html">ChartListener</a> interface should not be called
+directly on instances of this class.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>xSpan</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    60
+                
+                </td>
+            
+
+            <td class="description last">The size of the X axis. The units of the value depends on
+the model of the <a href="Chart.html">Chart</a> instance and possibly on the parser configured on
+the <a href="Chart.html#setXAxis">Chart#setXAxis</a> method. If not specified, then 60 will be used.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>yPerc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    20
+                
+                </td>
+            
+
+            <td class="description last">A percentage that is used for the first positioning of the
+Y axis: the Y axis will have as initial maximum position a value that is yPerc% 
+greater than the first Y position and as initial minimum position a value that
+is yPerc% smaller than it. If not specified, then 20 (meaning 20%) will be used.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+<!-- AUGMENTED -->
+    <ul>
+        <li class="signature"><a href="ChartListener.html">ChartListener</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="SimpleChartListener.html#onListenStart" class="onListenStart">onListenStart</a><span class="signature">
+  </dt>
+  
+  
+ 
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Inherited Methods</h3>
+        <div class="inherited_list">
+            | 
+                
+
+  
+ 
+            
+                
+
+  
+ 
+            
+                
+
+  
+ 
+            
+                
+
+  
+ 
+            
+        </div>
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="onListenStart"><span class="type-signature"></span>onListenStart<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:06 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

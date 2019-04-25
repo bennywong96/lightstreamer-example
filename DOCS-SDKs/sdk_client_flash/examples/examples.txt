@@ -1,0 +1,6 @@
+LIGHTSTREAMER SDK FOR FLASH CLIENTS - EXAMPLES
+==============================================
+
+Browse examples with full source code at:
+
+http://demos.lightstreamer.com/?p=lightstreamer&t=client&a=flashclient

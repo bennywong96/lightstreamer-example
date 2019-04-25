@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: VisualUpdate</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: VisualUpdate</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>VisualUpdate</h2>
+        
+            <div class="class-description">Contains all the information related to a row update that is about
+to be displayed on a grid. This may happen because of a call to the
+<a href="AbstractWidget.html#updateRow">AbstractWidget#updateRow</a> method, or, in case
+an AbstractGrid is used to listen to a <a href="Subscription.html">Subscription</a>, because of
+an update received from Lightstreamer Server.
+<BR> Specifically, for each row it supplies:
+<ul>
+<li>The current values for the row fields in the grid and in the
+underlying model and a method to modify the value in the gris cells
+before updating them on the DOM.</li>
+<li>Methods to set the stylesheets to be applied to the HTML cells.</li>
+<li>Methods to configure the visual effect to be applied to the HTML
+cells in order to emphasize the changes in the cell values.</li>
+</ul>
+The provided visual effect consists of the following sequence:
+<ul>
+<li>A change in the cell colors, with a fading behaviour, to temporary
+"hot" colors.</li>
+<li>The change of the values to the new values and the change of the
+stylesheets to the full "hot" stylesheet; after the change, the cell
+stays in this "hot" phase for a while.</li>
+<li>A change in the cell colors, with a fading behaviour, to the final
+"cold" colors.</li>
+<li>The change of the stylesheets to the full "cold" stylesheets.</li>
+</ul>
+<BR/>The class constructor, its prototype and any other properties should never
+be used directly.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="VisualUpdate"><span class="type-signature"></span>new VisualUpdate<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Used by Lightstreamer to provide a value object to each call of the
+<a href="StaticGridListener.html#onVisualUpdate">StaticGridListener#onVisualUpdate</a> and 
+<a href="DynaGridListener.html#onVisualUpdate">DynaGridListener#onVisualUpdate</a> events. This constructor
+is not supposed to be used by custom code.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="StaticGridListener.html#onVisualUpdate">StaticGridListener#onVisualUpdate</a></li>
+        
+            <li><a href="DynaGridListener.html#onVisualUpdate">DynaGridListener#onVisualUpdate</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#forEachChangedField" class="forEachChangedField">forEachChangedField</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Receives an iterator function and invokes it once per each field 
+of the underlying model changed with the current update.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#getCellValue" class="getCellValue">getCellValue</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that gets the value that is going to be shown in the grid 
+in a specified cell or the current value if the value is not going to be 
+changed.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#getChangedFieldValue" class="getChangedFieldValue">getChangedFieldValue</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Inquiry method that gets the value that is going to update the underlying
+model of the grid for the associated field.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setAttribute" class="setAttribute">setAttribute</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the stylesheet changes to be applied
+to all the HTML cells of the involved row, while changing the field values.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setCellAttribute" class="setCellAttribute">setCellAttribute</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the stylesheet changes to be applied
+to the HTML cell related with a specified field, while changing its
+value.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setCellStyle" class="setCellStyle">setCellStyle</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the stylesheet to be applied to the
+HTML cell related with a specified field, while changing its value.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setCellValue" class="setCellValue">setCellValue</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that assigns the value to be shown in a specified cell of 
+the grid.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setColdToHotTime" class="setColdToHotTime">setColdToHotTime</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the length of the color fading phase
+before the "hot" phase.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setHotTime" class="setHotTime">setHotTime</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the length of the "hot" phase for the
+current row.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setHotToColdTime" class="setHotToColdTime">setHotToColdTime</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the length of the color fading phase
+after the "hot" phase.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="VisualUpdate.html#setStyle" class="setStyle">setStyle</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Setter method that configures the stylesheets to be applied to the
+HTML cells of the involved row, while changing the field values.</dd>
+  
+  
+ 
+        </dl>
+    
+    
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="forEachChangedField"><span class="type-signature"></span>forEachChangedField<span class="signature">(iterator)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Receives an iterator function and invokes it once per each field 
+of the underlying model changed with the current update.
+<BR>Note that in case of an event generated by the creation of a new row
+all the field will be iterated.
+<BR>Note that the iterator is executed before this method returns.
+<BR>Note that the iterator will iterate through all of the changed fields
+including fields not having associated cells. Also, even if a field is 
+associated with more cells it will be passed to the iterator only once.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>iterator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ChangedFieldCallback">ChangedFieldCallback</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Function instance that will be called once per 
+each field changed on the current update on the internal model.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="VisualUpdate.html#getChangedFieldValue">VisualUpdate#getChangedFieldValue</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getCellValue"><span class="type-signature"></span>getCellValue<span class="signature">(field, replicaId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that gets the value that is going to be shown in the grid 
+in a specified cell or the current value if the value is not going to be 
+changed.
+<BR>Note that if the value is not changing then no effects or styles are
+going to be applied on the cell itself. If the effect is desired even if
+the value in the cell is unchanged, then a call to <a href="VisualUpdate.html#setCellValue">VisualUpdate#setCellValue</a> can
+be performed using the value from this getter.
+<BR>In order to inquiry the values for the row cells on the underlying
+model, the <a href="VisualUpdate.html#getChangedFieldValue">VisualUpdate#getChangedFieldValue</a> method is available.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The field name associated with one of the cells in the
+grid (the "data-field" attribute).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replicaId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A custom identifier that can be used in case two
+or more cells were defined for the same field (the "data-replica" attribute).
+If more cells have been defined but this parameter is not specified, then a random
+cell will be selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="VisualUpdate.html#setCellValue">VisualUpdate#setCellValue</a></li>
+        
+            <li><a href="VisualUpdate.html#getChangedFieldValue">VisualUpdate#getChangedFieldValue</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if no cells were associated with
+the specified field.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A text or null; if the value for the specified field has never been
+assigned in the model, the method also returns null.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getChangedFieldValue"><span class="type-signature"></span>getChangedFieldValue<span class="signature">(field)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Inquiry method that gets the value that is going to update the underlying
+model of the grid for the associated field. It can be null if no change 
+for the specified field is going to be applied.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of a field from the model.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The new value of the specified field (possibly null), or null
+if the field is not changing.
+If the value for the specified field has never been
+assigned in the model, the method also returns null.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setAttribute"><span class="type-signature"></span>setAttribute<span class="signature">(hotValue, coldValue, attrName)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the stylesheet changes to be applied
+to all the HTML cells of the involved row, while changing the field values.
+A temporary "hot" style can
+be specified as different than the final "cold" style. This allows
+Lightstreamer to perform a visual effect, in which a temporary "hot"
+phase is visible. By using this method, stylesheet attributes can be
+specified one at a time.
+<BR>If nonzero fading times are specified, through
+<a href="VisualUpdate.html#setColdToHotTime">VisualUpdate#setColdToHotTime</a> and/or <a href="VisualUpdate.html#setHotToColdTime">VisualUpdate#setHotToColdTime</a>,
+then the "color" and "backgroundColor" attributes, if set, will be
+changed with a fading behaviour.
+Note that if color attributes are not set and nonzero fading times are
+specified in <a href="VisualUpdate.html#setColdToHotTime">VisualUpdate#setColdToHotTime</a> and/or <a href="VisualUpdate.html#setHotToColdTime">VisualUpdate#setHotToColdTime</a>,
+this will cause a delay of the "hot" and "cold" phase switches;
+however, as fading times refer to the whole row, you may need to set
+them as nonzero in order to allow fading on some specific fields only.
+<BR>If a row stylesheet is set through the <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a> method,
+then this method should be used only to set stylesheet properties
+not set by the row stylesheet. This condition applies throughout the
+whole lifecycle of the cell (i.e. manipulating the same style property 
+through both methods, even at different times, does not guarantee
+the result).
+<br/>By default for each stylesheet attribute that is not
+specified neither with this method nor with <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a>, the
+current value is left unchanged.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hotValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the temporary "hot" value for the involved
+attribute, or null if the attribute should not change while entering
+"hot" phase; an empty string causes the current attribute value
+to be cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coldValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the final "cold" value for the involved
+attribute, or null if the attribute should not change while exiting
+"hot" phase; an empty string causes the "hot" phase attribute value
+to be cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attrName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of an HTML stylesheet attribute.
+The DOM attribute name should be used, not the CSS name (e.g.
+"backgroundColor" is accepted, while "background-color" is not).
+Note that if the "color" or "backgroundColor" attribute is being set,
+then several color name conventions are supported by the underlying
+DOM manipulation functions; however, in order to take advantage of the
+color fading support, only the "#RRGGBB" syntax is fully supported.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCellAttribute"><span class="type-signature"></span>setCellAttribute<span class="signature">(field, hotValue, coldValue, attrName, replicaId<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the stylesheet changes to be applied
+to the HTML cell related with a specified field, while changing its
+value.
+The method can be used to override, for a specific field, the settings
+made through <a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a>.
+<BR>If a specific stylesheet is assigned to the field through the
+<a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a> or <a href="VisualUpdate.html#setCellStyle">VisualUpdate#setCellStyle</a> method,
+then this method can be used only in order to set stylesheet properties
+not set by the assigned specific stylesheet. This condition applies
+throughout the whole lifecycle of the cell (i.e. it is discouraged
+to manipulate the same style property through both methods,
+even at different times).
+<br/>By default  the settings possibly made by <a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a>
+are used.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The field name associated with one of the cells in the
+grid (the "data-field" attribute).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hotValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the temporary "hot" value for the involved
+attribute, or null if the attribute should not change while entering
+"hot" phase; an empty string causes the current attribute value
+to be cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coldValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the final "cold" value for the involved
+attribute, or null if the attribute should not change while exiting
+"hot" phase; an empty string causes the "hot" phase attribute value
+to be cleared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>attrName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the name of an HTML stylesheet attribute.
+The DOM attribute name should be used, not the CSS name (e.g.
+"backgroundColor" is accepted, while "background-color" is not).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replicaId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A custom identifier that can be used in case two
+or more cells were defined for the same field (the "data-replica" attribute).
+If more cells were defined but this parameter is not specified, then a random
+cell will be selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if no cells were associated with
+the specified field.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCellStyle"><span class="type-signature"></span>setCellStyle<span class="signature">(field, hotStyle, coldStyle, replicaId<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the stylesheet to be applied to the
+HTML cell related with a specified field, while changing its value.
+<BR>This method can be used to override, for a specific field, the settings
+made through <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a>.
+<br/>By default the stylesheet possibly set through <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a>
+is used.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The field name associated with one of the cells in the
+grid (the "data-field" attribute).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hotStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the name of the temporary "hot" stylesheet,
+or null if the cell style should not change while entering "hot" phase
+(regardless of the settings made through <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a> and
+<a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a>).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coldStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the name of the final "cold" stylesheet,
+or null if the cell style should not change while exiting "hot" phase
+(regardless of the settings made through <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a> and
+<a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a>).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replicaId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A custom identifier that can be used in case two
+or more cells were defined for the same field (the "data-replica" attribute).
+If more cells were defined but this parameter is not specified, then a random
+cell will be selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if no cells were associated with
+the specified field.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setCellValue"><span class="type-signature"></span>setCellValue<span class="signature">(field, value, replicaId<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that assigns the value to be shown in a specified cell of 
+the grid.
+The specified value is the text that will be actually written in the cell
+(for instance, it may be a formatted version of the original value),
+unless it is null, in which case the value currently shown will be kept.
+The latter may still be the initial cell value (or the cell value
+specified on the template) if no formatted value hasn't been supplied
+for the field yet.
+<BR>Note that this method does not update the internal model of the AbstractGrid
+so that if a value is set through this method it can't be used 
+for features working on such model (e.g. it can't be used to sort the grid).
+If a change to the model is required use the <a href="AbstractWidget.html#updateRow">AbstractWidget#updateRow</a> method.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>field</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The field name associated with one of the cells in the
+grid (the "data-field" attribute).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">the value to be written in the cell, or null.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replicaId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">A custom identifier that can be used in case two
+or more cells were defined for the same field (the "data-replica" attribute).
+If more cells were defined but this parameter is not specified, then a random
+cell will be selected.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        if no cells were associated with
+the specified field.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><a href="IllegalArgumentException.html">IllegalArgumentException</a></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setColdToHotTime"><span class="type-signature"></span>setColdToHotTime<span class="signature">(val)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the length of the color fading phase
+before the "hot" phase. This fading phase is one of the phases of
+the visual effect supplied by Lightstreamer to emphasize the change
+of the row values. A 0 length means that the color switch to "hot"
+colors should be instantaneous and should happen together with value
+and stylesheet switch.
+<BR>Warning: The fading effect, if enabled, may be computation
+intensive for some client environments, when high-frequency updates
+are involved.
+<br/>By default 0 ms (no fading at all) is set.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Duration in milliseconds of the fading phase before
+the "hot" phase.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setHotTime"><span class="type-signature"></span>setHotTime<span class="signature">(val)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the length of the "hot" phase for the
+current row. The "hot" phase is one of the phases of the visual effect
+supplied by Lightstreamer to emphasize the change of the row values.
+<br/>By default 1200 ms is set.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Duration in milliseconds of the "hot" phase.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setHotToColdTime"><span class="type-signature"></span>setHotToColdTime<span class="signature">(val)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the length of the color fading phase
+after the "hot" phase. This fading phase is one of the phases of
+the visual effect supplied by Lightstreamer to emphasize the change
+of the row values. A 0 length means that the color switch from "hot"
+to final "cold" colors should be instantaneous and should happen
+together with the stylesheet switch.
+<BR>Warning: The fading effect, if enabled, may be very computation
+intensive for some client environments, when high-frequency updates
+are involved.
+<br/>By default 0 ms (no fading at all) is set.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Duration in milliseconds of the fading phase after
+the "hot" phase.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="setStyle"><span class="type-signature"></span>setStyle<span class="signature">(hotStyle, coldStyle)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Setter method that configures the stylesheets to be applied to the
+HTML cells of the involved row, while changing the field values.
+A temporary "hot" style can
+be specified as different than the final "cold" style. This allows
+Lightstreamer to perform a visual effect, in which a temporary "hot"
+phase is visible. By using this method, the names of existing
+stylesheets are supplied.
+<BR>Note that in order to specify cell colors that can change with
+a fading behavior, the <a href="VisualUpdate.html#setAttribute">VisualUpdate#setAttribute</a> method should be used instead,
+as fading is not supported when colors are specified in the stylesheets
+with this method. So, if nonzero fading times are specified in
+<a href="VisualUpdate.html#setColdToHotTime">VisualUpdate#setColdToHotTime</a> and/or <a href="VisualUpdate.html#setHotToColdTime">VisualUpdate#setHotToColdTime</a>,
+this will just cause a delay of the "hot" and "cold" phase switches;
+however, as fading times refer to the whole row, you may need to set
+them as nonzero in order to allow fading on some specific fields only.
+for each stylesheet attribute that is not
+specified neither with this method nor with <a href="VisualUpdate.html#setStyle">VisualUpdate#setStyle</a>, the
+current value is left unchanged.
+<br/>By default no stylesheet is applied to the cell.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>hotStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of the temporary "hot" stylesheet,
+or null if the cells style should not change while entering "hot" phase.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coldStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the name of the final "cold" stylesheet,
+or null if the cells style should not change while exiting "hot" phase.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:07 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

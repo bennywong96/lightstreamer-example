@@ -1,0 +1,6 @@
+LIGHTSTREAMER SDK FOR WEB CLIENTS (UNIFIED API) - EXAMPLES
+==========================================================
+
+Browse examples with full source code at:
+
+http://demos.lightstreamer.com/?p=lightstreamer&t=client&a=javascriptclient

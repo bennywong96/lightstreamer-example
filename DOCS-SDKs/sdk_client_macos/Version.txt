@@ -1,0 +1,2 @@
+Lightstreamer macOS Client API (Unified) version 4.1.0 build 66
+Compatible with Lightstreamer Server since version 7.0

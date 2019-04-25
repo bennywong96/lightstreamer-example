@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR macOS CLIENTS (UNIFIED API) - DOCUMENTATION
+=================================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-macos-client/4.1.0/
+

@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR JAVA SE CLIENTS (UNIFIED API) - DOCUMENTATION
+===================================================================
+
+Browse documentation at:
+
+http://docs.lightstreamer.com/api/ls-javase-client/4.3.0
+

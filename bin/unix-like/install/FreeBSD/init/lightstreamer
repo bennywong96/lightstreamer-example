@@ -1,0 +1,101 @@
+#!/bin/sh
+#
+# $FreeBSD: $
+#
+
+# PROVIDE: lightstreamer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for lightstreamer in /etc/rc.conf:
+#
+# lightstreamer_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable lightstreamer
+#
+
+lightstreamer_enable="${lightstreamer_enable:-"NO"}"
+lightstreamer_user=%LS_USER%
+lightstreamer_group=%LS_GROUP%
+lightstreamer_home="%LS_HOME%"
+lightstreamer_daemon="${lightstreamer_home}/bin/unix-like/LS.sh"
+
+. /etc/rc.subr
+
+name="lightstreamer"
+rcvar=`set_rcvar`
+pidfile="/var/run/lightstreamer.pid"
+
+load_rc_config "${name}"
+
+command="/usr/sbin/daemon"
+
+start_precmd="pid_touch"
+stop_cmd="lightstreamer_stop"
+status_cmd="lightstreamer_status"
+start_cmd="lightstreamer_start"
+
+pid_touch() {
+	touch "${pidfile}"
+	chown "${lightstreamer_user}" "${pidfile}"
+}
+
+lightstreamer_start() {
+	rc_pid=$(lightstreamer_get_pidfile $pidfile)
+	if [ -n "${rc_pid}" ]; then
+		echo "${name} already running? (check ${pidfile})."
+		return 1
+	fi
+	"${lightstreamer_daemon}" run > /dev/null &
+	echo $! > "${pidfile}"
+	if [ "${?}" = "0" ]; then
+		echo "${name} started."
+	else
+		echo "${name} not started."
+		return 1
+	fi
+}
+
+lightstreamer_stop() {
+	rc_pid=$(lightstreamer_get_pidfile ${pidfile})
+
+	if [ -z "${rc_pid}" ]; then
+		[ -n "${rc_fast}" ] && return 0
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+
+	echo "Stopping ${name}."
+	kill -TERM "${rc_pid}" 2> /dev/null && echo "Terminated."
+	rm -f ${pidfile}
+}
+
+lightstreamer_status() {
+	rc_pid=$(lightstreamer_get_pidfile ${pidfile})
+	if [ -n "${rc_pid}" ]; then
+		echo "${name} is running as pid $rc_pid."
+	else
+		echo "${name} is not running."
+		return 1
+	fi
+}
+
+lightstreamer_get_pidfile() {
+	_pidfile=$1
+	if [ -z "$_pidfile" ]; then
+		err 3 'USAGE: lightstreamer_check_pidfile pidfile'
+	fi
+	if [ ! -f $_pidfile ]; then
+		debug "pid file ($_pidfile): not readable."
+		return
+	fi
+	read _pid _junk < $_pidfile
+	if [ -z "$_pid" ]; then
+		debug "pid file ($_pidfile): no pid in file."
+		return
+	fi
+	echo -n $_pid
+}
+
+run_rc_command "$1"

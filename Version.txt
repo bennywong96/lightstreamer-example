@@ -1,0 +1,5 @@
+DISTRIBUTION TAG:
+Lightstreamer 7.0.3 20190315
+
+SERVER VERSION:
+Lightstreamer Server version 7.0.3 build 1885.8

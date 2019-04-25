@@ -1,0 +1,2 @@
+Lightstreamer Java SE Client API (Unified) version 4.3.0 build 1325.1
+Compatible with Lightstreamer Server since version 7.0

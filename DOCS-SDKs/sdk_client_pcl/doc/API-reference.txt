@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR .NET PCL CLIENTS - DOCUMENTATION
+======================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-pcl-client/3.1.1/
+

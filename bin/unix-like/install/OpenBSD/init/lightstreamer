@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $OpenBSD: $
+
+daemon="%LS_HOME%/bin/unix-like/LS.sh"
+daemon_flags=""
+daemon_user=%LS_USER%
+daemon_pid="%LS_HOME%/bin/unix-like/daemon.pid"
+# RC_DEBUG=1
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "WRITE_PID=${daemon_pid} ${daemon} run &"
+}
+
+rc_check() {
+	_pid=$(cat ${daemon_pid})
+	pgrep -u "${daemon_user}" | grep "^${_pid}" > /dev/null
+}
+
+rc_stop() {
+	_pid=$(cat ${daemon_pid})
+	kill -TERM "${_pid}"
+}
+
+rc_cmd $1

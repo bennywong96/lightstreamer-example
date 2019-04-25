@@ -1,0 +1,2 @@
+Lightstreamer Generic Client API version 2.1.0 build 1859
+Compatible with Lightstreamer Server since version 7.0.0

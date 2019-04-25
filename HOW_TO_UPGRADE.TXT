@@ -1,0 +1,297 @@
+HOW TO UPGRADE LIGHTSTREAMER
+============================
+
+First of all, please see CHANGELOG.HTML to know all the differences from
+the previous versions of the Lightstreamer components.
+
+---------------------------------------------------
+Upgrading from 7.0.3 build 20190107 to This Version
+---------------------------------------------------
+
+If you have an existing installation of Lightstreamer 7.0.3 build 20190107,
+then this new release only brings a few bug fixes and minor interface changes
+in the various Unified Client SDKs, whereas the Server has not changed.
+
+So, you can leave the Server installation unchanged.
+In order to upgrade the clients, read carefully through the CHANGELOG to learn
+about any possible compatibility issues. In particular, if you run the Server
+with a license of "file" type, a license upgrade may be needed.
+
+---------------------------------------------------
+Upgrading from 7.0.2 build 20181003 to This Version
+---------------------------------------------------
+
+If you have an existing installation of Lightstreamer 7.0.2 build 20181003,
+then this new release only brings a few bug fixes on the Server and the
+various Unified client SDKs (with minor interface changes). It also lists
+the new SDK for .NET Standard Clients, recently made available on NuGet.
+
+Still, we suggest you to do a fresh install of Lightstreamer 7.0.3, then:
+
+- CONFIGURATION:
+  You can copy your configuration files under the "conf" folder
+  (e.g. lightstreamer_conf.xml, lightstreamer_log_conf.xml)
+  unchanged in the new installation.
+  If you have changed the launch scripts under "bin" (e.g. LS.sh, LS.bat),
+  you can also copy them in the new installation.
+
+- ADAPTERS:
+  You can deploy your existing Adapter binaries unchanged.
+
+- CLIENTS:
+  The Server is compatible with previous client libraries, so your
+  existing clients should work with no issues.
+  In order to upgrade the clients, read carefully through the CHANGELOG
+  to learn about any possible compatibility issues. In particular, if you run
+  the Server with a license of "file" type, a license upgrade may be needed.
+
+- MPN MODULE DATABASE (where available):
+  You can keep the database unchanged.
+
+---------------------------------------------------
+Upgrading from 7.0.1 build 20180614 to This Version
+---------------------------------------------------
+
+If you have an existing installation of Lightstreamer 7.0.1 build 20180614,
+then this new release only brings a few bug fixes on the Server and adds
+compatibility with Java 11. However, the latter involves a change in the
+deployed third-party libraries.
+The release also brings a few bug fixes on some client SDKs (with minor
+interface changes). It also lists the new SDK for .NET Standard Clients,
+recently made available on NuGet.
+
+So, we suggest you to do a fresh install of Lightstreamer 7.0.3, then:
+
+- CONFIGURATION:
+  You can copy your configuration files under the "conf" folder
+  (e.g. lightstreamer_conf.xml, lightstreamer_log_conf.xml)
+  unchanged in the new installation.
+  On the other hand, if you have changed the launch scripts under "bin"
+  (e.g. LS.sh, LS.bat), take note of any changes you performed and apply
+  them to the new factory files.
+
+- ADAPTERS:
+  You can deploy your existing Adapter binaries unchanged.
+
+- CLIENTS:
+  The Server is compatible with previous client libraries, so your
+  existing clients should work with no issues.
+  In order to upgrade the clients, read carefully through the CHANGELOG
+  to learn about any possible compatibility issues. In particular, if you run
+  the Server with a license of "file" type, a license upgrade may be needed.
+
+- MPN MODULE DATABASE (where available):
+  You can keep the database unchanged.
+
+---------------------------------------------------
+Upgrading from 7.0.0 build 20180228 to This Version
+---------------------------------------------------
+
+If you have an existing installation of Lightstreamer 7.0.0 build 20180228,
+then this new release brings bug fixes and various improvements
+in the Server and some client SDKs (one of which is brand new:
+the SDK for .NET Standard Clients).
+The release also brings compatibility with Java 11 and discontinues the
+support for Java 6 on the Server. This involves a change in the deployed
+third-party libraries.
+
+So, we suggest you to do a fresh install of Lightstreamer 7.0.3, then:
+
+- CONFIGURATION:
+  You can copy your configuration files under the "conf" folder
+  (e.g. lightstreamer_conf.xml, lightstreamer_log_conf.xml)
+  unchanged in the new installation.
+  On the other hand, if you have changed the launch scripts under "bin"
+  (e.g. LS.sh, LS.bat), take note of any changes you performed and apply
+  them to the new factory files.
+  However, if you have enabled the https support, we suggest you porting
+  the main configuration file, lightstreamer_conf.xml, using the online
+  Configuration File Upgrade Tool; it is available at:
+  https://service.lightstreamer.com/ConfigUpgrade
+
+- ADAPTERS:
+  You can deploy your existing Adapter binaries unchanged.
+
+- CLIENTS:
+  The Server is compatible with previous client libraries, so your
+  existing clients should work with no issues. This will allow you to upgrade
+  the server *before* upgrading the clients. When you are ready to upgrade
+  the clients, read carefully through the CHANGELOG to learn about any possible
+  compatibility issues and if you need to recompile your code.
+  In particular, in order to upgrade some Client SDKs, if you run the Server
+  with a license of "file" type, a license upgrade may be needed.
+  
+  The Server upgrade to 7.0.3 also implies the upgrade of the
+  JMX Extension SDK to version 5.4.4. However, If using custom managers,
+  you can keep them unchanged.
+
+- MPN MODULE DATABASE (where available):
+  You can keep the database unchanged.
+
+---------------------------------------------------
+Upgrading from 6.1.0 build 20170123 to This Version
+---------------------------------------------------
+
+If you have an existing installation of Lightstreamer 6.1.0 build 20170123,
+then this new release brings a brand new licensing mechanism, a wholly
+revised MPN module and several improvements to the Server (including
+compatibility with Java 11) and some client SDKs.
+In particular, new client SDKs for Unity, .NET Standard, and watchOS have
+been added and some obsolete SDKs have been removed (although clients based
+on them keep being supported).
+
+However, if you have an existing installation of Lightstreamer Moderato 6.1.0
+build 20170123 and are upgrading to this release by leveraging the Community
+edition, then the new release also brings many client SDKs previously not
+included (only one of which can be activated) and several features that
+previously were hidden, but that are still unavailable.
+
+So we suggest you to do a fresh install of Lightstreamer 7.0.3, then:
+
+- CONFIGURATION:
+  The lightstreamer_version_conf.xml file was replaced by the brand
+  new lightstreamer_edition_conf.xml.
+  Since license configuration was totally revised, you need to pass through
+  the new file to configure properly the Lightstreamer Edition and License
+  Type, according with your current contractual terms.
+  Moreover, any changes you performed in lightstreamer_version_conf.xml
+  to the <proxy> block and the <audit_log_path>, <automatic_update_check>,
+  and <automatic_audit_upload> elements should also be applied to
+  lightstreamer_edition_conf.xml.
+
+  Take note of the changes you performed on the other configuration files under
+  the "conf" folder (e.g. lightstreamer_conf.xml, lightstreamer_log_conf.xml)
+  and apply your changes to the new factory configuration files.
+  Do the same for the launch scripts under "bin" (e.g. LS.sh, LS.bat).
+  For lightstreamer_conf.xml and lightstreamer_log_conf.xml, this may not be
+  easy, so we suggest you using the online Configuration File Upgrade Tool;
+  it is available at:
+  https://service.lightstreamer.com/ConfigUpgrade
+
+  However, if you are leveraging the MPN module, hence
+  you have modified the <mpn> block in lightstreamer_conf.xml and the files
+  under "conf/mpn", please contact Lightstreamer support for further
+  instructions.
+
+- ADAPTERS:
+  The Server upgrade to 7.0.3 also implies the upgrade of the
+  Adapter Remoting Infrastructure to version 1.8.1.
+
+  Your adapters.xml files should be revised according with the CHANGELOG for
+  the relevant SDK (i.e. Java In-Process Adapters SDK or Adapter Remoting
+  Infrastructure). To simplify the operation, we suggest you using the online
+  Configuration File Upgrade Tool; it is available at:
+  https://service.lightstreamer.com/ConfigUpgrade
+
+  After that, you can deploy your existing Adapter binaries unchanged, unless
+  the MPN module is involved. If leveraging the MPN module,
+  please read carefully through the CHANGELOG for all the details changed.
+
+- CLIENTS:
+  The Server is compatible with previous client libraries, so your
+  existing clients should work with no issues. This will allow you to upgrade
+  the server *before* upgrading the clients. When you are ready to upgrade
+  the clients, read carefully through the CHANGELOG to learn about any possible
+  compatibility issues and if you need to recompile your code.
+
+  However, if leveraging the MPN module (possible with some
+  old client SDKs), consider that the support for Push Notifications on such
+  old clients has been dropped and all client requests will be refused by the
+  new Server. In that case, a porting to the newest client SDK will be needed.
+  
+  The Server upgrade to 7.0.3 also implies the upgrade of the
+  JMX Extension SDK to version 5.4.4. If using custom managers, you can keep
+  them unchanged, unless you are using statistics related with the MPN module.
+  In that case, please look for compatibility issues in the related CHANGELOG.
+
+- MPN MODULE DATABASE (where available):
+  If leveraging the MPN module, the database should be migrated when ported
+  to the new Server. To achieve that, please contact Lightstreamer support
+  for instructions.
+
+-----------------------------------------------
+Upgrading from 6.0 or any 6.0.x to This Version
+-----------------------------------------------
+
+If you have an existing installation of Lightstreamer 6.0 build 20150121
+through 6.0.3 build 20160905, you can refer to this same document for
+Lightstreamer 6.1.0 and follow the provided instructions. After that,
+reconsider the previous paragraph.
+
+Note that, if you have an existing installation of Lightstreamer Moderato
+and are upgrading to this release by leveraging the Community edition,
+in the previous step you should refer to Lightstreamer Moderato 6.1.0.
+
+Alternatively, to upgrade in a single step, we suggest you to do a fresh
+install of Lightstreamer 7.0.3, then:
+
+- CONFIGURATION:
+  The lightstreamer_version_conf.xml file was replaced by the brand
+  new lightstreamer_edition_conf.xml.
+  Since license configuration was totally revised, you need to pass through
+  the new file to configure properly the Lightstreamer Edition and License
+  Type, according with your current contractual terms.
+  Moreover, any changes you performed in lightstreamer_version_conf.xml
+  to the <proxy> block and the <audit_log_path>, <automatic_update_check>,
+  and <automatic_audit_upload> elements should also be applied to
+  lightstreamer_edition_conf.xml.
+
+  Then use the online Configuration File Upgrade Tool to automatically convert
+  your configuration files to 7.0.3. Supported files are lightstreamer_conf.xml
+  and lightstreamer_log_conf.xml in the "conf" folder (also for Lightstreamer
+  Moderato). The online Configuration File Upgrade Tool is available at:
+  https://service.lightstreamer.com/ConfigUpgrade
+
+  For other configuration files under "conf" and the launch scripts under bin
+  (e.g. LS.sh, LS.bat), take note of any changes you performed and apply them
+  to the new factory files.
+  However, if you launch the Server with custom scripts, please check the
+  "compatibility notes" in the Server CHANGELOG.
+
+- ADAPTERS:
+  The Server upgrade to 7.0.3 also implies the upgrade of the
+  Adapter Remoting Infrastructure to version 1.8.1.
+
+  Use the online Configuration File Upgrade Tool to automatically convert
+  your adapters.xml files to 7.0.3 (Lightstreamer Moderato also supported).
+  The tool is available at:
+  https://service.lightstreamer.com/ConfigUpgrade
+
+  After that, you can deploy your existing Adapter binaries unchanged, unless
+  the MPN module is involved. If leveraging the MPN module,
+  please read carefully through the CHANGELOG for all the details changed.
+
+- CLIENTS:
+  The Server is compatible with previous client libraries, so your
+  existing clients should work with no issues. This will allow you to upgrade
+  the server *before* upgrading the clients. When you are ready to upgrade
+  the clients, read carefully through the CHANGELOG to learn about any possible
+  compatibility issues and if you need to recompile your code.
+
+  However, if leveraging the MPN module (possible with some
+  old client SDKs), consider that the support for Push Notifications on such
+  old clients has been dropped and all client requests will be refused by the
+  new Server. In that case, a porting to the newest client SDK will be needed.
+
+  If you are using the .NET or Windows Phone or winRT SDK, you should move
+  to the new .NET PCL SDK, which exposes the same interface.
+
+  The Server upgrade to 7.0.3 also implies the upgrade of the
+  JMX Extension SDK to version 5.4.4. If using custom managers, you can keep
+  them unchanged, unless you are using statistics related with the MPN module.
+  In that case, please look for compatibility issues in the related CHANGELOG.
+
+- MPN MODULE DATABASE (where available):
+  If leveraging the MPN module, the database should be migrated when ported
+  to the new Server. To achieve that, please contact Lightstreamer support
+  for instructions.
+
+-----------------------------------------------------------------
+Upgrading from all Previous Versions (before 6.0) to This Version
+-----------------------------------------------------------------
+
+Refer to this same document for Lightstreamer 6.1.0 and follow the provided
+instructions. After that, reconsider the previous paragraph.
+
+Note that, if upgrading from Lightstreamer Moderato, in the previous step
+you should refer to Lightstreamer Moderato 6.1.0.

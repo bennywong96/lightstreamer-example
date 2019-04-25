@@ -1,0 +1,742 @@
+25-Apr-19 13:13:40,859|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:13:40,870|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:13:40,886|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:13:40,887|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:13:40,887|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:13:40,887|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:13:40,887|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:13:40,888|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:13:40,888|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:13:40,892|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:13:40,893|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:13:40,893|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:13:40,894|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:13:40,894|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:13:40,895|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:13:40,895|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:13:40,895|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:13:40,900|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:13:40,900|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:13:40,901|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:13:40,901|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:13:40,902|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:13:40,902|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:13:41,454|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:13:41,455|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:13:41,804|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:13:41,807|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:13:41,962|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:13:41,964|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:13:41,979|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:13:42,034|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:13:42,037|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:13:42,039|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:13:42,111|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:13:42,123|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:13:42,635|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:13:42,654|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:13:42,704|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:13:42,733|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:13:42,733|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:13:42,736|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:13:42,840|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:13:42,846|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:13:43,008|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:13:43,010|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:13:43,010|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:13:43,010|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:13:43,010|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:13:43,016|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:13:43,022|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:13:43,023|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:13:43,024|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:13:43,041|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:13:43,042|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:13:43,071|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:13:43,073|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:13:43,074|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:13:43,076|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:13:43,077|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:13:43,078|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:13:43,080|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:13:43,082|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:13:43,090|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:13:43,091|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:13:43,093|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:13:43,094|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:13:43,096|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:13:43,097|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:13:43,098|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:13:43,100|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:13:43,105|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:13:43,106|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:13:43,107|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:13:43,109|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:13:43,112|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:13:43,114|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:13:43,116|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:13:43,117|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:13:43,119|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:13:43,120|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:13:43,122|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:13:43,124|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:13:43,126|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:13:43,127|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:13:43,129|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:13:43,130|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:13:43,136|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:13:43,137|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:13:43,147|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:13:43,520|INFO |streamerMonitorText|Timer-0                    |Total threads = 94, Total heap = 257425408 (free = 212289880), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 0), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:14:09,600|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8201&LS_cause=new.api&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65396
+25-Apr-19 13:14:09,716|INFO |L.requests         |SERVER POOLED THREAD 7     |Starting new session: Sd29353e28dc3ab98Mc2cT1409683 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65396
+25-Apr-19 13:14:10,350|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: bind_session -> LS_session=Sd29353e28dc3ab98Mc2cT1409683&LS_phase=8203&LS_cause=loop1&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65398
+25-Apr-19 13:14:10,352|INFO |L.requests         |SERVER POOLED THREAD 9     |Attaching session: Sd29353e28dc3ab98Mc2cT1409683 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65398
+25-Apr-19 13:14:10,540|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=1&LS_req_phase=2&LS_win_phase=1&LS_op=add&LS_session=Sd29353e28dc3ab98Mc2cT1409683& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65398
+25-Apr-19 13:14:10,557|INFO |L.requests         |SERVER POOLED THREAD 9     |Controlling session: Sd29353e28dc3ab98Mc2cT1409683 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:65398
+25-Apr-19 13:15:43,578|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 157286400 (free = 108791368), Sessions = 1 (max = 1), New sessions = [+1, -0], Connections = 1 (max = 7), New connections = [+7, -6], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 5011, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:17:43,630|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 157286400 (free = 104879488), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 7879, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:19:43,681|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 157286400 (free = 99921688), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 10747, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:21:43,733|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 157286400 (free = 92859424), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 13560, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:23:43,785|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 157286400 (free = 88946776), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 16475, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:25:43,837|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 157286400 (free = 85065904), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 19296, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:27:43,890|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 157286400 (free = 80626696), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 22117, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:29:43,942|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 157286400 (free = 137566352), Sessions = 1 (max = 1), New sessions = [+0, -0], Connections = 1 (max = 7), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 1 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 0.5 updates/s (0.4 kbit/s, max = 1), Lost updates = 0 (total = 0), Total bytes sent = 24883, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:29:49,224|INFO |L.init             |Thread-21                  |Shutdown requested by script, or via JMX.
+25-Apr-19 13:29:49,227|INFO |L.init             |LightstreamerShutdownHook  |Server shutdown requested.
+25-Apr-19 13:29:49,227|INFO |L.init             |LightstreamerShutdownHook  |Exiting.....
+25-Apr-19 13:29:53,865|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:29:53,869|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:29:53,886|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:29:53,886|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:29:53,887|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:29:53,887|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:29:53,887|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:29:53,887|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:29:53,887|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:29:53,888|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:29:53,891|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:29:53,892|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:29:53,892|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:29:53,892|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:29:53,892|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:29:53,892|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:29:53,893|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:29:53,894|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:29:53,894|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:29:53,894|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:29:53,894|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:29:53,894|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:29:53,895|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:29:54,341|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:29:54,341|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:29:54,636|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:29:54,638|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:29:54,679|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:29:54,681|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:29:54,694|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:29:54,727|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:29:54,730|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:29:54,732|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:29:54,796|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:29:54,805|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:29:54,835|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:29:54,838|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:29:54,873|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:29:54,898|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:29:54,898|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:29:54,914|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:29:54,915|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:29:54,920|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:29:55,069|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:29:55,071|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:29:55,071|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:29:55,071|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:29:55,071|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:29:55,075|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:29:55,077|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:29:55,083|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:29:55,083|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:29:55,097|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:29:55,097|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:29:55,116|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:29:55,118|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:29:55,119|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:29:55,120|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:29:55,121|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:29:55,122|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:29:55,123|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:29:55,125|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:29:55,132|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:29:55,133|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:29:55,134|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:29:55,135|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:29:55,137|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:29:55,139|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:29:55,140|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:29:55,141|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:29:55,146|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:29:55,148|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:29:55,149|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:29:55,151|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:29:55,152|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:29:55,172|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:29:55,173|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:29:55,174|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:29:55,175|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:29:55,176|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:29:55,177|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:29:55,179|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:29:55,182|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:29:55,183|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:29:55,185|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:29:55,186|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:29:55,190|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:29:55,190|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:29:55,200|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:29:56,329|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/bind_session.js --> LS_phase=8205&LS_cause=network.error&LS_polling=true&LS_polling_millis=224&LS_idle_millis=0&LS_session=Sd29353e28dc3ab98Mc2cT1409683&LS_recovery_from=467&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49330
+25-Apr-19 13:29:56,357|INFO |L.requests         |SERVER POOLED THREAD 9     |Received old session ID: Sd29353e28dc3ab98Mc2cT1409683
+25-Apr-19 13:29:56,361|INFO |L.requests         |SERVER POOLED THREAD 9     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49330
+25-Apr-19 13:29:56,382|INFO |streamerMonitorText|Timer-0                    |Total threads = 95, Total heap = 201326592 (free = 176896216), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 1), New connections = [+1, -1], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 48, Notify delay = 0
+25-Apr-19 13:30:00,054|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8207&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49331
+25-Apr-19 13:30:00,106|INFO |L.requests         |SERVER POOLED THREAD 10    |Starting new session: S0a1bf58b118fb0c3M715T3000090 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49331
+25-Apr-19 13:30:00,171|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: bind_session -> LS_session=S0a1bf58b118fb0c3M715T3000090&LS_phase=8209&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49332
+25-Apr-19 13:30:00,173|INFO |L.requests         |SERVER POOLED THREAD 7     |Attaching session: S0a1bf58b118fb0c3M715T3000090 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49332
+25-Apr-19 13:30:01,088|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=2&LS_req_phase=3&LS_win_phase=3&LS_op=add&LS_session=S0a1bf58b118fb0c3M715T3000090& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49332
+25-Apr-19 13:30:01,106|INFO |L.requests         |SERVER POOLED THREAD 10    |Controlling session: S0a1bf58b118fb0c3M715T3000090 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49332
+25-Apr-19 13:30:11,635|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=1901&LS_cause=new.api&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=WELCOME&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49342
+25-Apr-19 13:30:11,636|INFO |L.requests         |SERVER POOLED THREAD 8     |Starting new session: S537826e13afd4191M715T3011636 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49342
+25-Apr-19 13:30:12,284|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: bind_session -> LS_session=S537826e13afd4191M715T3011636&LS_phase=1903&LS_cause=loop1&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,285|INFO |L.requests         |SERVER POOLED THREAD 9     |Attaching session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,294|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=4301&LS_cause=new.api&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_requested_max_bandwidth=100&LS_adapter_set=MONITOR&LS_user=z&LS_password=[...]&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49342
+25-Apr-19 13:30:12,296|INFO |L.requests         |SERVER POOLED THREAD 9     |Starting new session: Sd53cd81985f1931cM715T3012296 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49342
+25-Apr-19 13:30:12,382|INFO |L.requests         |SERVER POOLED THREAD 3     |Serving request: bind_session -> LS_session=Sd53cd81985f1931cM715T3012296&LS_phase=4303&LS_cause=loop1&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,383|INFO |L.requests         |SERVER POOLED THREAD 3     |Attaching session: Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,459|INFO |L.requests         |SERVER POOLED THREAD 3     |Serving request: control -> LS_mode=MERGE&LS_id=item1%20item2%20item3%20item4%20item5%20item6&LS_schema=stock_name%20last_price%20time%20pct_change%20min%20max&LS_data_adapter=STOCKS&LS_snapshot=true&LS_table=1&LS_req_phase=2&LS_win_phase=1&LS_op=add&LS_session=S537826e13afd4191M715T3011636& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,462|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving multiple request: control -> {2 subrequests} on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,462|INFO |L.requests         |SERVER POOLED THREAD 10    |Controlling session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,462|INFO |L.requests         |SERVER POOLED THREAD 8     |Subrequest 1: LS_mode=MERGE&LS_id=P_driver_1&LS_schema=TIME%20Speed%20Rpm%20Gear_output%20Distance&LS_data_adapter=TELEMETRY&LS_snapshot=true&LS_table=2&LS_req_phase=3&LS_win_phase=1&LS_op=add& LS_session:S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,463|INFO |L.requests         |SERVER POOLED THREAD 8     |Subrequest 2: LS_mode=DISTINCT&LS_id=chat_room&LS_schema=timestamp%20message%20IP%20nick&LS_data_adapter=CHAT&LS_snapshot=30&LS_table=3&LS_req_phase=4&LS_win_phase=1&LS_op=add& LS_session:S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,469|INFO |L.requests         |SERVER POOLED THREAD 8     |Controlling session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,473|INFO |L.requests         |SERVER POOLED THREAD 2     |Controlling session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,518|INFO |L.requests.messages|SERVER POOLED THREAD 9     |Serving request: msg -> LS_unq=89&LS_outcome=&LS_sequence=Nick&LS_max_wait=3000&LS_ack=&LS_msg_prog=1&LS_message=n|Guest942 LS_session:S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,523|INFO |L.requests.messages|SERVER POOLED THREAD 9     |Sending message to session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,582|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_mode=MERGE&LS_id=monitor_identification&LS_schema=EDITION%20LICENSE_TYPE&LS_snapshot=true&LS_table=1&LS_req_phase=2&LS_win_phase=1&LS_op=add&LS_session=Sd53cd81985f1931cM715T3012296& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,582|INFO |L.requests         |SERVER POOLED THREAD 7     |Controlling session: Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,593|INFO |L.requests         |SERVER POOLED THREAD 2     |Serving request: control -> LS_mode=COMMAND&LS_id=Players_list&LS_schema=command%20key%20nick%20msg%20usrAgnt%20posX%20posY%201Plot.SymbolName&LS_data_adapter=ROOMBALL&LS_snapshot=true&LS_table=4&LS_req_phase=5&LS_win_phase=1&LS_op=add& LS_session:S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,593|INFO |L.requests         |SERVER POOLED THREAD 7     |Controlling session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:12,626|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_mode=MERGE&LS_id=monitor_details&LS_schema=MAX_SSNS%20IS_MPN%20EXP_DATE%20MAX_RATE%20BAND%20TLS%20JMX%20VAL_TYPE&LS_snapshot=true&LS_table=2&LS_req_phase=3&LS_win_phase=1&LS_op=add& LS_session:Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,626|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: control -> LS_mode=COMMAND&LS_id=monitor_client_libs&LS_schema=key%20command%20lib_ext%20free%20demo%20eval%20startup%20noprod-lim%20noprod-full%20prod%20standby%20ordinal&LS_snapshot=true&LS_table=3&LS_req_phase=4&LS_win_phase=1&LS_op=add& LS_session:Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,626|INFO |L.requests         |SERVER POOLED THREAD 7     |Controlling session: Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:12,626|INFO |L.requests         |SERVER POOLED THREAD 2     |Controlling session: Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:18,420|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_op=destroy&LS_session=S537826e13afd4191M715T3011636&LS_cause=suicide& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:18,421|INFO |L.requests         |SERVER POOLED THREAD 9     |Destroying session: S537826e13afd4191M715T3011636 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49345
+25-Apr-19 13:30:18,423|INFO |L.requests         |SERVER POOLED THREAD 6     |Serving request: control -> LS_op=destroy&LS_session=Sd53cd81985f1931cM715T3012296&LS_cause=suicide& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:18,424|INFO |L.requests         |SERVER POOLED THREAD 6     |Destroying session: Sd53cd81985f1931cM715T3012296 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49348
+25-Apr-19 13:30:18,425|INFO |L.requests         |SERVER POOLED THREAD 6     |Closed session Sd53cd81985f1931cM715T3012296 with internal cause code: 31 (Destroy invoked by client).
+25-Apr-19 13:30:18,425|INFO |L.requests         |SERVER POOLED THREAD 9     |Closed session S537826e13afd4191M715T3011636 with internal cause code: 31 (Destroy invoked by client).
+25-Apr-19 13:30:18,622|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3301&LS_cause=new.api&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49341
+25-Apr-19 13:30:18,623|INFO |L.requests         |SERVER POOLED THREAD 2     |Starting new session: S69141cec20b84ee4M715T3018622 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49341
+25-Apr-19 13:30:18,833|INFO |L.requests         |SERVER POOLED THREAD 2     |Serving request: bind_session -> LS_session=S69141cec20b84ee4M715T3018622&LS_phase=3303&LS_cause=loop1&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:30:18,833|INFO |L.requests         |SERVER POOLED THREAD 2     |Attaching session: S69141cec20b84ee4M715T3018622 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:30:19,042|INFO |L.requests         |SERVER POOLED THREAD 2     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=1&LS_req_phase=2&LS_win_phase=1&LS_op=add&LS_session=S69141cec20b84ee4M715T3018622& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:30:19,043|INFO |L.requests         |SERVER POOLED THREAD 2     |Controlling session: S69141cec20b84ee4M715T3018622 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:31:56,441|INFO |streamerMonitorText|Timer-0                    |Total threads = 107, Total heap = 201326592 (free = 142083728), Sessions = 2 (max = 3), New sessions = [+4, -2], Connections = 2 (max = 9), New connections = [+10, -8], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 1 updates/s (0.81 kbit/s, max = 27.36), Lost updates = 0 (total = 0), Total bytes sent = 23338, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0.08), Total messages handled = 1, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:33:56,493|INFO |streamerMonitorText|Timer-0                    |Total threads = 107, Total heap = 201326592 (free = 137825528), Sessions = 2 (max = 3), New sessions = [+0, -0], Connections = 2 (max = 9), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0.5 updates/s (pre-filtered = 0.5), Outbound throughput = 1 updates/s (0.81 kbit/s, max = 27.36), Lost updates = 0 (total = 0), Total bytes sent = 28980, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0.08), Total messages handled = 1, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:34:30,977|INFO |L.requests         |SERVER POOLED THREAD 1     |Serving request: control -> LS_op=destroy&LS_session=S69141cec20b84ee4M715T3018622&LS_cause=suicide& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:34:30,978|INFO |L.requests         |SERVER POOLED THREAD 1     |Destroying session: S69141cec20b84ee4M715T3018622 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49349
+25-Apr-19 13:34:30,980|INFO |L.requests         |SERVER POOLED THREAD 1     |Closed session S69141cec20b84ee4M715T3018622 with internal cause code: 31 (Destroy invoked by client).
+25-Apr-19 13:34:31,344|INFO |L.requests         |SERVER POOLED THREAD 1     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3801&LS_cause=new.api&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49381
+25-Apr-19 13:34:31,344|INFO |L.requests         |SERVER POOLED THREAD 1     |Starting new session: S090f067f5b542e02M715T3431344 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49381
+25-Apr-19 13:34:31,955|INFO |L.requests         |SERVER POOLED THREAD 3     |Serving request: bind_session -> LS_session=S090f067f5b542e02M715T3431344&LS_phase=3803&LS_cause=loop1&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49382
+25-Apr-19 13:34:31,956|INFO |L.requests         |SERVER POOLED THREAD 3     |Attaching session: S090f067f5b542e02M715T3431344 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49382
+25-Apr-19 13:34:32,164|INFO |L.requests         |SERVER POOLED THREAD 3     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=1&LS_req_phase=2&LS_win_phase=1&LS_op=add&LS_session=S090f067f5b542e02M715T3431344& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49382
+25-Apr-19 13:34:32,164|INFO |L.requests         |SERVER POOLED THREAD 3     |Controlling session: S090f067f5b542e02M715T3431344 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49382
+25-Apr-19 13:34:45,754|INFO |L.init             |Thread-23                  |Shutdown requested by script, or via JMX.
+25-Apr-19 13:34:45,756|INFO |L.init             |LightstreamerShutdownHook  |Server shutdown requested.
+25-Apr-19 13:34:45,757|INFO |L.init             |LightstreamerShutdownHook  |Exiting.....
+25-Apr-19 13:34:50,354|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:34:50,358|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:34:50,373|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:34:50,373|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:34:50,374|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:34:50,374|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:34:50,374|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:34:50,375|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:34:50,375|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:34:50,375|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:34:50,375|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:34:50,375|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:34:50,376|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:34:50,377|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:34:50,378|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:34:50,378|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:34:50,378|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:34:50,825|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:34:50,825|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:34:51,128|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:34:51,130|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:34:51,178|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:34:51,180|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:34:51,193|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:34:51,226|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:34:51,229|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:34:51,231|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:34:51,296|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:34:51,307|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:34:51,341|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:34:51,344|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:34:51,377|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:34:51,402|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:34:51,402|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:34:51,418|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:34:51,419|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:34:51,424|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:34:51,582|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:34:51,584|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:34:51,584|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:34:51,584|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:34:51,584|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:34:51,589|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:34:51,595|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:34:51,596|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:34:51,597|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:34:51,610|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:34:51,610|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:34:51,628|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:34:51,630|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:34:51,631|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:34:51,633|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:34:51,634|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:34:51,636|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:34:51,637|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:34:51,638|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:34:51,647|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:34:51,648|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:34:51,650|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:34:51,651|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:34:51,652|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:34:51,654|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:34:51,655|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:34:51,656|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:34:51,661|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:34:51,662|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:34:51,663|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:34:51,664|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:34:51,666|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:34:51,667|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:34:51,668|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:34:51,670|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:34:51,671|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:34:51,673|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:34:51,674|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:34:51,675|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:34:51,677|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:34:51,678|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:34:51,681|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:34:51,682|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:34:51,686|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:34:51,686|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:34:51,696|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:34:52,397|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: /lightstreamer/bind_session.js --> LS_phase=3805&LS_cause=network.error&LS_polling=true&LS_polling_millis=508&LS_idle_millis=0&LS_session=S090f067f5b542e02M715T3431344&LS_recovery_from=9&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49471
+25-Apr-19 13:34:52,427|INFO |L.requests         |SERVER POOLED THREAD 7     |Received old session ID: S090f067f5b542e02M715T3431344
+25-Apr-19 13:34:52,430|INFO |L.requests         |SERVER POOLED THREAD 7     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49471
+25-Apr-19 13:34:52,860|INFO |streamerMonitorText|Timer-0                    |Total threads = 95, Total heap = 195559424 (free = 171088264), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 1), New connections = [+1, -1], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 44, Notify delay = 0
+25-Apr-19 13:34:53,053|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: /lightstreamer/bind_session.js --> LS_phase=8211&LS_cause=network.error&LS_polling=true&LS_polling_millis=408&LS_idle_millis=0&LS_session=S0a1bf58b118fb0c3M715T3000090&LS_recovery_from=140&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49472
+25-Apr-19 13:34:53,053|INFO |L.requests         |SERVER POOLED THREAD 7     |Received old session ID: S0a1bf58b118fb0c3M715T3000090
+25-Apr-19 13:34:53,053|INFO |L.requests         |SERVER POOLED THREAD 7     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49472
+25-Apr-19 13:34:56,170|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3807&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49473
+25-Apr-19 13:34:56,219|INFO |L.requests         |SERVER POOLED THREAD 7     |Starting new session: S9ffece4029e8a360M205T3456204 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49473
+25-Apr-19 13:34:56,263|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: bind_session -> LS_session=S9ffece4029e8a360M205T3456204&LS_phase=3809&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49474
+25-Apr-19 13:34:56,264|INFO |L.requests         |SERVER POOLED THREAD 10    |Attaching session: S9ffece4029e8a360M205T3456204 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49474
+25-Apr-19 13:34:56,477|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=2&LS_req_phase=3&LS_win_phase=3&LS_op=add&LS_session=S9ffece4029e8a360M205T3456204& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49474
+25-Apr-19 13:34:56,486|INFO |L.requests         |SERVER POOLED THREAD 10    |Controlling session: S9ffece4029e8a360M205T3456204 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49474
+25-Apr-19 13:34:57,051|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8213&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49473
+25-Apr-19 13:34:57,052|INFO |L.requests         |SERVER POOLED THREAD 9     |Starting new session: Sb465a5d7dbff2e3aM205T3457052 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49473
+25-Apr-19 13:34:57,060|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: bind_session -> LS_session=Sb465a5d7dbff2e3aM205T3457052&LS_phase=8215&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49475
+25-Apr-19 13:34:57,060|INFO |L.requests         |SERVER POOLED THREAD 9     |Attaching session: Sb465a5d7dbff2e3aM205T3457052 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49475
+25-Apr-19 13:34:58,052|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=3&LS_req_phase=4&LS_win_phase=5&LS_op=add&LS_session=Sb465a5d7dbff2e3aM205T3457052& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49475
+25-Apr-19 13:34:58,053|INFO |L.requests         |SERVER POOLED THREAD 9     |Controlling session: Sb465a5d7dbff2e3aM205T3457052 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49475
+25-Apr-19 13:36:16,314|INFO |L.init             |Thread-21                  |Shutdown requested by script, or via JMX.
+25-Apr-19 13:36:16,317|INFO |L.init             |LightstreamerShutdownHook  |Server shutdown requested.
+25-Apr-19 13:36:16,317|INFO |L.init             |LightstreamerShutdownHook  |Exiting.....
+25-Apr-19 13:36:20,917|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:36:20,921|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:36:20,937|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:36:20,938|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:36:20,938|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:36:20,938|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:36:20,938|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:36:20,939|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:36:20,939|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:36:20,939|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:36:20,943|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:36:20,943|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:36:20,943|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:36:20,943|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:36:20,943|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:36:20,944|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:36:20,945|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:36:20,945|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:36:20,945|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:36:20,945|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:36:20,945|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:36:20,945|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:36:21,415|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:36:21,415|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:36:21,717|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:36:21,718|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:36:21,759|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:36:21,761|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:36:21,773|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:36:21,809|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:36:21,812|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:36:21,814|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:36:21,879|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:36:21,889|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:36:21,921|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:36:21,924|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:36:21,958|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:36:21,984|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:36:21,984|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:36:22,000|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:36:22,002|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:36:22,005|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:36:22,159|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:36:22,161|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:36:22,161|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:36:22,161|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:36:22,161|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:36:22,167|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:36:22,172|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:36:22,172|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:36:22,173|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:36:22,187|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:36:22,187|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:36:22,206|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:36:22,207|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:36:22,209|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:36:22,230|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:36:22,245|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:36:22,246|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:36:22,248|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:36:22,249|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:36:22,257|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:36:22,259|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:36:22,260|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:36:22,261|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:36:22,262|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:36:22,264|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:36:22,265|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:36:22,266|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:36:22,272|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:36:22,273|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:36:22,274|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:36:22,275|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:36:22,277|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:36:22,279|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:36:22,280|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:36:22,281|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:36:22,282|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:36:22,283|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:36:22,284|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:36:22,286|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:36:22,288|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:36:22,290|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:36:22,291|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:36:22,292|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:36:22,296|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:36:22,297|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:36:22,307|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:36:22,995|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/bind_session.js --> LS_phase=3811&LS_cause=network.error&LS_polling=true&LS_polling_millis=632&LS_idle_millis=0&LS_session=S9ffece4029e8a360M205T3456204&LS_recovery_from=44&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49572
+25-Apr-19 13:36:23,027|INFO |L.requests         |SERVER POOLED THREAD 9     |Received old session ID: S9ffece4029e8a360M205T3456204
+25-Apr-19 13:36:23,032|INFO |L.requests         |SERVER POOLED THREAD 9     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49572
+25-Apr-19 13:36:23,053|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/bind_session.js --> LS_phase=8217&LS_cause=network.error&LS_polling=true&LS_polling_millis=754&LS_idle_millis=0&LS_session=Sb465a5d7dbff2e3aM205T3457052&LS_recovery_from=44&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49573
+25-Apr-19 13:36:23,053|INFO |L.requests         |SERVER POOLED THREAD 9     |Received old session ID: Sb465a5d7dbff2e3aM205T3457052
+25-Apr-19 13:36:23,053|INFO |L.requests         |SERVER POOLED THREAD 9     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49573
+25-Apr-19 13:36:23,451|INFO |streamerMonitorText|Timer-0                    |Total threads = 95, Total heap = 196608000 (free = 171412256), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 1), New connections = [+2, -2], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 30, Notify delay = 0
+25-Apr-19 13:36:26,772|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3813&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49575
+25-Apr-19 13:36:26,837|INFO |L.requests         |SERVER POOLED THREAD 9     |Starting new session: S01529030e0a6dba5Mcb5T3626821 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49575
+25-Apr-19 13:36:26,886|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: bind_session -> LS_session=S01529030e0a6dba5Mcb5T3626821&LS_phase=3815&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49576
+25-Apr-19 13:36:26,887|INFO |L.requests         |SERVER POOLED THREAD 10    |Attaching session: S01529030e0a6dba5Mcb5T3626821 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49576
+25-Apr-19 13:36:27,099|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=3&LS_req_phase=4&LS_win_phase=5&LS_op=add&LS_session=S01529030e0a6dba5Mcb5T3626821& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49576
+25-Apr-19 13:36:27,116|INFO |L.requests         |SERVER POOLED THREAD 10    |Controlling session: S01529030e0a6dba5Mcb5T3626821 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49576
+25-Apr-19 13:36:28,060|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8219&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49575
+25-Apr-19 13:36:28,063|INFO |L.requests         |SERVER POOLED THREAD 8     |Starting new session: S3c6cf04a25ee08daMcb5T3628063 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49575
+25-Apr-19 13:36:28,080|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: bind_session -> LS_session=S3c6cf04a25ee08daMcb5T3628063&LS_phase=8221&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49578
+25-Apr-19 13:36:28,081|INFO |L.requests         |SERVER POOLED THREAD 8     |Attaching session: S3c6cf04a25ee08daMcb5T3628063 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49578
+25-Apr-19 13:36:29,050|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=4&LS_req_phase=5&LS_win_phase=7&LS_op=add&LS_session=S3c6cf04a25ee08daMcb5T3628063& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49578
+25-Apr-19 13:36:29,051|INFO |L.requests         |SERVER POOLED THREAD 8     |Controlling session: S3c6cf04a25ee08daMcb5T3628063 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49578
+25-Apr-19 13:38:16,446|INFO |L.init             |Thread-21                  |Shutdown requested by script, or via JMX.
+25-Apr-19 13:38:16,448|INFO |L.init             |LightstreamerShutdownHook  |Server shutdown requested.
+25-Apr-19 13:38:16,448|INFO |L.init             |LightstreamerShutdownHook  |Exiting.....
+25-Apr-19 13:38:21,090|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:38:21,094|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:38:21,109|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:38:21,110|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:38:21,110|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:38:21,110|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:38:21,110|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:38:21,111|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:38:21,111|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:38:21,111|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:38:21,111|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:38:21,111|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:38:21,112|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:38:21,112|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:38:21,112|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:38:21,112|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:38:21,112|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:38:21,113|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:38:21,114|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:38:21,114|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:38:21,114|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:38:21,114|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:38:21,114|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:38:21,605|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:38:21,606|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:38:21,906|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:38:21,907|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:38:21,952|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:38:21,954|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:38:21,966|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:38:22,000|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:38:22,004|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:38:22,006|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:38:22,075|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:38:22,088|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:38:22,126|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:38:22,130|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:38:22,168|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:38:22,194|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:38:22,194|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:38:22,215|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:38:22,217|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:38:22,219|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:38:22,371|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:38:22,373|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:38:22,373|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:38:22,373|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:38:22,373|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:38:22,377|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:38:22,378|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:38:22,382|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:38:22,386|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:38:22,402|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:38:22,402|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:38:22,422|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:38:22,424|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:38:22,426|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:38:22,427|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:38:22,428|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:38:22,429|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:38:22,430|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:38:22,432|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:38:22,440|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:38:22,442|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:38:22,444|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:38:22,445|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:38:22,447|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:38:22,448|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:38:22,450|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:38:22,451|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:38:22,457|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:38:22,458|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:38:22,460|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:38:22,461|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:38:22,464|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:38:22,466|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:38:22,467|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:38:22,468|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:38:22,469|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:38:22,470|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:38:22,472|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:38:22,474|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:38:22,475|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:38:22,476|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:38:22,478|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:38:22,479|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:38:22,483|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:38:22,483|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:38:22,494|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:38:23,160|INFO |L.requests         |SERVER POOLED THREAD 6     |Serving request: /lightstreamer/bind_session.js --> LS_phase=3817&LS_cause=network.error&LS_polling=true&LS_polling_millis=527&LS_idle_millis=0&LS_session=S01529030e0a6dba5Mcb5T3626821&LS_recovery_from=12&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49727
+25-Apr-19 13:38:23,160|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/bind_session.js --> LS_phase=8223&LS_cause=network.error&LS_polling=true&LS_polling_millis=366&LS_idle_millis=0&LS_session=S3c6cf04a25ee08daMcb5T3628063&LS_recovery_from=12&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49728
+25-Apr-19 13:38:23,192|INFO |L.requests         |SERVER POOLED THREAD 6     |Received old session ID: S01529030e0a6dba5Mcb5T3626821
+25-Apr-19 13:38:23,192|INFO |L.requests         |SERVER POOLED THREAD 8     |Received old session ID: S3c6cf04a25ee08daMcb5T3628063
+25-Apr-19 13:38:23,196|INFO |L.requests         |SERVER POOLED THREAD 8     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49728
+25-Apr-19 13:38:23,196|INFO |L.requests         |SERVER POOLED THREAD 6     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49727
+25-Apr-19 13:38:23,642|INFO |streamerMonitorText|Timer-0                    |Total threads = 95, Total heap = 194510848 (free = 168666008), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 2), New connections = [+2, -2], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 51, Notify delay = 0
+25-Apr-19 13:38:26,922|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3819&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49729
+25-Apr-19 13:38:27,005|INFO |L.requests         |SERVER POOLED THREAD 8     |Starting new session: S8e8cf5d133cf69bdM5ebT3826987 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49729
+25-Apr-19 13:38:27,051|INFO |L.requests         |SERVER POOLED THREAD 6     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8225&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49729
+25-Apr-19 13:38:27,051|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: bind_session -> LS_session=S8e8cf5d133cf69bdM5ebT3826987&LS_phase=3821&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49730
+25-Apr-19 13:38:27,052|INFO |L.requests         |SERVER POOLED THREAD 8     |Starting new session: S44caa9f03efc84ccM5ebT3827052 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49729
+25-Apr-19 13:38:27,053|INFO |L.requests         |SERVER POOLED THREAD 7     |Attaching session: S8e8cf5d133cf69bdM5ebT3826987 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49730
+25-Apr-19 13:38:27,060|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: bind_session -> LS_session=S44caa9f03efc84ccM5ebT3827052&LS_phase=8227&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49731
+25-Apr-19 13:38:27,060|INFO |L.requests         |SERVER POOLED THREAD 7     |Attaching session: S44caa9f03efc84ccM5ebT3827052 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49731
+25-Apr-19 13:38:27,246|INFO |L.requests         |SERVER POOLED THREAD 7     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=4&LS_req_phase=5&LS_win_phase=7&LS_op=add&LS_session=S8e8cf5d133cf69bdM5ebT3826987& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49730
+25-Apr-19 13:38:27,261|INFO |L.requests         |SERVER POOLED THREAD 9     |Controlling session: S8e8cf5d133cf69bdM5ebT3826987 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49730
+25-Apr-19 13:38:28,052|INFO |L.requests         |SERVER POOLED THREAD 6     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=5&LS_req_phase=6&LS_win_phase=9&LS_op=add&LS_session=S44caa9f03efc84ccM5ebT3827052& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49731
+25-Apr-19 13:38:28,054|INFO |L.requests         |SERVER POOLED THREAD 6     |Controlling session: S44caa9f03efc84ccM5ebT3827052 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49731
+25-Apr-19 13:40:23,703|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 194510848 (free = 146249696), Sessions = 2 (max = 2), New sessions = [+2, -0], Connections = 2 (max = 3), New connections = [+3, -1], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0.47 kbit/s, max = 1.26), Lost updates = 0 (total = 0), Total bytes sent = 6110, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:42:23,755|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 194510848 (free = 142160752), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0.47 kbit/s, max = 1.26), Lost updates = 0 (total = 0), Total bytes sent = 6762, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:44:23,806|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 194510848 (free = 136824488), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0.47 kbit/s, max = 1.26), Lost updates = 0 (total = 0), Total bytes sent = 7414, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:46:13,297|INFO |L.init             |Thread-21                  |Shutdown requested by script, or via JMX.
+25-Apr-19 13:46:13,299|INFO |L.init             |LightstreamerShutdownHook  |Server shutdown requested.
+25-Apr-19 13:46:13,299|INFO |L.init             |LightstreamerShutdownHook  |Exiting.....
+25-Apr-19 13:46:17,893|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8
+25-Apr-19 13:46:17,897|INFO |L.init             |main                       |Server launched on Java Virtual Machine: Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.202-b08, 1.8.0_202-b08 on Windows 10
+25-Apr-19 13:46:17,912|INFO |L.license          |main                       |License correctly bound with the following parameter(s):
+25-Apr-19 13:46:17,912|INFO |L.license          |main                       |        Product                          : LS-SERVER
+25-Apr-19 13:46:17,913|INFO |L.license          |main                       |        Edition                          : ENTERPRISE
+25-Apr-19 13:46:17,913|INFO |L.license          |main                       |        License Type                     : DEMO
+25-Apr-19 13:46:17,913|INFO |L.license          |main                       |        Contract Id                      : DEMO
+25-Apr-19 13:46:17,914|INFO |L.init             |main                       |        Mobile Push Notifications        : enabled
+25-Apr-19 13:46:17,914|INFO |L.init             |main                       |        Max Message Rate (Downstream)    : unlimited
+25-Apr-19 13:46:17,914|INFO |L.init             |main                       |        JMX Management API               : enabled
+25-Apr-19 13:46:17,918|INFO |L.init             |main                       |        Bandwidth Control                : enabled
+25-Apr-19 13:46:17,918|INFO |L.init             |main                       |        TLS/SSL Support                  : enabled
+25-Apr-19 13:46:17,918|INFO |L.init             |main                       |        Web Client API                   : enabled (all versions)
+25-Apr-19 13:46:17,918|INFO |L.init             |main                       |        Android Client API               : enabled (all versions)
+25-Apr-19 13:46:17,918|INFO |L.init             |main                       |        iOS Client API                   : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        .NET Standard Client API         : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        BlackBerry Client API            : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        Flash Client API                 : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        Flex and AIR Client API          : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        Java ME Client API               : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        Java SE Client API               : enabled (all versions)
+25-Apr-19 13:46:17,919|INFO |L.init             |main                       |        Node.js Client API               : enabled (all versions)
+25-Apr-19 13:46:17,920|INFO |L.init             |main                       |        macOS Client API                 : enabled (all versions)
+25-Apr-19 13:46:17,920|INFO |L.init             |main                       |        Silverlight Client API           : enabled (all versions)
+25-Apr-19 13:46:17,920|INFO |L.init             |main                       |        tvOS Cllient API                 : enabled (all versions)
+25-Apr-19 13:46:17,920|INFO |L.init             |main                       |        watchOS Client API               : enabled (all versions)
+25-Apr-19 13:46:17,920|INFO |L.init             |main                       |        Generic Clients (TLCP Protocol)  : enabled (all versions)
+25-Apr-19 13:46:17,921|WARN |L.init             |main                       |Lightstreamer Server is running with a Demo license, which has a limit of 20 concurrent users and can be used for evaluation, development, and testing, but not for production. If you need to evaluate Lightstreamer Server without this user limit, or need any information on the other license types, please contact info@lightstreamer.com
+25-Apr-19 13:46:18,376|INFO |L.init             |main                       |Number of detected cores: 8
+25-Apr-19 13:46:18,377|INFO |L.init             |main                       |Lightstreamer Server starting in ENTERPRISE edition.
+25-Apr-19 13:46:18,674|INFO |L.init             |main                       |Started RMI server for JMX on port 8888.
+25-Apr-19 13:46:18,676|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) started...
+25-Apr-19 13:46:18,716|INFO |L.init             |ng of RMI Connector for JMX|Binding of RMI Connector for JMX on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:46:18,718|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 started...
+25-Apr-19 13:46:18,730|INFO |L.init             |Connector reachability test|Test of reachability of the JMX Connector at localhost:8888 successful.
+25-Apr-19 13:46:18,765|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) started...
+25-Apr-19 13:46:18,772|INFO |L.init             |nnector for Platform mbeans|Binding of RMI Connector for Platform mbeans on port 8888 (communication on port 8888) successful.
+25-Apr-19 13:46:18,774|INFO |L.init             |main                       |SERVER pool size set by default at 1000.
+25-Apr-19 13:46:18,845|WARN |L.init             |main                       |THE MONITORING DASHBOARD IS NOT PASSWORD PROTECTED. Remember to protect it in production! For more details, see PRODUCTION_SECURITY_NOTES.TXT.
+25-Apr-19 13:46:18,857|INFO |L.init             |main                       |Pump pool size set by default at 8.
+25-Apr-19 13:46:18,890|INFO |L.init             |main                       |Events pool size set by default at 8.
+25-Apr-19 13:46:18,892|INFO |L.init             |main                       |Snapshot pool size set by default at 10.
+25-Apr-19 13:46:18,927|INFO |L.init             |main                       |data_provider element without name attribute; using DEFAULT as the default name.
+25-Apr-19 13:46:18,952|INFO |L.init             |Init for HELLOWORLD        |Loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:46:18,952|INFO |L.init             |Init for WELCOME           |Loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:46:18,954|INFO |L.init             |Init for HELLOWORLD        |Finished loading Metadata Adapter for Adapter Set HELLOWORLD
+25-Apr-19 13:46:18,969|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:46:18,974|INFO |L.init             |Init for HELLOWORLD.DEFAULT|Finished loading Data Adapter HELLOWORLD.DEFAULT
+25-Apr-19 13:46:19,151|INFO |L.init             |Init for WELCOME           |Finished loading Metadata Adapter for Adapter Set WELCOME
+25-Apr-19 13:46:19,153|INFO |L.init             |Init for WELCOME.STOCKS    |Loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:46:19,153|INFO |L.init             |Init for WELCOME.ROOMBALL  |Loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:46:19,153|INFO |L.init             |Init for WELCOME.CHAT      |Loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:46:19,153|INFO |L.init             |Init for WELCOME.TELEMETRY |Loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:46:19,163|INFO |L.init             |Init for WELCOME.TELEMETRY |Finished loading Data Adapter WELCOME.TELEMETRY
+25-Apr-19 13:46:19,164|INFO |L.init             |Init for WELCOME.STOCKS    |Finished loading Data Adapter WELCOME.STOCKS
+25-Apr-19 13:46:19,164|INFO |L.init             |Init for WELCOME.ROOMBALL  |Finished loading Data Adapter WELCOME.ROOMBALL
+25-Apr-19 13:46:19,165|INFO |L.init             |Init for WELCOME.CHAT      |Finished loading Data Adapter WELCOME.CHAT
+25-Apr-19 13:46:19,179|INFO |L.init             |main                       |Selector pool size set by default at 8.
+25-Apr-19 13:46:19,180|INFO |L.init             |main                       |Selector maximum load set by default at 0.
+25-Apr-19 13:46:19,198|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 1.
+25-Apr-19 13:46:19,200|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 2.
+25-Apr-19 13:46:19,201|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 3.
+25-Apr-19 13:46:19,202|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 4.
+25-Apr-19 13:46:19,203|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 5.
+25-Apr-19 13:46:19,205|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 6.
+25-Apr-19 13:46:19,206|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 7.
+25-Apr-19 13:46:19,207|INFO |L.init             |main                       |Created selector thread: NIO TLS/SSL HANDSHAKE SELECTOR 8.
+25-Apr-19 13:46:19,214|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 1.
+25-Apr-19 13:46:19,216|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 2.
+25-Apr-19 13:46:19,217|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 3.
+25-Apr-19 13:46:19,218|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 4.
+25-Apr-19 13:46:19,220|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 5.
+25-Apr-19 13:46:19,221|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 6.
+25-Apr-19 13:46:19,222|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 7.
+25-Apr-19 13:46:19,224|INFO |L.init             |main                       |Created selector thread: NIO WRITE SELECTOR 8.
+25-Apr-19 13:46:19,228|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 1.
+25-Apr-19 13:46:19,230|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 2.
+25-Apr-19 13:46:19,232|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 3.
+25-Apr-19 13:46:19,233|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 4.
+25-Apr-19 13:46:19,234|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 5.
+25-Apr-19 13:46:19,235|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 6.
+25-Apr-19 13:46:19,236|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 7.
+25-Apr-19 13:46:19,238|INFO |L.init             |main                       |Created selector thread: NIO READ SELECTOR 8.
+25-Apr-19 13:46:19,240|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 1.
+25-Apr-19 13:46:19,242|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 2.
+25-Apr-19 13:46:19,243|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 3.
+25-Apr-19 13:46:19,244|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 4.
+25-Apr-19 13:46:19,245|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 5.
+25-Apr-19 13:46:19,247|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 6.
+25-Apr-19 13:46:19,248|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 7.
+25-Apr-19 13:46:19,251|INFO |L.init             |main                       |Created selector thread: NIO CHECK SELECTOR 8.
+25-Apr-19 13:46:19,254|INFO |L.init             |main                       |Lightstreamer Server initialized.
+25-Apr-19 13:46:19,255|INFO |L.init             |main                       |Lightstreamer Server 7.0.3 build 1885.8 starting...
+25-Apr-19 13:46:19,264|INFO |L.init             |main                       |Server "Lightstreamer HTTP Server" listening to *:8080 ...
+25-Apr-19 13:46:19,946|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/bind_session.js --> LS_phase=3823&LS_cause=network.error&LS_polling=true&LS_polling_millis=238&LS_idle_millis=0&LS_session=S8e8cf5d133cf69bdM5ebT3826987&LS_recovery_from=17&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49860
+25-Apr-19 13:46:19,973|INFO |L.requests         |SERVER POOLED THREAD 8     |Received old session ID: S8e8cf5d133cf69bdM5ebT3826987
+25-Apr-19 13:46:19,976|INFO |L.requests         |SERVER POOLED THREAD 8     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49860
+25-Apr-19 13:46:20,053|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/bind_session.js --> LS_phase=8229&LS_cause=network.error&LS_polling=true&LS_polling_millis=232&LS_idle_millis=0&LS_session=S44caa9f03efc84ccM5ebT3827052&LS_recovery_from=17&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49861
+25-Apr-19 13:46:20,054|INFO |L.requests         |SERVER POOLED THREAD 8     |Received old session ID: S44caa9f03efc84ccM5ebT3827052
+25-Apr-19 13:46:20,054|INFO |L.requests         |SERVER POOLED THREAD 8     |Sync error: Can't find session on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49861
+25-Apr-19 13:46:20,417|INFO |streamerMonitorText|Timer-0                    |Total threads = 95, Total heap = 198180864 (free = 173652112), Sessions = 0 (max = 0), New sessions = [+0, -0], Connections = 0 (max = 1), New connections = [+2, -2], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 0 (for 0 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 0), Lost updates = 0 (total = 0), Total bytes sent = 0, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 36, Notify delay = 0
+25-Apr-19 13:46:23,724|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=3825&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49862
+25-Apr-19 13:46:23,774|INFO |L.requests         |SERVER POOLED THREAD 8     |Starting new session: S631e3742fa91f23eMdfaT4623759 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49862
+25-Apr-19 13:46:23,819|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: bind_session -> LS_session=S631e3742fa91f23eMdfaT4623759&LS_phase=3827&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49863
+25-Apr-19 13:46:23,819|INFO |L.requests         |SERVER POOLED THREAD 8     |Attaching session: S631e3742fa91f23eMdfaT4623759 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49863
+25-Apr-19 13:46:24,057|INFO |L.requests         |SERVER POOLED THREAD 8     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=5&LS_req_phase=6&LS_win_phase=9&LS_op=add&LS_session=S631e3742fa91f23eMdfaT4623759& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49863
+25-Apr-19 13:46:24,058|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: /lightstreamer/create_session.js --> LS_op2=create&LS_phase=8231&LS_cause=syncerror&LS_polling=true&LS_polling_millis=0&LS_idle_millis=0&LS_cid=pcYgxn8m8 feOojyA1T681f3g2.pz479mDv&LS_adapter_set=HELLOWORLD&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49862
+25-Apr-19 13:46:24,061|INFO |L.requests         |SERVER POOLED THREAD 9     |Starting new session: Sa5e4c6a345bbc832MdfaT4624059 (javascript_client 7.2.0 build 1777) on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49862
+25-Apr-19 13:46:24,078|INFO |L.requests         |SERVER POOLED THREAD 8     |Controlling session: S631e3742fa91f23eMdfaT4623759 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49863
+25-Apr-19 13:46:24,102|INFO |L.requests         |SERVER POOLED THREAD 10    |Serving request: bind_session -> LS_session=Sa5e4c6a345bbc832MdfaT4624059&LS_phase=8233&LS_cause=loop1&LS_keepalive_millis=5000&LS_container=lsc& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49864
+25-Apr-19 13:46:24,104|INFO |L.requests         |SERVER POOLED THREAD 10    |Attaching session: Sa5e4c6a345bbc832MdfaT4624059 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49864
+25-Apr-19 13:46:25,050|INFO |L.requests         |SERVER POOLED THREAD 9     |Serving request: control -> LS_mode=MERGE&LS_id=greetings&LS_schema=message%20timestamp&LS_snapshot=true&LS_table=6&LS_req_phase=7&LS_win_phase=11&LS_op=add&LS_session=Sa5e4c6a345bbc832MdfaT4624059& on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49864
+25-Apr-19 13:46:25,052|INFO |L.requests         |SERVER POOLED THREAD 9     |Controlling session: Sa5e4c6a345bbc832MdfaT4624059 on "Lightstreamer HTTP Server" from 0:0:0:0:0:0:0:1:49864
+25-Apr-19 13:48:20,476|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 154995056), Sessions = 2 (max = 2), New sessions = [+2, -0], Connections = 2 (max = 3), New connections = [+3, -1], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 9018, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:50:20,527|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 148113864), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 12614, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:52:20,580|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 198180864 (free = 142853208), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 16188, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:54:20,632|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 138901432), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 19700, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:56:20,683|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 198180864 (free = 134611192), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 23262, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 13:58:20,734|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 130594320), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 26832, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 14:00:20,787|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 126409920), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 30398, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 14:02:20,839|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 198180864 (free = 121630224), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 34042, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 14:04:20,891|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 178261424), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 37650, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 14:06:20,942|INFO |streamerMonitorText|Timer-0                    |Total threads = 105, Total heap = 198180864 (free = 172489608), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 41228, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0
+25-Apr-19 14:08:20,993|INFO |streamerMonitorText|Timer-0                    |Total threads = 104, Total heap = 198180864 (free = 168027568), Sessions = 2 (max = 2), New sessions = [+0, -0], Connections = 2 (max = 3), New connections = [+0, -0], In-pool threads = 36, Active threads = 0, Available threads = 36, Queued tasks = 0, Pool queue wait = 0, NIO write queue = 0, NIO write queue wait = 0, NIO write selectors = 8, NIO total selectors = 32, Subscribed items = 1 (for 2 subscriptions), Inbound throughput = 0 updates/s (pre-filtered = 0), Outbound throughput = 0 updates/s (0 kbit/s, max = 1.24), Lost updates = 0 (total = 0), Total bytes sent = 44830, Client messages throughput = 0 msgs/s (0 kbit/s, max = 0), Total messages handled = 0, Extra sleep = 0, Notify delay = 0

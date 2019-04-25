@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not remove this line. File tag: hibernate_conf-APV-20180228. -->
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+  <session-factory>
+
+    <!-- Sample database connection settings for HSQL (suitable for testing) -->
+    <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+    <property name="connection.url">jdbc:hsqldb:hsql://localhost</property>
+    <property name="connection.username">sa</property>
+    <property name="connection.password"></property>
+    <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+    <property name="c3p0.preferredTestQuery">SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS</property>
+
+    <!-- Sample database connection settings for MySQL -->
+    <!--
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://192.168.1.100:3306/lsmpn</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password"></property>
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="c3p0.preferredTestQuery">SELECT 1</property>
+    -->
+
+    <!-- Sample database connection settings for Oracle 11g -->
+    <!--
+    <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="connection.url">jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.100)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = ORCL) (SRVR = DEDICATED)))</property>
+    <property name="connection.username">system</property>
+    <property name="connection.password"></property>
+    <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <property name="c3p0.preferredTestQuery">SELECT 1 FROM DUAL</property>
+    -->
+
+    <!-- C3P0 database connection pool configuration -->
+    <property name="c3p0.min_size">5</property>
+    <property name="c3p0.max_size">20</property>
+    <property name="c3p0.timeout">300</property>
+    <property name="c3p0.max_statements">200</property>
+    <property name="c3p0.testConnectionOnCheckout">true</property>
+
+    <!-- Enable Hibernate's automatic session context management -->
+    <property name="current_session_context_class">thread</property>
+
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+    <!-- Automatically create/update the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+
+    <!-- Debugging: echo all executed SQL to console -->
+    <property name="show_sql">false</property>
+
+    <!-- Mapping files: these paths are relative to the current directory.
+         If the Server has been started with its scripts, the samples paths
+         hereunder are correct. But if it has been start with cron or another
+         scheduler they may need to be fixed. -->
+    <mapping file="../../conf/mpn/Module.hbm.xml"/>
+    <mapping file="../../conf/mpn/Command.hbm.xml"/>
+    <mapping file="../../conf/mpn/Device.hbm.xml"/>
+    <mapping file="../../conf/mpn/Subscription.hbm.xml"/>
+    <mapping file="../../conf/mpn/SubscriptionItem.hbm.xml"/>
+
+  </session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,50 @@
+#!/sbin/sh
+
+. /lib/svc/share/smf_include.sh
+
+# Lightstreamer specific settings
+# LS_HOME=/opt/Lightstreamer
+LS_HOME=%LS_HOME%
+
+PIDFILE="${LS_HOME}/lightstreamer.pid"
+DAEMON="${LS_HOME}/bin/unix-like/LS.sh"
+cd "${LS_HOME}"
+
+ls_kill() {
+    mypid=""
+    if [ -f "${PIDFILE}" ]; then
+        mypid=$(cat "${PIDFILE}")
+    fi
+    if [ -n "${mypid}" ]; then
+        kill -TERM "${mypid}" 2> /dev/null
+    fi
+    rm -f "${PIDFILE}"
+}
+
+case "$1" in
+start)
+    cmd="start";
+    ;;
+
+stop)
+    cmd="stop";
+    ;;
+*)
+    echo "Usage: $0 {start|stop}"
+    exit $SMF_EXIT_ERR_CONFIG
+    ;;
+esac
+
+if [ "${cmd}" = "stop" ]; then
+    ls_kill
+elif [ "${cmd}" = "start" ]; then
+    "${DAEMON}" run &
+    echo $! > "${PIDFILE}"
+fi
+
+if [ $? -ne 0 ]; then
+    echo "Lightstreamer Server failed to start. Check logs inside: ${LS_HOME}/logs"
+    exit $SMF_EXIT_ERR_FATAL
+fi
+
+exit $SMF_EXIT_OK

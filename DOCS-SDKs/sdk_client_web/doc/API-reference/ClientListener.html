@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ClientListener</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: ClientListener</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>ClientListener</h2>
+        
+            <div class="class-description">Interface to be implemented to listen to <a href="LightstreamerClient.html">LightstreamerClient</a> events
+comprehending notifications of connection activity and errors.
+<BR>Events for these listeners are executed asynchronously with respect to the code
+that generates them. This means that, upon reception of an event, it is possible that
+the current state of the client has changed furtherly.
+<BR>Note that it is not necessary to implement all of the interface methods for 
+the listener to be successfully passed to the <a href="LightstreamerClient.html#addListener">LightstreamerClient#addListener</a>
+method.
+<BR>A ClientListener implementation is distributed together with the library:
+<a href="StatusWidget.html">StatusWidget</a>.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="ClientListener"><span class="type-signature"></span>new ClientListener<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    This is a dummy constructor not to be used in any case.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onListenEnd" class="onListenEnd">onListenEnd</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that receives a notification when the ClientListener instance 
+is removed from a LightstreamerClient through 
+<a href="LightstreamerClient.html#removeListener">LightstreamerClient#removeListener</a>.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onListenStart" class="onListenStart">onListenStart</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that receives a notification when the ClientListener instance 
+is added to a LightstreamerClient through 
+<a href="LightstreamerClient.html#addListener">LightstreamerClient#addListener</a>.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onPropertyChange" class="onPropertyChange">onPropertyChange</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that receives a notification each time  the value of a property of 
+<a href="LightstreamerClient.html#connectionDetails">LightstreamerClient#connectionDetails</a> or <a href="LightstreamerClient.html#connectionOptions">LightstreamerClient#connectionOptions</a> 
+is changed.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onServerError" class="onServerError">onServerError</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that is called when the Server notifies a refusal on the
+client attempt to open a new connection or the interruption of a
+streaming connection.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onServerKeepalive" class="onServerKeepalive">onServerKeepalive</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Notifies that the Server has sent a keepalive message because a streaming connection
+is in place and no update had been sent for the configured time 
+(see <a href="ConnectionOptions.html#setKeepaliveInterval">ConnectionOptions#setKeepaliveInterval</a>).</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onShareAbort" class="onShareAbort">onShareAbort</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that receives a notification in case a connection 
+sharing is aborted.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="ClientListener.html#onStatusChange" class="onStatusChange">onStatusChange</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Event handler that receives a notification each time the LightstreamerClient 
+status has changed.</dd>
+  
+  
+ 
+        </dl>
+    
+    
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="onListenEnd"><span class="type-signature"></span>onListenEnd<span class="signature">(lsClient)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that receives a notification when the ClientListener instance 
+is removed from a LightstreamerClient through 
+<a href="LightstreamerClient.html#removeListener">LightstreamerClient#removeListener</a>.
+This is the last event to be fired on the listener.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lsClient</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="LightstreamerClient.html">LightstreamerClient</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the LightstreamerClient this
+instance was removed from.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onListenStart"><span class="type-signature"></span>onListenStart<span class="signature">(lsClient)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that receives a notification when the ClientListener instance 
+is added to a LightstreamerClient through 
+<a href="LightstreamerClient.html#addListener">LightstreamerClient#addListener</a>.
+This is the first event to be fired on the listener.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lsClient</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="LightstreamerClient.html">LightstreamerClient</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the LightstreamerClient this
+instance was added to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onPropertyChange"><span class="type-signature"></span>onPropertyChange<span class="signature">(the)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that receives a notification each time  the value of a property of 
+<a href="LightstreamerClient.html#connectionDetails">LightstreamerClient#connectionDetails</a> or <a href="LightstreamerClient.html#connectionOptions">LightstreamerClient#connectionOptions</a> 
+is changed.
+<BR>Properties of these objects can be modified by direct calls to them, but
+also by calls performed on other LightstreamerClient instances sharing the
+same connection and by server sent events.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>the</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of the changed property.
+<BR>Possible values are:
+<ul>
+<li>adapterSet</li>
+<li>serverAddress</li>
+<li>user</li>
+<li>password</li>
+<li>serverInstanceAddress</li>
+<li>serverSocketName</li>
+<li>sessionId</li>
+<li>contentLength</li>
+<li>idleTimeout</li>
+<li>keepaliveInterval</li>
+<li>maxBandwidth</li>
+<li>pollingInterval</li>
+<li>reconnectTimeout</li>
+<li>stalledTimeout</li>
+<li>retryDelay</li>
+<li>firstRetryMaxDelay</li>
+<li>slowingEnabled</li>
+<li>forcedTransport</li>
+<li>serverInstanceAddressIgnored</li>
+<li>cookieHandlingRequired</li>
+<li>reverseHeartbeatInterval</li>
+<li>earlyWSOpenEnabled</li>
+<li>httpExtraHeaders</li>
+<li>httpExtraHeadersOnSessionCreationOnly</li>
+
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="LightstreamerClient.html#connectionDetails">LightstreamerClient#connectionDetails</a></li>
+        
+            <li><a href="LightstreamerClient.html#connectionOptions">LightstreamerClient#connectionOptions</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onServerError"><span class="type-signature"></span>onServerError<span class="signature">(errorCode, errorMessage)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that is called when the Server notifies a refusal on the
+client attempt to open a new connection or the interruption of a
+streaming connection. In both cases, the <a href="ClientListener.html#onStatusChange">ClientListener#onStatusChange</a>
+event handler has already been invoked with a "DISCONNECTED" status and
+no recovery attempt has been performed. By setting a custom handler, however,
+it is possible to override this and perform custom recovery actions.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The error code. It can be one of the
+following:
+<ul>
+<li>1 - user/password check failed</li>
+<li>2 - requested Adapter Set not available</li>
+<li>7 - licensed maximum number of sessions reached
+(this can only happen with some licenses)</li>
+<li>8 - configured maximum number of sessions reached</li>
+<li>9 - configured maximum server load reached</li>
+<li>10 - new sessions temporarily blocked</li>
+<li>11 - streaming is not available because of Server license
+restrictions (this can only happen with special licenses)</li>
+<li>30-41 - the current connection or the whole session has been closed
+by external agents; the possible cause may be:
+<ul>
+<li>The session was closed by the administrator, through JMX (32)
+or through a "destroy" request (31);</li>
+<li>The Metadata Adapter imposes limits on the overall open sessions
+for the current user and has requested the closure of the current session
+upon opening of a new session for the same user
+on a different browser window
+(35);</li>
+<li>An unexpected error occurred on the Server while the session was in
+activity (33, 34);</li>
+<li>An unknown or unexpected cause; any code different from the ones
+identified in the above cases could be issued.</li>
+</ul>
+A detailed description for the specific cause is currently not supplied
+(i.e. errorMessage is null in this case).</li>
+<li>60 - this version of the client is not allowed by the current license terms.</li>
+<li>71 - this kind of client is not allowed by the current license terms.</li>
+<li>&lt;= 0 - the Metadata Adapter has refused the user connection;
+the code value is dependent on the specific Metadata Adapter
+implementation</li>
+</ul></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>errorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The description of the error as sent
+by the Server.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ConnectionDetails.html#setAdapterSet">ConnectionDetails#setAdapterSet</a></li>
+        
+            <li><a href="ClientListener.html#onStatusChange">ClientListener#onStatusChange</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onServerKeepalive"><span class="type-signature"></span>onServerKeepalive<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Notifies that the Server has sent a keepalive message because a streaming connection
+is in place and no update had been sent for the configured time 
+(see <a href="ConnectionOptions.html#setKeepaliveInterval">ConnectionOptions#setKeepaliveInterval</a>).
+However, note that the lack of both updates and keepalives is already managed by the library
+(see <a href="ConnectionOptions.html#setReconnectTimeout">ConnectionOptions#setReconnectTimeout</a> and <a href="ConnectionOptions.html#setStalledTimeout">ConnectionOptions#setStalledTimeout</a>).
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onShareAbort"><span class="type-signature"></span>onShareAbort<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that receives a notification in case a connection 
+sharing is aborted.
+A connection sharing can only be aborted if one of the policies specified
+in the <a href="ConnectionSharing.html">ConnectionSharing</a> instance supplied to the
+<a href="LightstreamerClient.html#enableSharing">LightstreamerClient#enableSharing</a> method is "ABORT".
+<BR>If this event is fired the client will never be able to connect to 
+the server unless a new call to enableSharing is issued.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="onStatusChange"><span class="type-signature"></span>onStatusChange<span class="signature">(chngStatus)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Event handler that receives a notification each time the LightstreamerClient 
+status has changed. The status changes may be originated either by custom
+actions (e.g. by calling <a href="LightstreamerClient.html#disconnect">LightstreamerClient#disconnect</a>) or by 
+internal actions.
+<BR/><BR/>The normal cases are the following:
+<ul>
+<li>After issuing connect(), if the current status is "DISCONNECTED*", the 
+client will switch to "CONNECTING" first and 
+to "CONNECTED:STREAM-SENSING" as soon as the pre-flight request receives its
+answer.
+<BR>As soon as the new session is established, it will switch to 
+"CONNECTED:WS-STREAMING" if the browser/environment permits WebSockets;
+otherwise it will switch to "CONNECTED:HTTP-STREAMING" if the 
+browser/environment permits streaming or to "CONNECTED:HTTP-POLLING" 
+as a last resort.
+<BR>On the other hand if the status is already "CONNECTED:*" a
+switch to "CONNECTING" is usually not needed.</li>
+<li>After issuing disconnect(), the status will switch to "DISCONNECTED".</li>
+<li>In case of a server connection refusal, the status may switch from
+"CONNECTING" directly to "DISCONNECTED". After that, the
+<a href="ClientListener.html#onServerError">ClientListener#onServerError</a> event handler will be invoked.</li>
+</ul>
+<BR/>Possible special cases are the following:
+<ul>
+<li>In case of Server unavailability during streaming, the status may
+switch from "CONNECTED:*-STREAMING" to "STALLED" (see 
+<a href="ConnectionOptions.html#setStalledTimeout">ConnectionOptions#setStalledTimeout</a>).
+If the unavailability ceases, the status will switch back to 
+""CONNECTED:*-STREAMING"";
+otherwise, if the unavailability persists (see 
+<a href="ConnectionOptions.html#setReconnectTimeout">ConnectionOptions#setReconnectTimeout</a>),
+the status will switch to "DISCONNECTED:TRYING-RECOVERY" and eventually to 
+"CONNECTED:*-STREAMING".</li>
+<li>In case the connection or the whole session is forcibly closed
+by the Server, the status may switch from "CONNECTED:*-STREAMING" 
+or "CONNECTED:*-POLLING" directly to "DISCONNECTED". After that, the
+<a href="ClientListener.html#onServerError">ClientListener#onServerError</a> event handler will be invoked.</li>
+<li>Depending on the setting in <a href="ConnectionOptions.html#setSlowingEnabled">ConnectionOptions#setSlowingEnabled</a>,
+in case of slow update processing, the status may switch from
+"CONNECTED:WS-STREAMING" to "CONNECTED:WS-POLLING" or from
+"CONNECTED:HTTP-STREAMING" to "CONNECTED:HTTP-POLLING".</li>
+<li>If the status is "CONNECTED:*-POLLING" and any problem during an 
+intermediate poll occurs, the status may switch to "CONNECTING" and 
+eventually to "CONNECTED:*-POLLING". The same may hold for the 
+"CONNECTED:*-STREAMING" case, when a rebind is needed.</li>
+<li>In case a forced transport was set through 
+<a href="ConnectionOptions.html#setForcedTransport">ConnectionOptions#setForcedTransport</a>, only the related final 
+status or statuses are possible.</li>
+<li>In case of connection problems, the status may switch from any value
+to "DISCONNECTED:WILL-RETRY" (see <a href="ConnectionOptions.html#setRetryDelay">ConnectionOptions#setRetryDelay</a>),
+then to "CONNECTING" and a new attempt will start.
+However, in most cases, the client will try to recover the current session;
+hence, the "DISCONNECTED:TRYING-RECOVERY" status will be used and the recovery attempt will start.</li>
+<li>In case of connection problems during a recovery attempt, the status may stay
+in "DISCONNECTED:TRYING-RECOVERY" for long time, while further attempts are made.
+If the recovery is no longer possible, the current session will be abandoned
+and the status will switch to "DISCONNECTED:WILL-RETRY" before the next attempts.</li>
+<li>In case the local LightstreamerClient is exploiting the connection of a
+different LightstreamerClient (see <a href="ConnectionSharing.html">ConnectionSharing</a>) and such 
+LightstreamerClient or its container window is disposed, than the status will 
+switch to "DISCONNECTED:WILL-RETRY" unless the current status is "DISCONNECTED". 
+In the latter case it will remain "DISCONNECTED".</li>
+</ul>
+
+<BR>By setting a custom handler it is possible to perform
+actions related to connection and disconnection occurrences. Note that
+<a href="LightstreamerClient.html#connect">LightstreamerClient#connect</a> and <a href="LightstreamerClient.html#disconnect">LightstreamerClient#disconnect</a>,
+as any other method, can be issued directly from within a handler.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>chngStatus</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The new status. It can be one of the
+following values:
+<ul>
+<li>"CONNECTING" the client has started a connection attempt and is
+waiting for a Server answer.</li>
+<li>"CONNECTED:STREAM-SENSING" the client received a first response from
+the server and is now evaluating if a streaming connection is fully 
+functional. </li>
+<li>"CONNECTED:WS-STREAMING" a streaming connection over WebSocket has
+been established.</li>
+<li>"CONNECTED:HTTP-STREAMING" a streaming connection over HTTP has
+been established.</li>
+<li>"CONNECTED:WS-POLLING" a polling connection over WebSocket has
+been started. Note that, unlike polling over HTTP, in this case only one
+connection is actually opened (see <a href="ConnectionOptions.html#setSlowingEnabled">ConnectionOptions#setSlowingEnabled</a>).
+</li>
+<li>"CONNECTED:HTTP-POLLING" a polling connection over HTTP has
+been started.</li>
+<li>"STALLED" a streaming session has been silent for a while,
+the status will eventually return to its previous CONNECTED:*-STREAMING
+status or will switch to "DISCONNECTED:WILL-RETRY".</li>
+<li>"DISCONNECTED:WILL-RETRY" a connection or connection attempt has been 
+closed; a new attempt will be performed after a timeout.</li>
+<li>"DISCONNECTED:TRYING-RECOVERY" a connection has been closed and
+the client has started a connection attempt and is waiting for a Server answer; 
+if successful, the underlying session will be kept.</li>
+<li>"DISCONNECTED" a connection or connection attempt has been closed. The 
+client will not connect anymore until a new <a href="LightstreamerClient.html#connect">LightstreamerClient#connect</a>
+call is issued.</li>
+</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="LightstreamerClient.html#connect">LightstreamerClient#connect</a></li>
+        
+            <li><a href="LightstreamerClient.html#disconnect">LightstreamerClient#disconnect</a></li>
+        
+            <li><a href="LightstreamerClient.html#getStatus">LightstreamerClient#getStatus</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:05 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

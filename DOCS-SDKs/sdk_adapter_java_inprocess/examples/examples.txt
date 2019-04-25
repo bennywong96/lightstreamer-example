@@ -1,0 +1,6 @@
+LIGHTSTREAMER SDK FOR JAVA ADAPTERS - EXAMPLES
+==============================================
+
+Browse examples with full source code at:
+
+http://demos.lightstreamer.com/?p=lightstreamer&t=adapter&a=javaadapter

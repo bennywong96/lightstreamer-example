@@ -1,0 +1,2 @@
+Lightstreamer Node.js Adapter API version 1.4.2 build 34
+Compatible with Adapter Remoting Infrastructure since version 1.8

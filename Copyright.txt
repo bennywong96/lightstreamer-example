@@ -1,0 +1,9 @@
+Copyright (c) Lightstreamer Srl. All rights reserved.
+
+Lightstreamer Srl has intellectual property rights relating to
+technology embodied in this product.
+
+This product is distributed under licenses restricting its use, 
+copying distribution, and decompilation. No part of this product may 
+be reproduced in any form by any means without prior written 
+authorization of Lightstreamer Srl and its licensors, if any.

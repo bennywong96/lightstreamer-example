@@ -1,0 +1,2 @@
+Lightstreamer Silverlight Client API version 1.4.2 build 1012
+Compatible with Lightstreamer Server since version 6.0

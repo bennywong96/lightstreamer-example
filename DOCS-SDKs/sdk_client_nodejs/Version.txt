@@ -1,0 +1,2 @@
+Lightstreamer Node.js Client API (Unified) version 7.3.0 build 1766
+Compatible with Lightstreamer Server since version 7.0

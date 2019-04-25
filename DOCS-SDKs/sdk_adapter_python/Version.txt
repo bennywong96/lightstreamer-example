@@ -1,0 +1,2 @@
+Lightstreamer Python Adapter API version 1.1.2 build 33
+Compatible with Adapter Remoting Infrastructure since version 1.8

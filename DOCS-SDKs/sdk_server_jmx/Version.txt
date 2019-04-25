@@ -1,0 +1,2 @@
+Lightstreamer JMX Management API version 5.4.4 build 1885.6
+Compatible with Lightstreamer Server since version 7.0.3

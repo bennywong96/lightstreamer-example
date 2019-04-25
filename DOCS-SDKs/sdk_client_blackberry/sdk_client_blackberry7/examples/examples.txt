@@ -1,0 +1,6 @@
+LIGHTSTREAMER SDK FOR BLACKBERRY 7 CLIENTS - EXAMPLES
+=====================================================
+
+Browse examples with full source code at:
+
+http://demos.lightstreamer.com/?p=lightstreamer&t=client&a=blackberry7client

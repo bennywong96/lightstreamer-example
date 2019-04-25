@@ -1,0 +1,186 @@
+LIGHTSTREAMER QUICK SETUP
+=========================
+
+Thanks for downloading Lightstreamer!
+
+These notes will guide you through the set up of Lightstreamer
+Server, to see it running in a blink of an eye.
+
+By default, Lightstreamer ENTERPRISE Edition runs with a
+Demo License, which can be used for evaluation, development, and
+testing, but not for production. The Demo license has a limit of
+maximum 20 users' sessions at the same time. If you need to
+evaluate Lightstreamer without this limit, or need any information
+on the other license types, please contact info@lightstreamer.com.
+
+Lightstreamer Server, COMMUNITY Edition, does not require a license
+key and can be used for free for any purpose, including production
+(see the Software License Agreement for full details).
+
+To see the edition and features you have enabled, open the Welcome
+Page or the Monitoring Dashboard (License tab) of your running
+Lightstreamer Server.
+
+Please read the Software License Agreement carefully before using
+Lightstreamer.
+
+
+===================
+SYSTEM REQUIREMENTS
+===================
+
+You need a Java SE platform implementation installed on your system.
+You can get the latest version from Oracle (you can choose either the
+Server JRE or the JDK):
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+Alternatively, you can go for other Java implementations, including OpenJDK.
+
+Lightstreamer Server's minimum requirement is Java 7, but a more recent
+version is recommended for best performance.
+
+Unless you have configured the COMMUNITY Edition, or a Demo license,
+or you are leveraging FILE validation,
+your system needs to access the Internet in order to validate the license.
+
+
+==========
+QUICKSTART
+==========
+
+----------------------
+1) Extract the Archive
+----------------------
+
+* On a Linux, Mac, or Unix system:
+Extract the contents of the tar.gz archive to your hard drive (a
+short base path is recommended, because the archive contains quite
+long path names). GNU tar should be used, to handle long pathnames
+correctly). A "Lightstreamer" directory will be created, which is
+your installation home directory.
+
+* On a Windows system:
+Unzip the zip file to your hard drive (a short base path is
+recommended, e.g. "C:\", because the zip file contains quite long
+path names). A "Lightstreamer" directory will be created, which is
+your installation home directory.
+
+------------------------
+2) Choose Your TCP Ports
+------------------------
+
+By default, this installation uses TCP ports 8080 and 8888.
+If any of these ports are already in use on your system, please change
+them by editing the following elements in "lightstreamer_conf.xml":
+     <port> (inside the <http_server> block)
+     <port> (inside the <rmi_connector> block)
+
+-----------------
+3) Configure Java
+-----------------
+
+JAVA_HOME must point to your JRE or JDK installation.
+
+* On a Linux, Mac, or Unix system:
+Edit the "LS.sh" file under the "bin/unix-like" directory and set
+JAVA_HOME according to your environment.
+
+* On a Windows system:
+Edit the "LS.bat" file under the "bin\windows" directory and set
+JAVA_HOME according to your environment.
+
+--------------------
+4) Launch the Server
+--------------------
+
+* On a Linux, Mac, or Unix system:
+Go to the "bin/unix-like" directory and execute "start.sh".
+
+* On a Windows system:
+Go to the "bin\windows" directory and execute
+ "Start_LS_as_Application.bat".
+
+------------------
+5) Test the Server
+------------------
+
+Point your browser to "http://localhost:8080" (change the port number
+if you configured a different port in step 3).
+
+You should see a welcome page with some demos running out of the box.
+In case of problems, errors are reported in the "Lightstreamer.log"
+file under the "logs" directory.
+
+Now, give a try to the Monitoring Dashboard, a tool for monitoring the
+state of the Lightstreamer Server in real time. By default, the Monitoring
+Dashboard is publicly accessible from "http://localhost:8080/dashboard".
+
+***IMPORTANT***
+Carefully read the "PRODUCTION_SECURITY_NOTES.TXT" document to know what you
+must do before making your Lightstreamer installation production ready.
+In particular, remember to protect the Monitoring Dashboard before going in
+production!
+
+NOTES:
+- In production, it is recommended to make Lightstreamer Server listen on
+standard HTTP/HTTPS ports (80/443). Using non-standard ports (like default
+8080) will prevent some external users from accessing the Server, due to
+security constraints. See "bin/unix-like/README.TXT" for tips on how you can
+use privileged ports on Linux.
+- For best performance, it is important to revise the JVM command line
+and determine the optimal arguments, with particular regard to the Garbage
+Collection configuration. This should be done by leveraging the JAVA_OPTS
+variable, defined next to JAVA_HOME (see point 3 above).
+- To use HTTPS instead of HTTP, you should activate HTTPS within
+lightstreamer_conf.xml and provide a valid certificate or add the default
+one as a security exception in your browser.
+
+------------------
+6) Stop the Server
+------------------
+
+* On a Linux, Mac, or Unix system:
+Go to the "bin/unix-like" directory and execute "stop.sh".
+
+* On a Windows system:
+Go to the "bin\windows" directory and execute
+"Stop_LS_as_Application.bat".
+
+----------------------------
+7) Develop Your Applications
+----------------------------
+
+Lightstreamer Server is ready to host your own Adapters and serve your own
+Clients.
+
+An Adapter is a software component that connects Lightstreamer Server
+to your data sources. To develop a Lightstreamer Adapter, you can
+choose among Java, .NET, Node.js, Python, and plain TCP sockets.
+
+A Client connects to Lightstreamer Server to subscribe to the real-time
+data provided by your data sources. To develop a Lightstreamer Client,
+you can choose among many different technologies, including JavaScript,
+iOS, Android, Java, .NET PCL, and Unity.
+
+To grasp the main concepts of Lightstreamer development, you might want to
+start from the following readings:
+
+* A "Hello World" tutorial:
+  JS Client:
+  https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-client-javascript
+  Java Adapter:
+  https://github.com/Lightstreamer/Lightstreamer-example-HelloWorld-adapter-java
+
+* Demo Gallery with links to full source code hosted on GitHub:
+  http://demos.lightstreamer.com/
+
+* General theory:
+  "DOCS-SDKs/General Concepts.pdf"
+
+* Developer's guides and API reference for every Adapter SDK and Client SDK:
+  "DOCS-SDKs/sdk_*/doc/"
+
+* Online support forums:
+  http://forums.lightstreamer.com
+
+Enjoy!

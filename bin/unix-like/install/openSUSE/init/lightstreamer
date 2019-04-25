@@ -1,0 +1,138 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: lightstreamer
+# Required-Start: $network $syslog $remote_fs
+# Should-Start: $named $syslog $time
+# Required-Stop: $network $syslog
+# Should-Stop: $named $syslog $time
+# Default-Start:  3 5
+# Default-Stop:   0 1 2 6
+# Short-Description: Lightstreamer Server
+# Description:       Lightstreamer Server, Real-Time Data Push - http://www.lightstreamer.com
+### END INIT INFO
+
+PATH="/bin:/sbin:/usr/bin"
+
+if [ -r /lib/lsb/init-functions ]; then
+    . /lib/lsb/init-functions
+else
+    exit 1
+fi
+
+# Lightstreamer specific settings
+# LS_HOME=/opt/Lightstreamer
+LS_HOME=%LS_HOME%
+# LS_USER=lightstreamer
+LS_USER=%LS_USER%
+# LS_GROUP=lightstreamer
+LS_GROUP=%LS_GROUP%
+
+DAEMON="${LS_HOME}/bin/unix-like/LS.sh"
+LS_LOG="${LS_HOME}/logs/LS.out"
+PIDFILE="${LS_HOME}/bin/unix-like/daemon.pid"
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="Lightstreamer Server, Real-Time Data Push"
+NAME="Lightstreamer"
+
+# For SELinux we need to use 'runuser' not 'su'
+if [ -x "/sbin/runuser" ]; then
+    SU="/sbin/runuser"
+else
+    SU="/bin/su"
+fi
+
+RETVAL="0"
+
+. /etc/rc.status
+rc_reset
+
+function getlspid() {
+    local _pid
+    _pid=$(cat "${PIDFILE}" 2> /dev/null)
+    echo "${_pid}"
+}
+
+function checkpid() {
+    local _pid=$(getlspid)
+    if [ -n "${_pid}" ]; then
+        kill -0 "${_pid}" 2> /dev/null
+        return ${?}
+    fi
+    return 1
+}
+
+function start() {
+    echo -n "Starting Lightstreamer"
+    if checkpid; then
+        # already started
+        echo -n " (already started)"
+        rc_failed 0
+    else
+        $SU - "${LS_USER}" -c "WRITE_PID=\"${PIDFILE}\" ${DAEMON} run &" >> "${LS_LOG}" 2>&1
+        RETVAL="$?"
+        if [ "$RETVAL" -eq 0 ]; then
+            rc_failed 0
+            touch /var/run/rc${NAME}
+        else
+            rc_failed 7
+        fi
+    fi
+    rc_status -v
+}
+
+# Status has a slightly different for the status command:
+# 0 - service running
+# 1 - service dead, but /var/run/  pid  file exists
+# 2 - service dead, but /var/lock/ lock file exists
+# 3 - service not running
+
+# NOTE: checkproc returns LSB compliant status values.
+function status() {
+    echo -n "Checking for Lightstreamer"
+    if checkpid; then
+        rc_failed 0
+    else
+        rc_failed 3
+    fi
+    rc_status -v
+}
+
+function stop() {
+    echo -n "Shutting down Lightstreamer"
+    if [ -f "/var/run/rc${NAME}" ]; then
+        if ! checkpid; then
+            rc_failed 0
+        else
+            local _pid=$(getlspid)
+            if [ -n "${_pid}" ]; then
+                kill -TERM "${_pid}"
+                rc_failed 0
+            else
+                rc_failed 7
+            fi
+        fi
+    else
+        rc_failed 1
+    fi
+    rc_status -v
+}
+
+
+# See how we were called.
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status}"
+        exit 1
+        ;;
+esac
+rc_exit

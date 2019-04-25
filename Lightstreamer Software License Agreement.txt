@@ -1,0 +1,239 @@
+Lightstreamer SLA 201903
+
+LIGHTSTREAMER SOFTWARE LICENSE AGREEMENT
+
+
+Please read carefully all of the articles of the following Lightstreamer software use license (hereinafter referred to as "Agreement") before downloading and installing the software. Downloading and installing the software, either directly or through a third party, manifests your acceptance of all of the terms and conditions of this Agreement. If you do not intend to accept the contents of this Agreement, you should not download or install the software. Instead, you should return it to Lightstreamer S.r.l. or destroy it.
+Notwithstanding the fact that the present contract will be considered accepted and binding as described above, we encourage you to print and sign two copies of the present Agreement and to send one of the copies to the address indicated below.
+
+
+1.        Use License. 
+1.1        Lightstreamer S.r.l. (hereafter referred to as "Licensor"), following acceptance by you of all of the terms and conditions of the present Agreement and once payment of the contractually agreed amount, if any, is received by Licensor, grants you (hereafter referred to as "Licensee") this software use license permitting Licensee on a non exclusive perpetual or time-limited basis to use the Software and the Documentation described in Sections 1.2, 1.3 and 1.4 below. 
+1.2        Software means the 'Lightstreamer' programs and related upgrades, fixes, and patches, (hereafter referred to as "Lightstreamer" or "Software"), which are the exclusive property of Licensor. The server component of the Lightstreamer programs (hereafter referred to as "Lightstreamer Server") is either provided directly as a final product or embedded into a derived product (for example, MQTT.Cool and JMS Extender). All the licensing clauses below refer to Lightstreamer Server, irrespective if it is provided directly or is embedded into a derived product. Similarly, all the license types below refer to "Lightstreamer" licenses (for example, "Lightstreamer Community Edition License"), even in case a derived product is being licensed (for example, "MQTT.Cool Community Edition License").
+1.3        Documentation means all of the documentation related to the Software, including the use manuals, explanatory notes, and materials useful for the installation and functionality supplied by Licensor to Licensee, in any format, paper or electronic, at the moment of the consummation of the contract (hereafter referred to as "Documentation").
+1.4        The Software and the Documentation can be used only and exclusively on the number of computers, with the numbers of users, with the time limitation, and with the restrictions on product editions and features, which will be agreed upon by the parties as set forth in the Offer Letter or in the Purchase Order and for which the corresponding sum will be paid, according to the obligation and limitations contractually determined. For the Free Licenses, as set forth in Section 1.11.1, the Offer Letter and the Purchase Order might not be employed; in such case, the limitations, restrictions, and obligation that apply are those defined in Section 1.11.1 and in the Software itself.
+1.5        This license is non-exclusive and not transferable in any way, including in the form of a sublicense, subject to assignment on change of control. 
+1.6        Licensee is entitled to redistribute Lightstreamer Client Libraries both as part of Licensee's applications and as standalone libraries.
+1.7        Assistance, maintenance, and updating relating to the Software, aside from that for provided hereunder, are not a part of the present Agreement, as they may be provided for in a further agreement that may be entered into by the parties.
+1.8        Licensing Mechanisms. There exist three licensing mechanisms:
+1.8.1 "Cloud License Manager". Each instance of Lightstreamer Server periodically connects to a cloud-based license manager operated by Licensor, which can authorize or deny at any time the execution of the Lightstreamer Server process. Lightstreamer Server sends Cloud License Manager (CLM) the information needed to identify the License, the Audit Log (only if required by the license type), the number of CPU cores and the peak number of user sessions (for statistical purpose). Licensee must ensure that the https endpoints of CLM, specified by Licensor, are reachable through the public Internet by the Lightstreamer Server instances. Every Lightstreamer Server instance must be able to connect to CLM at startup, in order to be authorized. Then, it must be able to connect at least every 45 minutes to keep operating, otherwise it will be automatically terminated. Licensee is responsible to hold in confidence the assigned contract-id and password and not to disclose them to any person other than directly concerned with purposes of the Software operations.
+1.8.2 "License File". A License File, to be installed on Lightstreamer Server, is provided by Licensor to Licensee for each License. Each License File contains the MAC address of one of the network interfaces of the machine on which Lightstreamer Server is installed.
+1.8.3 "No License Validation". Lightstreamer Server does not perform any license validation and is executed without requiring to connect to the Cloud License Manager and without requiring a License File.
+1.9        "Audit Log". For some license types (as specified in Section 1.11), during the License validity period, Licensee must periodically provide Licensor with the audit log files for each of all the installed instances of Lightstreamer Server. The audit log files report the average number of Lightstreamer Sessions in each ten-minute slot of server operation. The Audit Log files must be delivered by Licensee to Licensor, via the means made available by Licensor, including automatic upload as described in Section 1.8.1 and Section 1.13, until Licensee declares in writing that it has definitively dismissed that instance. Licensee must make sure that the time difference among the clocks of the machines hosting Lightstreamer Server is maximum 60 seconds (while respecting the time zone of each machine). Licensee must ensure that the Audit Log files for every instance of Lightstreamer Server are regularly collected and not altered.
+1.10          License Duration. A license can have the following durations:
+1.10.1 "Perpetual". A Perpetual license has no expiration and can be used perpetually unless the Agreement is terminated pursuant to Art. 6.
+1.10.2 "Time Limited". A Time Limited license will expire at the end of the period for which it was purchased and the Software will stop working automatically. In any case, attempts to use the license after its expiration are expressly prohibited.
+1.11          License Types. Licenses can be chosen among the following:
+1.11.1 "Free Licenses":
+(i) Lightstreamer Community Edition License. The license can be used in production. Only one instance of Lightstreamer Server can be used for each application. This means that clustering, load balancing, fail over, and hot standby capabilities are explicitly prohibited. For all parts of the service or product that use Lightstreamer, the integrator must clearly and prominently indicate that all copyrights related to Lightstreamer are the sole and exclusive property of Lightstreamer S.r.l. One license is required for each instance of the Lightstreamer Server process. The Lightstreamer Community Edition License has the following characteristics:
+- License Duration: Perpetual.
+- Licensing Mechanism: No License Validation.
+- Audit Log: Not required.
+        (ii) Lightstreamer Demo License. The Lightstreamer Demo License is to be used solely for the purposes of evaluating Lightstreamer, developing and testing applications, and demonstrating a prototype of Licensee’s application. Licensee is not authorized to use any part of the Software for any other purposes without acquiring the appropriate production entitlements. Licensor may audit Licensee's use of the Lightstreamer Perpetual Demo License. One license is required for each instance of the Lightstreamer Server process. The Lightstreamer Perpetual Demo License has the following limitations and characteristics:
+- The allowed maximum number of concurrent Lightstreamer Sessions is 20 (twenty).
+- The allowed maximum number of concurrent Lightstreamer MPN Devices is 20 (twenty).
+- License Duration: Perpetual.
+- Licensing Mechanism: No License Validation.
+- Audit Log: Not required.
+        (iii) Lightstreamer Evaluation License. The Lightstreamer Evaluation License is to be used solely for the purpose of evaluating Lightstreamer without the limitation on the number of Lightstreamer Sessions posed by the Lightstreamer Demo License, and not for any other purpose. Licensee is not authorized to use any part of the Software for any other purposes without acquiring the appropriate production entitlements. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. The Lightstreamer Evaluation License has the following characteristics:
+- License Duration: Time Limited.
+- Licensing Mechanism: Cloud License Manager.
+- Audit Log: Required.
+        (iv) Lightstreamer Non-Production Limited License. The Lightstreamer Non-Production Limited License can only be installed and used to support Licensee's use of a Production license, has the same features and duration as the corresponding Production license, but can only be deployed as part of Licensee's internal development and test environment for internal non-production activities, including but not limited to testing, performance tuning, fault diagnosis, internal benchmarking, staging, quality assurance activity, and/or software development using published application programming interfaces. Licensee is not authorized to use any part of the Software for any other purposes without acquiring the appropriate production entitlements. Licensor may audit Licensee's use of the Lightstreamer Non-Production Limited License. One license is required for each instance of the Lightstreamer Server process. The Lightstreamer Non-Production Limited License has the following limitations and characteristics:
+- Each execution of the Lightstreamer Server process is limited to 3.5 hours. After this time, the process terminates and needs to be restarted.
+- License Duration: Perpetual or Time Limited.
+- Licensing Mechanism: Cloud License Manager or License File.
+- Audit Log: Not required.
+1.11.2 "Paid Licenses":
+        (v) Lightstreamer Production Per Client License. The Lightstreamer Production Per Client License can be used in production. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. The Lightstreamer Production Per Client License defines the maximum total number of concurrent Lightstreamer Sessions that are allowed at any time on the set of installed Lightstreamer Servers ("Allowed Sessions"). For each ten-minute time slot, the average numbers of Lightstreamer Sessions across all the server instances is summed, leading to a single time series. Every six months, calculated from the beginning of validity of the Agreement, the 99th percentile is extracted from the time series covering the past six months and the resulting value is assumed as the maximum number of utilized concurrent Lightstreamer Sessions ("Utilized Sessions"). If Utilized Sessions exceeds Allowed Sessions, Licensor will invoice Licensee for the cost difference between Utilized Sessions and Allowed Sessions. The cost difference will be calculated based on the rates agreed in the Offer Letter or in the Purchase Order and will be covered with a Time Limited license with six month duration, unless otherwise agreed between the parties. The Lightstreamer Production Per Client License has the following characteristics:
+- License Duration: Perpetual or Time Limited.
+- Licensing Mechanism: Cloud License Manager or License File.
+- Audit Log: Required, at least every 6 (six) months starting from the effective date of this Agreement and within 15 (fifteen) days from the expiration of the 6-month period.
+(vi) Lightstreamer Production Per Server License. The Lightstreamer Production Per Server License can be used in production. One license is required for each instance of the Lightstreamer Server process. The Lightstreamer Production Per Server License has the following characteristics:
+- License Duration: Perpetual or Time Limited.
+- Licensing Mechanism:  Cloud License Manager or License File.
+- Audit Log: Not required.
+        (vii) Lightstreamer Production Per Client-Hour License. The Lightstreamer Production Per Client-Hour License can be used in production. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. For each hour of server operation, the average number of Lightstreamer Sessions is calculated. The sum of the hourly averages across all the Lightstreamer Server instances and across all the hours contained in one month is the total number of Client-Hours consumed in that month. At the end of the month, Licensor will invoice Licensee for the consumed Client-Hours, applying the Client-Hour rates agreed in the Offer Letter or in the Purchase Order. The Lightstreamer Production Per Client-Hour License has the following characteristics:
+- License Duration: Time Limited.
+- Licensing Mechanism: Cloud License Manager.
+- Audit Log: Required (automatically sent to Cloud License Manager).
+        (viii) Lightstreamer Production Per Core-Hour License. The Lightstreamer Production Per Core-Hour License can be used in production. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. For each hour of server operation, the total number of cores visible to the Lightstreamer Server process (as defined by the Java system call Runtime.getRuntime().availableProcessors()) is calculated. The sum of the hourly cores across all the Lightstreamer Server instances and across all the hours contained in one month is the total number of Core-Hours consumed in that month. At the end of the month, Licensor will invoice Licensee for the consumed Core-Hours, applying the Core-Hour rate agreed in the Offer Letter or in the Purchase Order. The Lightstreamer Production Per Core-Hour License has the following characteristics:
+- License Duration: Time Limited.
+- Licensing Mechanism: Cloud License Manager.
+- Audit Log: Not required.
+        (ix) Lightstreamer Hot Standby Per Server License. The Lightstreamer Hot Standby Per Server License is to be used solely for the purpose of deploying a mirror standby server in conjunction with a valid Lightstreamer Production Per Server License and must be used only for disaster recovery and not to balance client connections. The Lightstreamer Hot Standby Per Server License has the same features and duration as the corresponding Lightstreamer Production Per Server License. The Lightstreamer Hot Standby Per Server License has the following characteristics:
+- License Duration: Perpetual or Time Limited.
+- Licensing Mechanism: Cloud License Manager or License File.
+- Audit Log: Not required.
+        (x) Lightstreamer Hot Standby Per Core-Hour License. The Lightstreamer Hot Standby Per Core-Hour License is to be used solely for the purpose of deploying a mirror standby server in conjunction with a valid Lightstreamer Production Per Core-Hour License and must be used only for disaster recovery and not to balance client connections. The Lightstreamer Hot Standby Per Core-Hour License has the same features and duration as the corresponding Lightstreamer Production Per Core-Hour License. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. For each hour of server operation, the total number of cores visible to the Lightstreamer Server process (as defined by the Java system call Runtime.getRuntime().availableProcessors()) is calculated. The sum of the hourly cores across all the Lightstreamer Server instances and across all the hours contained in one month is the total number of Core-Hours consumed in that month. At the end of the month, Licensor will invoice Licensee for the consumed Core-Hours, applying the Core-Hour rate agreed in the Offer Letter or in the Purchase Order. The Lightstreamer Hot Standby Per Core-Hour License has the following characteristics:
+- License Duration: Time Limited.
+- Licensing Mechanism: Cloud License Manager.
+- Audit Log: Not required.
+        (xi) Lightstreamer Non-Production Full License. The Lightstreamer Non-Production Full License can only be deployed as part of Licensee's internal development and test environment for internal non-production activities, including but not limited to testing, performance tuning, fault diagnosis, internal benchmarking, staging, quality assurance activity, and/or software development using published application programming interfaces. Licensee is not authorized to use any part of the Software for any other purposes without acquiring the appropriate production entitlements. Licensor may audit Licensee's use of the Lightstreamer Non-Production Full License. One license is required for each instance of the Lightstreamer Server process. The Lightstreamer Non-Production Limited License has the following characteristics:
+- License Duration: Perpetual or Time Limited.
+- Licensing Mechanism: Cloud License Manager or License File.
+- Audit Log: Not required.
+(xii) Lightstreamer Startup License. The Lightstreamer Startup License can be provided, at Licensee's full discretion, to interesting and promising startup companies. One license allows the installation of Lightstreamer Server on an arbitrary number of machines located anywhere, within reason. Licensee will cooperate, upon Licensor's request, in writing and publishing one or more success stories, and/or technical articles, and/or blog posts on the use of Lightstreamer. Licensee will promptly notify Licensor prior to product development announcements (e.g. launch of new services) and company's growth and funding news, to allow Licensor to give resonance to the success of Licensee’s and Licensor’s mutual cooperation. Licensor will not publish any non-public information shared by Licensee without prior authorization. The Lightstreamer Startup License has the following characteristics:
+- License Duration: Time Limited.
+- Licensing Mechanism: Cloud License Manager.
+- Audit Log: Required.
+1.12         Lightstreamer Server might periodically attempt to connect to Licensor's servers through the Internet to automatically check the availability of software updates; when this event occurs, Licensee is notified through the log file. Such mechanism can be disabled at Licensee's discretion.
+1.13 Lightstreamer Server might periodically attempt to connect to Licensor's servers through the Internet to automatically upload the Audit Log files, as referred to in Section 1.9 above, only if required by the License Type. Such mechanism can be disabled at Licensee's discretion. In case Licensee relies on such mechanism to deliver the Audit Log files to Licensor, Licensee shall make sure that the automatic upload is properly configured and is working correctly.
+1.14  After receiving the executed Offer Letter and/or Purchase Order, an invoice for the agreed amount according to the license chosen by Licensee hereunder will be issued by Licensor. Licensor reserves the right to provide Licensee with temporary licenses (hereinafter the "Temporary License") until the invoice has been fully settled by Licensee (or by a Reseller in case the sale happens through a channel partner). After invoice settlement, Licensor will provide Licensee with permanent licenses (Perpetual or Time Limited, based on the Offer Letter or Purchase Order). It is hereby agreed by the parties that the Temporary License provided by Licensor to Licensee according to paragraph above will be available until the payment and the relevant invoice has been fulfilled by Licensee but, in any case, for a period no longer than 30 days after the invoice Due Date. If, 30 days after issuance of the invoice, the invoice has not been fully settled by Licensee, the Temporary License will expire and Licensor will reserve the right to suspend any service and any Temporary License until Licensee has fully regularized the payment of the invoice to Licensor. Nothing, in this case, could be claimed, for any reason and/or nature, from Licensee to Licensor for the suspension/termination of use of the Temporary License.
+1.15 Neither the Audit Log, nor the automatic communication mechanisms described in sections 1.8.1, 1.12, and 1.13 will make available any personal data of Licensee’s users and customers to Licensor. Licensor is neither a Data Controller, nor a Data Processor in regards to personal data of Licensee’s users and customers.
+
+
+2.        Consented Uses and Restrictions.
+2.1        The Software and the Documentation are the exclusive property of Licensor and are protected, as are all of the connected and related rights, by Copyright and applicable Intellectual Property laws.
+2.2 The Software and all of the Documentation given by Licensor to Licensee are to be considered reserved and confidential and must not be disclosed for any reason, in any form, even after termination of this Agreement. If this Agreement is terminated in accordance with the terms of this Agreement, except as provided by law, none of the materials and Documentation can be kept and used in any manner and must be destroyed.
+2.3        Licensee agrees to use the Software respecting all of the applicable laws in the jurisdiction where the Software will be used, and complying with all laws in force in such jurisdiction, including but not limited to those related to Copyright and Intellectual Property rights.
+2.4        For the duration of the License, Licensee can copy the Software and the Documentation only for backup purposes. Except as provided for by contract or by law, Licensee shall not make any other copies of the Software and the Documentation. 
+2.5        Licensee cannot decode, decompile, disassemble or modify the Software, or create derivations based on the Software other than as permitted by law. Licensee shall not make known any program benchmark test without prior consent of Licensor. 
+2.6        By the present Agreement, Licensor gives in license solely and exclusively to Licensee the right to use the Software and the Documentation. No other right, including those related to trademarks, names, logos or anything else recognizable as a distinctive sign, present in the Software or in the Documentation, is given in license by Licensor to Licensee.
+2.7 The parties hereby agree and accept that Art. 2 and all the provisions included therein shall apply, to the fullest extent, also to the Temporary License. 
+
+
+3.        Trademarks and Logos.
+3.1        Licensee accepts and recognizes that Licensor is the sole and exclusive owner of the Lightstreamer trademark and logos related to it. 
+3.2        Licensee has no right in relation to the use of the Lightstreamer distinctive signs, and Licensee cannot remove such Lightstreamer distinctive signs, modify them or use them autonomously.
+
+
+4.        LIMITED WARRANTIES; DISCLAIMER.
+4.1        Licensor warrants that:
+4.1.1        it shall fulfill its obligations under this Agreement with all due skill, care and diligence including but not limited to Good Industry Practice, (without limiting the generality of this clause) in accordance with its own established internal procedures and in compliance with all applicable Laws;
+4.1.2        its title to and property in the Software and Documentation is free and unencumbered and that it has the right power and authority to license the same upon the terms and conditions of this Agreement;
+4.1.3      the Software does not contain any harmful code (such as "trojan horses", "worms", or "viruses") and any back door not declared in this Agreement;
+4.1.4        it is not aware of any right belonging to a third party that would result in the Software, Documentation or any other product or service rendered by Licensor to Licensee as violating any possible third party rights, including Copyrights, Patents, Trademarks or any other right.
+4.2        On Paid Licenses only (License Types (v), (vi), (vii), (viii), (ix), (x), (xi), and (xii) defined in Section 1.11.2), the following applies:
+4.2.1        For a period of 90 days from the start date of the license (hereinafter referred to as "Warranty Period"), the Software will perform in accordance with the Documentation.
+4.2.2        During the Warranty Period, Licensee must inform Licensor in writing if the Software does not operate as warranted and provide to Licensor such information and material as Licensor may reasonably request to document and reproduce such problem and to verify that any proposed solution corrects the problem. This warranty shall not apply to any bug, problem or defect to the extent resulting from any of the following: (i) any equipment, materials, products or software not provided by Licensor; (ii) Licensor’s compliance with designs, plans or specifications provided by Licensee to Licensor; (iii) any unauthorized repair, adjustment, modification or alteration to the Software by Licensee or any third party; (iv) any refusal by Licensee to install or to use a remedy, update, or replacement version of the Software offered by Licensor to Licensee; (v) any use of the Software not in accordance with the Documentation; (vi) any neglect, accident or misuse of the Software, or (vii) any malfunction that is not attributable to the Software. 
+4.2.3        Exclusive Remedies. If there is a breach by Licensor of the warranty set forth in Section 4.2 during the Warranty Period, Licensee’s exclusive remedy and Licensor’s sole obligation shall be to: (i) modify the Documentation to accurately reflect the actual operation of the Software if there is merely a transcription error in the Documentation; (ii) modify the Software to conform to the Documentation unless the Documentation is in error; or (iii) provide a like-for-like workaround solution which shall meet Licensee’s reasonable requirements. If none of the foregoing is determined by Licensor in its sole and absolute discretion to be commercially feasible, Licensor shall have the right to refund the Software licensee fees paid by Licensee under this Agreement and to terminate this Agreement with no further liability to Licensee. In any event, Licensor shall not be held responsible for any damages, direct or indirect, of any type, that may be suffered by Licensee or third parties.
+4.2.4        To the fullest extent provided by law, and save as set out above, Licensor assumes no responsibility and offers and recognized no guarantee, of any kind or nature, whether direct or indirect, explicit or implicit, for the Software, Documentation or any other product or service provided by Licensor to Licensee, including but not limited to, guarantees related to the quality, saleability, accuracy, peaceful possession, and fitness for a particular purpose of the Software or of the Documentation.
+4.2.5        Save as set out in Sections 5.2 and 5.5 below, Licensor agrees to indemnify and handle at its own expense, for any claim or action against Licensee, its affiliates and its and their respective directors, officers, employees, agents and representatives (each, an "Indemnified Party") for actual or alleged infringement of any intellectual or industrial property right, including without limitation, trademarks, service marks, patents, copyrights, misappropriation of trade secrets or any similar property rights, based upon the Software, any portion thereof and/or Licensee’s use thereof.  Licensor further agrees to indemnify and hold each Indemnified Party harmless from and against any and all liabilities, costs, losses, damages and expenses (including reasonable attorney’s fees) associated with such claim or action. 
+Licensee shall promptly notify Licensor of any such claim or action (provided that any delay shall only reduce Licensor’s obligations hereunder in the event and to the extent that such delay actually prejudices Licensor). Licensee shall reasonably cooperate with Licensor in the defence of such claim or action at Licensor’s expense.
+Licensor shall have the sole right to conduct the defence of any such claim or action and all negotiations for its settlement or compromise.  Notwithstanding the foregoing, in the event that Licensor shall fail to appoint an attorney within ten (10) calendar days after Licensee has notified Licensor of any such claim, Licensee shall have the right to select and appoint an alternative attorney and the reasonable cost and expense thereof shall be paid by Licensor.
+If the Software becomes or in Licensor’s reasonable opinion is likely to become the subject of any such claim or action, then Licensor shall either: 
+        (a) procure for Licensee the right to continue using the Software as contemplated hereunder;
+        (b) modify the Software to render same non-infringing (provided such modification does not adversely affect Licensee’s use as reasonably determined by Licensee); or
+        (c) replace the same with an equally suitable, functionally equivalent, compatible non-infringing Software Program.
+Notwithstanding and in addition to the foregoing, Licensee may at its option and expense select and be represented by separate counsel. 
+4.2.6        Licensor shall have no liability to Licensee in respect of any breach of Licensee’s obligations under this Agreement.
+4.2.7        Save as set out above, Licensor neither claims nor guarantees that the functions contained in the Software will satisfy the requests, expectation or needs of Licensee and possible third parties or that the functioning of the Software is continual, and without errors and defects.
+4.2.8        Save as set out above, Licensor makes no guarantees regarding the use or any results deriving from the use of the Software and Documentation with respect to their correctness, accuracy, trustworthiness or in any other way.
+4.2.9        The Software and Documentation are granted under license and supplied by Licensor and accepted by Licensee, who has evaluated their appropriateness for his needs, as is. Save as set out above, Licensee assumes every risk and responsibility with respect to the choice, installation and use of the Software and Documentation and their results.
+4.2.10        Save as set out above, Licensor has no obligations or responsibilities and makes no guarantees, aside from those expressly and specifically assumed or made in this contract.
+4.2.11        To the fullest extent provided by law, all the provisions contained in Art. 4, and especially Sections 4.2.4,  4.2.7 and 4.2.8, shall fully apply to Temporary License.
+4.3        On Free Licenses only (License Types (i), (ii), (iii), and (iv) defined in Section 1.11.1), the following applies:
+4.3.1        The Software and Documentation are licensed "AS IS". Licensor disclaims any and all warranties, whether express or implied, including without limitation, any implied warranties of merchantability or fitness for a particular purpose. Licensor does not warrant the functions contained in the Software will meet any requirement or needs Licensee may have, or that the Software will operate error free, or in an uninterrupted fashion, or that the Software is compatible with any particular platform. Licensor makes no guarantees regarding the use or any results deriving from the use of the Software and Documentation with respect to their correctness, accuracy, trustworthiness or in any other way.
+4.3.2        Licensee shall immediately inform Licensor of any claim or action made against Licensee by a third party that the normal and correct operation possession or use of the Software or Documentation by Licensee infringes the patent, copyright, registered design or trademark rights of any third party.
+4.3.3        Licensee shall cooperate in and collaborate with Licensor in the defense of any claim or action made against Licensee, Licensor or about Software or Documentation.
+4.3.4        In any case, Licensor will neither indemnify nor hold harmless Licensee on demand against any damages (including costs) that may be awarded or agreed to be paid to any third party in respect of any claim or action about infringement of patent, copyright, registered design or trademark rights of any third party.
+4.3.5        Licensor shall have no liability to Licensee in respect of any breach of Licensee’s obligations under this Agreement.
+4.3.6        Licensee assumes every risk and responsibility with respect to the choice, installation and use of the Software and Documentation and their results.
+
+
+5.        Limitation of Responsibility. 
+5.1        Save as set out above, neither party is responsible for, and is expressly relieved from liability for, any damages suffered by the other, those direct, indirect, incidental, consequential, of any kind or nature, arising out of or related to this Agreement, the Software and/or Documentation.
+5.2        Save as set out above, including Licensor's indemnifications obligation, Licensee recognizes and accepts that Licensor is not in any way responsible for any use of the Software and/or the Documentation by Licensee and/or for the consequences of such use, including but not limited to, if such use results in obtaining materials that violate the rights of third parties, is imprecise, obscene, indecent, threatening, offensive, defamatory, illicit, illegal or otherwise.
+5.3        Licensee recognizes and accepts that Licensor is not responsible for possible malfunctions provoked by the Software or resulting from possible incompatibility between the Software and/or Documentation and hardware and for other possible delays or problems of functionality.
+5.4        Where the applicable law does not allow for the applicability of the exclusions and limitations of responsibility contained in the present Art. 4 and Art. 5, in no event (other than for its indemnification obligations in Art. 4) the limit of responsibility and compensation of either party hereto (except in connection with Sections 4.2.1 and 4.2.4 above) in any way, for any and all damage, loss and for any other cause, shall not exceed, in total, the amount paid as Software license fees.
+5.5        However, the limitations above shall not exclude or limit Licensee’s liability for fraud or for death or personal injury arising from the negligence of Licensee, its employees, agents or sub-contractors, or from Licensee’s indemnification obligations provided in the license with respect to the Software.
+
+
+6.        Termination of the Agreement.
+6.1         In the event of breach by Licensee of any of the undertakings or obligations set forth in this Agreement, Licensee has 30 (thirty) calendar days following notification in writing by Licensor to arrange an acceptable remedy and notify Licensor. If Licensee fails to do so, Licensor will have the right to immediate terminate the present Agreement; upon the simple declaration given in writing to Licensee to avail himself of this article. However, the right of Licensor to take action necessary to obtain compensation for the damages possibly suffered shall remain.
+6.2        Any termination of this Agreement pursuant to this clause shall be without prejudice to any other rights or remedies a party may be entitled to under this Agreement or at law and shall not affect any accrued rights or liabilities of either party nor the coming into or continuance in force of any provision of this Agreement which is expressly or by implication intended to come into or continue in force on or after such termination. In any case, the possible termination of the Agreement will not result in the obligation of restitution of any amounts already paid and will not produce effects regarding the services already performed, nor will it eliminate the right of Licensor to receive other possible payments still due.
+6.3        At the termination of the Agreement (in the event that this Agreement terminates as set forth herein) or at the end of the contract term, or at the expiration of a Time-Limited License, Licensee shall cease any and all use of the Software and Documentation and destroy the Software and Documentation, except as provided by law.
+
+
+7.        Source Code Escrow
+7.1        Escrow Agreement. Only if previously agreed by the parties, concurrent with execution of this Agreement, the parties will execute a third-party escrow Agreement in a form on which they shall agree (the "Escrow Agreement"), in conjunction with an escrow agent that they shall both approve (the "Escrow Agent").
+7.2        Deposit. Upon execution of the Escrow Agreement, Licensor will deposit with the Escrow Agent, pursuant to the procedures of the Escrow Agreement, the source code for the Software and Documentation and the list of tools needed to create the binary version. Licensor will deposit any updated source code and Documentation with the Escrow Agent ("Deposit Material" refers to material required to be deposited pursuant to this Section 7.1).
+7.3        License and Use. Contingent upon the accrual of Release Conditions, Licensor hereby grants Licensee a license to use, reproduce, and create derivative works from the Deposit Material, Licensee may not distribute or sublicense the Deposit Material or make any use of it whatsoever except for such internal use as is necessary to maintain and support the Software. Copies of the Deposit Material created or transferred pursuant to this Agreement are licensed, not sold, and Licensee receives no title to or ownership of any copy of the Deposit Material itself. The Deposit Material constitutes Confidential Information of Licensor pursuant to Section 7.1 hereof. Licensee may not exceed  the number of production licenses, neither use different license typology, neither different features than the number of production licenses,  typology and features owned.
+7.4        Release Conditions.  The Escrow Agent shall release the Deposit Material to Licensee solely under any of the following conditions (each a "Release Condition"): (i) appointment, or consent to a receiver, trustee or other custodian for Licensor or substantially all of its assets, or application for same if such application is not lifted within 14 days; (iii) Licensor makes an assignment for the benefit of creditors; (iv) Licensor is liquidated or dissolved, or any proceedings are commenced with regard to Licensor under any bankruptcy, insolvency, or debtor’s relief law which are not lifted within 14 days from commencement; (v) any failure by Licensor to function as a going concern.
+7.5        Costs. All costs of the escrow, including, for avoidance of doubt, the fees of the Escrow Agent, shall be borne and paid directly by Licensee.
+7.6        Duration. The Escrow Agreement will commence on the date of the deposit to the Escrow Agent and will automatically terminate when all acquired Time-Limited licenses expire and all acquired Perpetual licenses are no more covered by maintenance service.
+7.7 As set out above, this article and all the provisions contained therein will only apply in case Licensee had chosen the "Source Code Escrow" option. In this case, all the conditions between the parties will be regulated separately in the Escrow Agreement which, therefore - in case of contrast between the following and the Escrow Agreement – will prevail. 
+
+
+8.        Applicable Law and Competent Forum.
+8.1          THIS AGREEMENT SHALL BE GOVERNED BY, AND CONSTRUED AND ENFORCED IN ACCORDANCE WITH, THE LAWS OF ENGLAND WITHOUT REGARD FOR ITS CONFLICT OF LAW PROVISIONS.  
+8.2        All disputes arising out of or in connection with the Agreement shall be finally settled in arbitration under the Rules of Arbitration of the International Chamber of Commerce (ICC), by 3 (Three) arbitrators appointed in accordance with the said Rules. The place of arbitration shall be Milan (Italy). The language of the arbitration shall be English. Any Party shall have the right to have recourse to and shall be bound by the pre-arbitral referee procedure of the International Chamber of Commerce (ICC) in accordance with its Rules for a Pre-Arbitral Referee Procedure. The Arbitration Section shall not prevent either Party from having recourse to the Court of Bruxelles according to Section 8.3.
+8.3        Alternatively, EACH OF THE PARTIES HERETO HEREBY CONSENTS AND AGREES TO THE EXCLUSIVE JURISDICTION OF THE COURT OF BRUXELLES IN CONNECTION WITH ANY DISPUTE ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT.
+
+
+9. Miscellaneous.
+9.1        The possible nullity of one or more of the clauses of this Agreement will not invalidate the other clauses in the Agreement. The possible nullity of one or more of the clauses of the Agreement will not result in the invalidity of the Agreement as a whole. In any case, the contracting parties undertake, in good faith, to use their reasonable efforts in order to remedy the nullity of the single clauses and to substitute the invalid parts with valid ones of equivalent or similar content.
+9.2        This Agreement substitutes any and all past negotiations, obligations and agreements such that all of the conduct of an obligations assumed by the parties will be regulated by the present Agreement.
+9.3        Any modification or integration of the contents of this Agreement must be agreed upon in writing and signed by the legal representatives of the parties.
+9.4        With regard to the personal data of each party that may be processed during the performance of this Agreement, the other party undertakes to process said data in full compliance with the provisions of Regulation EU 2016/ 679 (“GDPR�?) on the processing of personal data as well as exclusively for the purposes connected to the performance of this Agreement.
+9.5        Licensor reserves the right to access and/or make known information regarding Licensee, including the contents of communications, in order to comply with the law or respond to a lawsuit; enforce the fulfillment of the present contract by Licensee (including protecting its rights in the Software, Documentation or anything else deriving from and/or related to the present contract).
+9.6        All communications, statement and/or other announcements made on the base or as foreseen by the Agreement shall be sent to Licensor at:
+
+
+Lightstreamer S.r.l.
+Via Campanini, 6
+20124 Milan
+Italy
+
+
+Tel. +1 650 353 33 30
+Fax +39 02 3631 1392
+E-mail: info@lightstreamer.com
+
+
+Any changes to the addresses or numbers above will be reported on the www.lightstreamer.com site.
+
+
+IN WITNESS WHEREOF the parties hereto have executed this Agreement in duplicate originals by their duly authorized officers or representatives.
+
+
+
+
+
+
+LICENSOR
+
+Lightstreamer Srl
+
+Via Campanini, 6
+20124 Milan, Italy
+
+
+Authorized Signature:__________________________
+
+
+Name:__________________________________________
+
+
+Title:_________________________________________
+
+
+Signature Date:________________________________
+
+
+
+
+
+LICENSEE
+
+
+Company Name:__________________________________
+
+
+Address:_______________________________________
+
+
+        _______________________________________
+
+
+Authorized Signature:__________________________
+
+
+Name:__________________________________________
+
+
+Title:_________________________________________
+
+
+Signature Date:________________________________

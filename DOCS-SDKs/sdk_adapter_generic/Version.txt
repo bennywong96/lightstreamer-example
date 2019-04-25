@@ -1,0 +1,2 @@
+Lightstreamer Generic Adapter API version 1.8.0 build 84
+Compatible with Adapter Remoting Infrastructure since version 1.8.0

@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR ANDROID CLIENTS (UNIFIED API) - DOCUMENTATION
+===================================================================
+
+Browse documentation at:
+
+http://docs.lightstreamer.com/api/ls-android-client/4.1.0
+

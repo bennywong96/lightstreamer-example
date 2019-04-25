@@ -1,0 +1,2 @@
+Lightstreamer Java In-Process Adapter API version 7.0.1 build 1859
+Compatible with Lightstreamer Server since version 7.0.0

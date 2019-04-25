@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="NonVisualItemUpdateEvent,com.lightstreamer.as_client.events.NonVisualItemUpdateEvent,CONNECTION_DROP,CONTROL_CONNECTION_ERROR,DATA_ERROR,END_OF_SNAPSHOT,LOST_UPDATES,NON_VISUAL_ITEM_UPDATE,SEND_MESSAGE_ABORT,SEND_MESSAGE_ERROR,SEND_MESSAGE_PROCESSED,SERVER_ERROR,STATUS_CHANGE,SUBSCRIPTION,SUBSCRIPTION_ERROR,UNSUBSCRIPTION,client,endCause,error,errorCode,errorCode,errorCode,errorEvent,errorMessage,errorMessage,errorMessage,item,item,key,key,key,lostUpdates,messageProg,numFields,originalMessage,previousStatus,sessionId,sessionServerAddress,sessionServerName,status,table,getFieldValue,getOldFieldValue,isFieldChanged"><title>com.lightstreamer.as_client.events.NonVisualItemUpdateEvent</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'NonVisualItemUpdateEvent - Lightstreamer Flex client 2.2.1 API';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Lightstreamer Flex client 2.2.1 API</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?com/lightstreamer/as_client/events/NonVisualItemUpdateEvent.html&amp;com/lightstreamer/as_client/events/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">NonVisualItemUpdateEvent</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#constantSummary">Constants</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("NonVisualItemUpdateEvent"); titleBar_setSubNav(true,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.lightstreamer.as_client.events</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  NonVisualItemUpdateEvent</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">NonVisualItemUpdateEvent  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> <a href="../../../../com/lightstreamer/as_client/events/TableItemEvent.html">TableItemEvent</a> <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> <a href="../../../../com/lightstreamer/as_client/events/TableEvent.html">TableEvent</a> <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.Event</td></tr></table><p></p><p></p><p></p>
+               <p>Dispatched whenever an update pertaining to an item in the NonVisualTable reaches the client.
+   It reports all the new and old values of the fields, though it does not allow
+   you to alter the values received from the Server.</p>
+               <p>If the involved table behaves with a "COMMAND logic", then the old
+   values for the current update are meant as relative to the specific key
+   received with the update. The concepts of "first update" and "changed value"
+   are also meant accordingly.</p>
+               <p>Moreover, if the involved table behaves in "MultiMetapush logic",
+   then each update may be associated with either a first-level or
+   a second-level item. In this case, the reported fields are always the union
+   of the first-level and second-level fields and each single update can
+   only change either the first-level or the second-level fields
+   (but for the "command" field, which is first-level and is always set to
+   "UPDATE" upon a second-level update); note that the second-level field
+   values are always null until the first second-level update occurs).</p>
+               <p>With "MultiMetapush logic" behaviour, in all methods where a field
+   descriptor has to be supplied, the following convention should be followed:</p>
+               <ul>
+                  <li>The field name can always be used, both for the first-level and the
+   second-level fields (of course, unless schema identifiers were used as
+   schema descriptors for the related table). Only in case of name conflict,
+   the second-level field name must be preceded by a "$" character.</li>
+                  <li>The field position can always be used; however, the field positions
+   for the second-level fields start at the highest position of the
+   first-level schema + 1. If schema identifiers were used as schema
+   descriptors for the related table, client-side knowledge of the
+   first-level schema lenght would be required.</li>
+               </ul>   
+            <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><div class="showHideLinks"><div id="hideInheritedProperty" class="hideInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(false,'Property');"><img class="showHideLinkImage" src="../../../../images/expanded.gif"> Hide Inherited Public Properties</a></div><div id="showInheritedProperty" class="showInheritedProperty"><a class="showHideLink" href="#propertySummary" onclick="javascript:setInheritedVisible(true,'Property');"><img class="showHideLinkImage" src="../../../../images/collapsed.gif"> Show Inherited Public Properties</a></div></div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class="hideInheritedProperty"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><a href="../../../../com/lightstreamer/as_client/events/TableItemEvent.html#item" class="signatureLink">item</a> : *<div class="summaryTableDescription">[read-only] 
+		 The item name or item index which this event is related to.</div></td><td class="summaryTableOwnerCol"><a href="../../../../com/lightstreamer/as_client/events/TableItemEvent.html">TableItemEvent</a></td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#key" class="signatureLink">key</a> : String<div class="summaryTableDescription">[read-only] 
+     Only in case the related data table behaves in "MultiMetapush logic",
+     this property provides the value of the key involved in the update.</div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#numFields" class="signatureLink">numFields</a> : uint<div class="summaryTableDescription">[read-only] 
+     The number of fields received from the Server
+     with the current update.</div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr><tr class="hideInheritedProperty"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img src="../../../../images/inheritedSummary.gif" alt="Inherited" title="Inherited" class="inheritedSummaryImage"></td><td class="summaryTableSignatureCol"><a href="../../../../com/lightstreamer/as_client/events/TableEvent.html#table" class="signatureLink">table</a> : <a href="../../../../com/lightstreamer/as_client/Table.html">Table</a><div class="summaryTableDescription">[read-only] 
+		 The table which this event is related to.</div></td><td class="summaryTableOwnerCol"><a href="../../../../com/lightstreamer/as_client/events/TableEvent.html">TableEvent</a></td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getFieldValue()" class="signatureLink">getFieldValue</a>(field:*):*</div><div class="summaryTableDescription">
+     Inquiry method that gets the current value for a specified field.</div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getOldFieldValue()" class="signatureLink">getOldFieldValue</a>(field:*):*</div><div class="summaryTableDescription">
+     Inquiry method that gets the value for a specified field as it was
+     after the previous update.
+     If the involved table has been subscribed to by specifying
+     binary encoding, then the returned object is the result of the
+     deserialization of an AMF representation supplied by the Data
+     Adapter, hence it can be of any type; otherwise it will be a String.
+     
+     </div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isFieldChanged()" class="signatureLink">isFieldChanged</a>(field:*):Boolean</div><div class="summaryTableDescription">
+     Inquiry method that asks whether the current update from the Server
+     causes the value for a field to change.
+     If the current update is the first one for the item,
+     then the values are always considered as changing.
+     
+     </div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr></table></div><a name="constantSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Constants</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableConstant"><tr><th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#NON_VISUAL_ITEM_UPDATE" class="signatureLink">NON_VISUAL_ITEM_UPDATE</a> : String = nonVisualItemUpdate<div class="summaryTableDescription">[static] 
+     Define the value of the type property of a NonVisualItemUpdate event object.</div></td><td class="summaryTableOwnerCol">NonVisualItemUpdateEvent</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="key"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">key</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>key:String</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     Only in case the related data table behaves in "MultiMetapush logic",
+     this property provides the value of the key involved in the update.
+     Otherwise, the property value is null.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get key():String</code><br/></div><a name="propertyDetail"></a><a name="numFields"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">numFields</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>numFields:uint</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     <p>The number of fields received from the Server
+     with the current update. The value, however, is the same across all
+     updates pertaining to the same item, because it is determined by the
+     schema associated to the item at subscription.
+     The fields received from the Server are always associated to consecutive
+     field numbers starting from 1.</p>
+     <p>Only in case the related data table behaves in "MultiMetapush logic",
+     it may not be possible to determine the correct number of fields of the
+     data table. This only happens when a schema identifier is used as the
+     schema descriptor for the second-level schema and no update for any
+     second-level item has been received yet.
+     In this case, the property value is 0.</p>
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get numFields():uint</code><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="getFieldValue()"></a><a name="getFieldValue(any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getFieldValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function getFieldValue(field:*):*</code><p></p><p></p><p>
+     <p>Inquiry method that gets the current value for a specified field.
+     The value may have changed because of the current update.</p>
+     <p>If the involved table has been subscribed to by specifying
+     binary encoding, then the returned object is the result of the
+     deserialization of an AMF representation supplied by the Data
+     Adapter, hence it can be of any type; otherwise it will be a String.</p>
+     
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">field</span>:*</code> &mdash; String field name or a Number representing a field position.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>*</code> &mdash; The current value. Note that null is a possible value.
+     </td></tr></table></div><a name="getOldFieldValue()"></a><a name="getOldFieldValue(any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getOldFieldValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getOldFieldValue(field:*):*</code><p></p><p></p><p>
+     <p>Inquiry method that gets the value for a specified field as it was
+     after the previous update.</p>
+     <p>If the involved table has been subscribed to by specifying
+     binary encoding, then the returned object is the result of the
+     deserialization of an AMF representation supplied by the Data
+     Adapter, hence it can be of any type; otherwise it will be a String.</p>
+     
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">field</span>:*</code> &mdash; String field name or a Number representing a field position.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>*</code> &mdash; The previous value. Note that null is a possible value;
+     null is also returned if the current update is the first one for the item.
+     </td></tr></table></div><a name="isFieldChanged()"></a><a name="isFieldChanged(any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isFieldChanged</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isFieldChanged(field:*):Boolean</code><p></p><p></p><p>
+     <p>Inquiry method that asks whether the current update from the Server
+     causes the value for a field to change.</p>
+     <p>If the current update is the first one for the item,
+     then the values are always considered as changing.</p>
+     
+     </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">field</span>:*</code> &mdash; String field name or a Number representing a field position.
+     </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if the value has changed; false otherwise.
+     </td></tr></table></div><div class="detailSectionHeader">Constant Detail</div><a name="constantDetail"></a><a name="NON_VISUAL_ITEM_UPDATE"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">NON_VISUAL_ITEM_UPDATE</td><td class="detailHeaderType">Constant</td></tr></table><div class="detailBody"><code>public static const NON_VISUAL_ITEM_UPDATE:String = nonVisualItemUpdate</code><p></p><p></p><p>
+     Define the value of the type property of a NonVisualItemUpdate event object.
+     </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer>Lightstreamer Flex client 2.2.1 API</footer><br/> </center></div></body></html><!--Lightstreamer Flex client 2.2.1 API<br/> -->

@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR .NET Standard CLIENTS - DOCUMENTATION
+===========================================================
+
+Browse documentation at:
+
+https://www.lightstreamer.com/api/ls-dotnetstandard-client/4.0.0/
+

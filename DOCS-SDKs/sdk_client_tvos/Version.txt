@@ -1,0 +1,2 @@
+Lightstreamer tvOS Client API (Unified) version 4.1.0 build 44
+Compatible with Lightstreamer Server since version 7.0

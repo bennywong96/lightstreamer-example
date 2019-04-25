@@ -1,0 +1,2 @@
+Lightstreamer .NET Adapter API version 1.11.0 build 1022
+Compatible with Adapter Remoting Infrastructure since version 1.8

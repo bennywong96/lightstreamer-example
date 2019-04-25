@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><title>com.lightstreamer.as_client.events Summary</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'com.lightstreamer.as_client.events package - Lightstreamer Flex client 2.2.1 API';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Lightstreamer Flex client 2.2.1 API</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?com/lightstreamer/as_client/events/package-detail.html&amp;com/lightstreamer/as_client/events/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">com.lightstreamer.as_client.events</td><td class="titleTableSubNav" id="subNav" align="right"><a href="package-detail.html#classSummary">Classes</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("com.lightstreamer.as_client.events"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false	,false,false,false,true,false);}	
+				-->
+			</script><div class="MainContent"><br><br><hr><a name="classSummary"></a><div class="summaryTableTitle">Classes</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Class</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ConnectionDropEvent.html">ConnectionDropEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever a Connection or the whole session is closed because
+	 of a Server decision.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ControlConnectionErrorEvent.html">ControlConnectionErrorEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever a connection error occurs during a control
+	 connection, i.e.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="DataErrorEvent.html">DataErrorEvent</a></td><td class="summaryTableLastCol">
+   Dispatched whenever an update received from the Server could not
+   be processed, because of an unexpected error in the data flow
+   or a runtime exception.
+   In principle, Flex environment specific resource limits
+   may be hit because of a very huge data flow.
+   This notification should never occur in a normal case.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="EndOfSnapshotEvent.html">EndOfSnapshotEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever no more snapshot events are coming for an item.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LostUpdatesEvent.html">LostUpdatesEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever one or more updates are suppressed in the Server because of internal memory limitations.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="LSClientEvent.html">LSClientEvent</a></td><td class="summaryTableLastCol">
+	 Base class for any event related to LSClient.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="NonVisualItemUpdateEvent.html">NonVisualItemUpdateEvent</a></td><td class="summaryTableLastCol">
+   Dispatched whenever an update pertaining to an item in the NonVisualTable reaches the client.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SendMessageAbortEvent.html">SendMessageAbortEvent</a></td><td class="summaryTableLastCol">
+   Carries a Client-originated notification of a problem which prevents
+   the processing outcome of a Message sent through LSClient.sendMessage()
+   from being received.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SendMessageErrorEvent.html">SendMessageErrorEvent</a></td><td class="summaryTableLastCol">
+	 Carries a Server-originated notification of an error which prevented
+	 the correct handling of a Message sent through LSClient.sendMessage().</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SendMessageEvent.html">SendMessageEvent</a></td><td class="summaryTableLastCol">
+   Base class for any event related to a sendMessage call.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SendMessageProcessedEvent.html">SendMessageProcessedEvent</a></td><td class="summaryTableLastCol">
+   Carries the notification of the successful
+   processing of a Message sent through LSClient.sendMessage().</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ServerErrorEvent.html">ServerErrorEvent</a></td><td class="summaryTableLastCol">
+   Dispatched whenever the Server returns an error in response to a
+   stream/poll connection.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="StatusChangeEvent.html">StatusChangeEvent</a></td><td class="summaryTableLastCol">
+   Dispatched whenever the connection status changes.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SubscriptionErrorEvent.html">SubscriptionErrorEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever the Server notifies an error which prevents
+	 the subscription request performed by the related table from being
+ 	 accomplished; as a consequence, the table will receive no data.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="SubscriptionEvent.html">SubscriptionEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever a subscription request has been accomplished,
+	 before the related updates are received.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="TableEvent.html">TableEvent</a></td><td class="summaryTableLastCol">
+	 Base class for any event related to Table.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="TableItemEvent.html">TableItemEvent</a></td><td class="summaryTableLastCol">
+	 Base class for any Table-related event pertaining to a specific item.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="UnsubscriptionEvent.html">UnsubscriptionEvent</a></td><td class="summaryTableLastCol">
+	 Dispatched whenever all the items in the table are unsubscribed from.</td></tr></table><p></p><div><p></p><center class="copyright"><footer>Lightstreamer Flex client 2.2.1 API</footer><br/> </center></div></div></body></html><!--Lightstreamer Flex client 2.2.1 API<br/> -->

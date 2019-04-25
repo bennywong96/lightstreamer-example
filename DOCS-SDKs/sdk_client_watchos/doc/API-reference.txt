@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR watchOS CLIENTS (UNIFIED API) - DOCUMENTATION
+===================================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-watchos-client/4.1.0/
+

@@ -1,0 +1,7 @@
+LIGHTSTREAMER SDK FOR PYTHON ADAPTERS - EXAMPLES
+================================================
+
+Browse documentation at:
+
+http://www.lightstreamer.com/api/ls-python-adapter/1.1.2/
+

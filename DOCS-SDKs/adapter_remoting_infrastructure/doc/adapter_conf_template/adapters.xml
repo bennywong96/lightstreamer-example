@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not remove this line. File tag: adapters_conf-APV-20180228. -->
+
+<!--
+    This is a generic template for the configuration file of an Adapter Set
+    pluggable into Lightstreamer Server.
+    It can be considered a reference example of Proxy Adapters deploy.
+
+    If the Server version is 6.1 or later, a very simple variable-expansion
+    feature is available; see <enable_expansion_for_adapters_config> in the
+    Server's main configuration file.
+-->
+
+<!-- Mandatory. Define an Adapter Set and its unique ID. -->
+<adapters_conf id="PROXY_SOCKET">
+
+    <!-- Optional. Requests the creation of a specific "SET" thread pool, devoted
+         to the management of all the client requests pertaining to sessions
+         based on this Adapter Set. Only requests related with the special
+         Data Adapter used to supply the state of the MPN Module (if enabled)
+         are not included and fall into the global SERVER pool.
+
+         If not defined, these requests are managed by the global SERVER
+         thread pool.
+         If defined, the <max_size> and <max_free> elements are mandatory,
+         with meaning similar to that of the global <server_pool_max_size>
+         and <server_pool_max_free> settings.
+         Using a specific thread pool is advisable if the implementation
+         of any of the Adapter methods introduces delays and more specific
+         thread pools are not being used. -->
+    <!--
+    <adapter_set_pool>
+        <max_size>100</max_size>
+        <max_free>10</max_free>
+    </adapter_set_pool>
+    -->
+
+    <!-- Optional. If "Y", ensures that the initialization of the Metadata
+         Adapter ends before any initialization of the Data Adapters is performed.
+         Otherwise the Metadata Adapter is initialised in parallel with all the
+         other Data Adapters. In case of a Remote Adapter, the initialization
+         consists of an invocation of the Metadata Init or Data Init method.
+
+         If not defined, the default value is "Y" (i.e. Metadata Adapter
+         initialised first). -->
+    <metadata_adapter_initialised_first>N</metadata_adapter_initialised_first>
+
+    <!-- Mandatory. The Metadata Adapter is the Java Proxy Adapter. -->
+    <metadata_provider>
+
+        <!-- Mandatory. Java class name of the Proxy Metadata Adapter.
+             In this case, "PROXY_FOR_REMOTE_ADAPTER" is a special keyword that
+             identifies the Proxy Metadata Adapter, which is embedded
+             in Lightstreamer Server and available out of the box.
+             The Proxy Metadata Adapter communicates with its remote counterpart
+             through standard TCP sockets. It listens on a specific port and
+             waits for its counterpart to connect. -->
+        <adapter_class>PROXY_FOR_REMOTE_ADAPTER</adapter_class>
+
+        <!-- Mandatory for Proxy Adapters. Determines the ClassLoader to be used
+             to load the Adapter related classes (see the base template).
+             In case a Proxy Adapter is configured, it is advisable to use the
+             special "log-enabled" option, to let the Proxy Adapter share the
+             logging support and configuration with the Server.
+             If set to "dedicated", logging support must be explicitly provided,
+             by adding the slf4j library, together with a suitable log
+             implementation and configuration. Only for this purpose, the
+             "install_dir" element can be leveraged (see the base template,
+             but note that in this special case the element is not mandatory).
+             With this special configuration, the "common" option is forbidden. -->
+        <classloader>log-enabled</classloader>
+
+        <!-- Optional. Requests the creation of a specific "AUTHENTICATION"
+             thread pool, expressly devoted to the calls of Notify User against
+             the Remote Metadata Adapter.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the implementation of
+             Notify User may introduce delays. -->
+        <!--
+        <authentication_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </authentication_pool>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "MSG" thread pool,
+             expressly devoted to the calls of Notify User Message, which
+             handle messages sent by the client, against the Remote Metadata Adapter.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the implementation of
+             Notify User Message may introduce delays. -->
+        <!--
+        <messages_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </messages_pool>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "MPN REQUESTS" thread
+             pool, devoted to the submission to the Remote Metadata Adapter
+             of all the mobile push notification requests pertaining to sessions
+             based on this Adapter Set.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the implementation
+             of MPN operations (like Notify MPN Subscription Activation etc.)
+             may introduce delays. -->
+        <!--
+        <mpn_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </mpn_pool>
+        -->
+
+        <!-- Optional. If "Y", ensures that all Table (i.e. Subscription)
+             notifications (that is, all the invocations to the Notify New Tables
+             and Notify Tables Close methods) pertaining to the same session will
+             be sequential, with no overlapping; if "N", then concurrent
+             invocations will be possible.
+             Note that the final invocation to Notify Session Close is always
+             guaranteed to occur after all the above notifications have terminated.
+
+             If not defined, the default value is "N" (i.e. do not sequentialize). -->
+        <!--
+        <sequentialize_table_notifications>Y</sequentialize_table_notifications>
+        -->
+
+        <!-- List of initialization parameters specific to the Proxy Metadata Adapter. -->
+
+        <!-- Mandatory.
+             The request/reply port to listen on. -->
+        <param name="request_reply_port">6663</param>
+
+        <!-- Optional.
+             The local network interface to bind to.
+             If not specified, it will bind to any available interface. -->
+        <!--
+        <param name="interface">192.168.1.1</param>
+        -->
+
+        <!-- Optional.
+             Name of the Proxy Metadata Adapter, to better identify its connections
+             and threads when assessing problems.
+             If not specified, the Adapter Set id, as configured in this file, will be used. -->
+        <!--
+        <param name="name">MyFeedMetadata</param>
+        -->
+
+        <!-- Optional.
+             If true, the Proxy Adapter will wait for the completion of the
+             initialization of the remote counterpart before beginning to
+             forward requests; any exception occurred during initialization
+             will be received.
+             It can be set to false only in order to enforce compatibility
+             with remote servers compliant with ARI version older than 1.5,
+             which don't support remote initialization requests;
+             on the other hand, a setting to false would not be supported by
+             remote servers compliant with ARI version 1.5 or newer.
+             Default: true. -->
+        <!--
+        <param name="init_remote">false</param>
+        -->
+
+        <!-- Optional, ignored if "init_remote" is false.
+             Determines the initialization parameters to be sent to the remote
+             counterpart.
+             The supplied value is meant as a prefix, such that all parameters
+             supplied to this Proxy Adapter and whose names start with this
+             prefix will be sent (an empty value is also supported, to match
+             all parameters).
+             Moreover, the following parameters, with obvious meaning, will
+             also be sent:
+             - adapters_conf.id
+             Default: if not defined, no initialization parameters will be
+             sent at all. -->
+        <!--
+        <param name="remote_params_prefix">remote_</param>
+        -->
+        <!--
+        <param name="remote_xxxx">my value for the remote counterpart</param>
+        -->
+
+        <!-- Optional.
+             Timeout for sent requests. A negative value stands for an unlimited timeout.
+             Timed out requests are considered as failed and later answers are ignored.
+             Default: 10000 ms (10 seconds). -->
+        <!--
+        <param name="timeout">10000</param>
+        -->
+
+        <!-- Optional.
+             If set to false, suppresses clearing of the cached profile data
+             for a user when no sessions for the user are active. This is only for
+             troubleshooting purpose, as profile data are always refreshed upon
+             Notify User requests.
+             Default: true. -->
+        <!--
+        <param name="clear_on_session_close">true</param>
+        -->
+
+        <!-- Optional.
+             Sets the minimum time (in milliseconds) cached profile data are kept;
+             these cached data are needed in order to manage request processing before a session
+             is fully started. Ignored if clear_on_session_close is false.
+             Default: 10000 ms (10 seconds). -->
+        <!--
+        <param name="user_data_timeout">1000</param>
+        -->
+
+        <!-- Optional for all Proxy Metadata Adapters.
+             Specifies a comma-separated list of hosts allowed to connect to this proxy adapter
+             in order to act as remote adapters.
+             If a list is specified, connections received from addresses not in the list will be
+             turned down, otherwise any connection will be accepted.
+             The addresses can be in any form accepted by Java InetAddress.getByName method. -->
+        <!--
+        <param name="remote_address_whitelist">localhost,192.168.0.190</param>
+        -->
+
+        <!-- Optional for all Proxy Metadata Adapters.
+             Timeout for received data from the Remote Metadata Adapter.
+             If no data (nor keepalives) is received within the specified timeout,
+             the TCP connection will be considered broken and will be reset;
+             as a consequence, the whole Server will be shut down.
+             Setting a timeout is only meaningful if the Remote Metadata Adapter
+             is configured to send keepalive messages at a shorter interval.
+             A negative value stands for an unlimited timeout.
+             Default: -1 (unlimited timeout). -->
+        <!--
+        <param name="keepalive_timeout_millis">-1</param>
+        -->
+
+    </metadata_provider>
+
+
+    <!-- Mandatory. The Data Adapter is the Java Proxy Adapter.
+         The "name" attribute is optional and the default name is "DEFAULT";
+         if multiple Data Adapters are defined in the same Adapter Set,
+         then using the "name" attribute is needed to distinguish them. -->
+    <data_provider name="MY_REMOTE">
+
+        <!-- Mandatory. Java class name of the Proxy Data Adapter.
+             In this case, "PROXY_FOR_REMOTE_ADAPTER" is a special keyword that
+             identifies the Proxy Data Adapter, which is embedded
+             in Lightstreamer Server and available out of the box.
+             The Proxy Data Adapter communicates with its remote counterpart
+             through standard TCP sockets. It listens on two specific ports
+             and waits for its counterpart to connect. -->
+        <adapter_class>PROXY_FOR_REMOTE_ADAPTER</adapter_class>
+
+        <!-- Mandatory for Proxy Adapters. Determines the ClassLoader to be used
+             to load the Adapter related classes (see the base template).
+             In case a Proxy Adapter is configured, it is advisable to use the
+             special "log-enabled" option, to let the Proxy Adapter share the
+             logging support and configuration with the Server.
+             If set to "dedicated", logging support must be explicitly provided,
+             by adding the slf4j library, together with a suitable log
+             implementation and configuration. Only for this purpose, the
+             "install_dir" element can be leveraged (see the base template).
+             With this special configuration, the "common" option is forbidden. -->
+        <classloader>log-enabled</classloader>
+
+        <!-- Optional. Requests the creation of a specific "DATA" thread pool,
+             expressly devoted to the submission to the Remote Data Adapter
+             of table subscription and unsubscription requests for all the tables
+             based on this Data Adapter.
+             This involves the calls of Subscribe and Unsubscribe to the Remote
+             Data Adapter and the calls of Get Items, Get Schema, Get Item Data,
+             and Get User Item Data to the Remote Metadata Adapter.
+
+             If not defined, these requests are managed by the thread pool
+             related with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the implementation
+             of any of the involved Adapter methods introduces delays. -->
+        <!--
+        <data_adapter_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </data_adapter_pool>
+        -->
+
+        <!-- List of initialization parameters specific to the Proxy Data Adapter. -->
+
+        <!-- Mandatory.
+             The request/reply port to listen on. -->
+        <param name="request_reply_port">6661</param>
+
+        <!-- Mandatory.
+             The notification port to listen on. -->
+        <param name="notify_port">6662</param>
+
+        <!-- Optional.
+             The local network interface to bind to.
+             If not specified, it will bind to any available interface. -->
+        <!--
+        <param name="interface">192.168.1.1</param>
+        -->
+
+        <!-- Optional.
+             Timeout that is activated when the first connection (either to the
+             request/reply or the notification port) has been received.
+             If the second connection is not received within this time,
+             the first connection is also invalidated.
+             A zero or negative value stands for an unlimited timeout.
+             Default: -1. -->
+        <param name="missing_connection_timeout_millis">10000</param>
+
+        <!-- Optional.
+             Name of the Proxy Data Adapter, to better identify its connections
+             and threads when assessing problems.
+             If not specified, the Adapter Set id and the Data Adapter name, as configured
+             in this file, will be used. -->
+        <!--
+        <param name="name">MyFeedData</param>
+        -->
+
+        <!-- Optional.
+             If true, the Proxy Adapter will wait for the completion of the
+             initialization of the remote counterpart before beginning to
+             forward requests; any exception occurred during initialization
+             will be received.
+             It can be set to false only in order to enforce compatibility
+             with remote servers compliant with ARI version older than 1.5,
+             which don't support remote initialization requests;
+             on the other hand, a setting to false would not be supported by
+             remote servers compliant with ARI version 1.5 or newer.
+             Default: true. -->
+        <!--
+        <param name="init_remote">false</param>
+        -->
+
+        <!-- Optional, ignored if "init_remote" is false.
+             Determines the initialization parameters to be sent to the remote
+             counterpart.
+             The supplied value is meant as a prefix, such that all parameters
+             supplied to this Proxy Adapter and whose names start with this
+             prefix will be sent (an empty value is also supported, to match
+             all parameters).
+             Moreover, the following parameters, with obvious meaning, will
+             also be sent:
+             - adapters_conf.id
+             - data_provider.name
+             Default: if not defined, no initialization parameters will be
+             sent at all. -->
+        <!--
+        <param name="remote_params_prefix">remote_</param>
+        -->
+        <!--
+        <param name="remote_xxxx">my value for the remote counterpart</param>
+        -->
+
+        <!-- Optional.
+             Timeout for sent requests. A negative value stands for an unlimited timeout.
+             Timed out requests are considered as failed and later answers are ignored.
+             Default: 10000 ms (10 seconds). -->
+        <!--
+        <param name="timeout">10000</param>
+        -->
+
+        <!-- Optional for all Proxy Data Adapters.
+             Specifies a comma-separated list of hosts allowed to connect to this proxy adapter
+             in order to act as remote adapters.
+             If a list is specified, connections received from addresses not in the list will be
+             turned down, otherwise any connection will be accepted.
+             The addresses can be in any form accepted by Java InetAddress.getByName method. -->
+        <!--
+        <param name="remote_address_whitelist">localhost,192.168.0.190</param>
+        -->
+
+        <!-- Optional for all Proxy Data Adapters.
+             Timeout for received data from the Remote Data Adapter; it applies
+             independently on the request-reply and the notify connection.
+             If no data (nor keepalives) is received within the specified timeout,
+             the TCP connection will be considered broken and will be reset;
+             as a consequence, the whole Server will be shut down.
+             Setting a timeout is only meaningful if the Remote Data Adapter
+             is configured to send keepalive messages on both connections
+             at a shorter interval.
+             A negative value stands for an unlimited timeout.
+             Default: -1 (unlimited timeout). -->
+        <!--
+        <param name="keepalive_timeout_millis">-1</param>
+        -->
+
+    </data_provider>
+
+</adapters_conf>

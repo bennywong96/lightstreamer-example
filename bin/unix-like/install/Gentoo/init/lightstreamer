@@ -1,0 +1,31 @@
+#!/sbin/runscript
+
+# Lightstreamer specific settings
+# LS_HOME=/opt/Lightstreamer
+LS_HOME=%LS_HOME%
+# LS_USER=lightstreamer
+LS_USER=%LS_USER%
+# LS_GROUP=lightstreamer
+LS_GROUP=%LS_GROUP%
+
+DAEMON="${LS_HOME}/bin/unix-like/LS.sh"
+PIDFILE=/var/run/lightstreamer.pid
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting Lightstreamer"
+	start-stop-daemon --start --make-pidfile \
+		--pidfile "${PIDFILE}" \
+		--background --user ${LS_USER}:${LS_GROUP} \
+		--exec "${DAEMON}" -- run
+	eend "${?}"
+}
+
+stop() {
+	ebegin "Stopping Lightstreamer"
+	start-stop-daemon --stop --pidfile "${PIDFILE}"
+	eend "${?}"
+}

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: SimpleLoggerProvider</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: SimpleLoggerProvider</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>SimpleLoggerProvider</h2>
+        
+            <div class="class-description">SimpleLoggerProvider implementation that can be used to consume logging
+from the <a href="LightstreamerClient.html">LightstreamerClient</a>. 
+To enable client logging, an instance of this class has to be created and supplied through the
+<a href="LightstreamerClient.html#.setLoggerProvider">LightstreamerClient.setLoggerProvider</a> method before any log can be 
+consumed.
+<br/>In order to determine how to consume the log, one or multiple "appenders"
+can be supplied to this object, through <a href="SimpleLoggerProvider.html#addLoggerAppender">SimpleLoggerProvider#addLoggerAppender</a>.
+The <a href="Logger.html">Logger</a> instances created by this LoggerProvider for the various log categories
+will forward the log lines to the appenders, based on the appender preferences configured.
+Category and level filters are available and can be configured on each appender.
+<br/>Several appender classes are distributed with the library in 
+order to enable custom code to consume the log in different ways:
+<a href="ConsoleAppender.html">ConsoleAppender</a>, <a href="AlertAppender.html">AlertAppender</a>,
+<a href="DOMAppender.html">DOMAppender</a>, <a href="FunctionAppender.html">FunctionAppender</a> and <a href="BufferAppender.html">BufferAppender</a>.  
+<BR>
+<BR>The SimpleLoggerProvider is available for the implementation of custom logging;
+just invoke the <a href="LoggerProvider.html#getLogger">LoggerProvider#getLogger</a> method to get <a href="Logger.html">Logger</a>
+objects for custom categories, then invoke the various methods available on the
+loggers to produce log messages to be handled by the configured appenders.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<dt>
+
+
+    <h4 class="name" id="SimpleLoggerProvider"><span class="type-signature"></span>new SimpleLoggerProvider<span class="signature">()</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Empty constructor for SimpleLoggerProvider.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+<!-- AUGMENTED -->
+    <ul>
+        <li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Method Summary</h3>
+        
+        <dl>
+          
+
+
+  <dt>
+    <span class="signature"><a href="SimpleLoggerProvider.html#addLoggerAppender" class="addLoggerAppender">addLoggerAppender</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Adds a <a href="SimpleLogAppender.html">SimpleLogAppender</a> to this SimpleLoggerProvider instance.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="SimpleLoggerProvider.html#dispatchLog" class="dispatchLog">dispatchLog</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Publish a log message on all SimpleLogAppender object instances added to this SimpleLoggerProvider so far.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="SimpleLoggerProvider.html#getLogger" class="getLogger">getLogger</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Logger factory that gets a logger related to a specified category name.</dd>
+  
+  
+ 
+        
+          
+
+
+  <dt>
+    <span class="signature"><a href="SimpleLoggerProvider.html#removeLoggerAppender" class="removeLoggerAppender">removeLoggerAppender</a><span class="signature">
+  </dt>
+  
+      <dd class="summary">Removes a <a href="SimpleLogAppender.html">SimpleLogAppender</a> from this SimpleLoggerProvider instance.</dd>
+  
+  
+ 
+        </dl>
+    
+    
+        
+    
+    
+        <h3 class="subsection-title">Method Detail</h3>
+        <dl>
+            
+<dt>
+
+
+    <h4 class="name" id="addLoggerAppender"><span class="type-signature"></span>addLoggerAppender<span class="signature">(logAppender)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Adds a <a href="SimpleLogAppender.html">SimpleLogAppender</a> to this SimpleLoggerProvider instance. Such appender 
+will receive log lines from the Logger instances generated by this SimpleLoggerProvider instance. 
+The appender defines a category and a threshold level, 
+so that it will receive only the log lines with a level equal to or greater
+than the threshold and only from the Logger associated with the requested category.
+
+<br/>Appenders can be added at any time; any loggers already created
+by this SimpleLoggerProvider instance will start using the new appender.
+Until the first appender is added, all log will be discarded.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>logAppender</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="SimpleLogAppender.html">SimpleLogAppender</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An instance of SimpleLogAppender that will consume
+the log.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="dispatchLog"><span class="type-signature"></span>dispatchLog<span class="signature">(category, level, mex)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Publish a log message on all SimpleLogAppender object instances added to this SimpleLoggerProvider so far.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>category</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The category name that produced the given message.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The logging level of the given message. It should be one of DEBUG INFO WARN ERROR FATAL
+constants values.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The message to be logged. It could be a String instance, an Error instance or any other
+object, provided that it has a toString method.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="getLogger"><span class="type-signature"></span>getLogger<span class="signature">(category)</span><span class="type-signature"> &rarr; {<a href="Logger.html">Logger</a>}</span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Logger factory that gets a logger related to a specified category name.
+If such logger does not exist it is created.
+A unique instance is always maintained for each logger name.
+This method can potentially cause a memory leak as once a Logger 
+is created it will never be dismissed. It is expected that the number of 
+categories within a single application is somewhat limited and in any case
+not growing with time.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>category</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the desired log category.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="LoggerProvider.html#getLogger">LoggerProvider#getLogger</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The desired Logger instance.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Logger.html">Logger</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+<dt>
+
+
+    <h4 class="name" id="removeLoggerAppender"><span class="type-signature"></span>removeLoggerAppender<span class="signature">(logAppender)</span><span class="type-signature"></span></h4>
+
+</dt>
+<dd>
+
+
+<div class="description">
+    Removes a <a href="SimpleLogAppender.html">SimpleLogAppender</a> from this SimpleLoggerProvider instance.
+<br/>Appenders can be removed at any time.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>logAppender</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="SimpleLogAppender.html">SimpleLogAppender</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An instance of SimpleLogAppender that was previously 
+added to this SimpleLoggerProvider instance.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="SimpleLoggerProvider.html#addLoggerAppender">SimpleLoggerProvider#addLoggerAppender</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </dl>
+    
+    
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <a href="http://www.lightstreamer.com"><img src="logo.png"/></a><h2><a href="index.html">Home</a> | <a href="index-all.html">Index</a></h2><h3>Modules</h3><ul><li class="signature"><a href="module-Inheritance.html">Inheritance</a></li></ul><h3>Classes</h3><ul><li class="signature"><a href="AbstractGrid.html">AbstractGrid</a></li><li class="signature"><a href="AbstractWidget.html">AbstractWidget</a></li><li class="signature"><a href="AlertAppender.html">AlertAppender</a></li><li class="signature"><a href="BufferAppender.html">BufferAppender</a></li><li class="signature"><a href="Chart.html">Chart</a></li><li class="signature"><a href="ChartLine.html">ChartLine</a></li><li class="signature"><a href="ChartListener.html">ChartListener</a></li><li class="signature"><a href="ClientListener.html">ClientListener</a></li><li class="signature"><a href="ClientMessageListener.html">ClientMessageListener</a></li><li class="signature"><a href="ConnectionDetails.html">ConnectionDetails</a></li><li class="signature"><a href="ConnectionOptions.html">ConnectionOptions</a></li><li class="signature"><a href="ConnectionSharing.html">ConnectionSharing</a></li><li class="signature"><a href="ConsoleAppender.html">ConsoleAppender</a></li><li class="signature"><a href="DOMAppender.html">DOMAppender</a></li><li class="signature"><a href="DynaGrid.html">DynaGrid</a></li><li class="signature"><a href="DynaGridListener.html">DynaGridListener</a></li><li class="signature"><a href="FlashBridge.html">FlashBridge</a></li><li class="signature"><a href="FunctionAppender.html">FunctionAppender</a></li><li class="signature"><a href="IllegalArgumentException.html">IllegalArgumentException</a></li><li class="signature"><a href="IllegalStateException.html">IllegalStateException</a></li><li class="signature"><a href="ItemUpdate.html">ItemUpdate</a></li><li class="signature"><a href="LightstreamerClient.html">LightstreamerClient</a></li><li class="signature"><a href="Logger.html">Logger</a></li><li class="signature"><a href="LoggerProvider.html">LoggerProvider</a></li><li class="signature"><a href="LogMessages.html">LogMessages</a></li><li class="signature"><a href="RemoteAppender.html">RemoteAppender</a></li><li class="signature"><a href="SimpleChartListener.html">SimpleChartListener</a></li><li class="signature"><a href="SimpleLogAppender.html">SimpleLogAppender</a></li><li class="signature"><a href="SimpleLogger.html">SimpleLogger</a></li><li class="signature"><a href="SimpleLoggerProvider.html">SimpleLoggerProvider</a></li><li class="signature"><a href="StaticGrid.html">StaticGrid</a></li><li class="signature"><a href="StaticGridListener.html">StaticGridListener</a></li><li class="signature"><a href="StatusWidget.html">StatusWidget</a></li><li class="signature"><a href="Subscription.html">Subscription</a></li><li class="signature"><a href="SubscriptionListener.html">SubscriptionListener</a></li><li class="signature"><a href="VisualUpdate.html">VisualUpdate</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    <div class="footer_text">Lightstreamer Web Client 7.2.0 API Reference
+      <div class="jsdoc_ctime">
+         Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Apr 02 2019 11:53:06 GMT+0200 (W. Europe Daylight Time)
+      </div>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

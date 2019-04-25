@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not remove this line. File tag: adapters_conf-APV-20180228. -->
+
+<!--
+    This is a generic template for the configuration file of an Adapter Set
+    pluggable into Lightstreamer Server.
+    It can be considered a reference example of in-process Java Adapter deploy.
+
+    If the Server version is 6.1 or later, a very simple variable-expansion
+    feature is available; see <enable_expansion_for_adapters_config> in the
+    Server's main configuration file.
+-->
+
+<!-- Mandatory. Define an Adapter Set and its unique ID. -->
+<adapters_conf id="DEMO">
+
+    <!-- Optional. Requests the creation of a specific "SET" thread pool, devoted
+         to the management of all the client requests pertaining to sessions
+         based on this Adapter Set. Only requests related with the special
+         Data Adapter used to supply the state of the MPN Module (if enabled)
+         are not included and fall into the global SERVER pool.
+
+         If not defined, these requests are managed by the global SERVER
+         thread pool.
+         If defined, the <max_size> and <max_free> elements are mandatory,
+         with meaning similar to that of the global <server_pool_max_size>
+         and <server_pool_max_free> settings.
+         Using a specific thread pool is advisable if the implementation
+         of any of the Adapter methods introduces delays and more specific
+         thread pools are not being used. -->
+    <!--
+    <adapter_set_pool>
+        <max_size>100</max_size>
+        <max_free>10</max_free>
+    </adapter_set_pool>
+    -->
+
+    <!-- Optional. If "Y", ensures that the call of the method 'init' of the
+         Metadata Adapter ends before any 'init' of the Data Adapters is called.
+         Otherwise the Metadata Adapter is initialised in parallel with all the
+         other Data Adapters.
+
+         If not defined, the default value is "Y" (i.e. Metadata Adapter
+         initialised first). -->
+    <!--
+    <metadata_adapter_initialised_first>Y</metadata_adapter_initialised_first>
+    -->
+
+    <!-- Mandatory. Define the Metadata Adapter. -->
+    <metadata_provider>
+
+        <!-- Optional. Specify a directory other than "."
+             for this Adapter's own class and configuration files. -->
+        <install_dir>metadata</install_dir>
+
+        <!-- Mandatory. Java class name of the adapter. -->
+        <adapter_class>all_demos.adapters.MixedMetadataAdapter</adapter_class>
+
+        <!-- Optional. Determines the ClassLoader to be used to load the Adapter
+             related classes. Possible values are:
+             - "common": The common ClassLoader assigned to the whole Adapter Set
+               is used; this ClassLoader already includes all the classes found
+               in the common "lib" and "classes" folders; it also inherits from
+               a global ClassLoader that includes all the classes found under the
+               "shared/lib" and "shared/classes" folders. If a specific <install_dir>
+               is assigned to the Adapter, classes found in its "lib" and "classes"
+               subfolders are added to the Adapter Set ClassLoader.
+             - "dedicated": A dedicated ClassLoader, which still inherits from the
+               Adapter Set ClassLoader, is used. In this case, it is mandatory
+               that a specific <install_dir> is assigned to the Adapter; hence,
+               classes found in its "lib" and "classes" subfolders are added to
+               the dedicated ClassLoader.
+             - "log-enabled": A dedicated ClassLoader which also includes the
+               slf4j library used by the Server is used; hence the Adapter shares
+               the log configuration with the Server. However, in this case, the
+               Adapter ClassLoader does not inherit from the Adapter Set
+               ClassLoader, hence no sharing of classes with other Adapters is
+               possible. If no specific <install_dir> is assigned to the Adapter,
+               then the dedicated ClassLoader will be added all classes found in
+               the common "lib" and "classes" folders.
+
+             The determined ClassLoader is also set as the "context ClassLoader"
+             in all Adapter method invocations.
+             If not defined, the default value is "common" (i.e. the common
+             Adapter Set ClassLoader is used). -->
+        <!--
+        <classloader>dedicated</classloader>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "AUTHENTICATION"
+             thread pool, expressly devoted to the calls of "notifyUser" against
+             this Metadata Adapter.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the "notifyUser"
+             implementation may introduce delays. -->
+        <!--
+        <authentication_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </authentication_pool>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "MSG" thread pool,
+             expressly devoted to the calls of "notifyUserMessage", which
+             handle messages sent by the client, against this Metadata Adapter.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the
+             "notifyUserMessage" implementation may introduce delays. -->
+        <!--
+        <messages_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </messages_pool>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "MPN REQUESTS" thread
+             pool, devoted to the management of all the mobile push notification
+             requests pertaining to sessions based on this Adapter Set.
+
+             If not defined, these calls are managed by the thread pool related
+             with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if implementation
+             of MPN operations (like "notifyMpnSubscriptionActivation" etc.)
+             may introduce delays. -->
+        <!--
+        <mpn_pool>
+            <max_size>10</max_size>
+            <max_free>0</max_free>
+        </mpn_pool>
+        -->
+
+        <!-- Optional. If "Y", ensures that all Table (i.e. Subscription)
+             notifications (that is, all the invocations to "notifyNewTables" and
+             "notifyTablesClose") pertaining to the same session will be sequential,
+             with no overlapping; if "N", then concurrent invocations will be
+             possible.
+             Note that the final invocation to "notifySessionClose" is always
+             guaranteed to occur after all the above notifications have terminated.
+
+             If not defined, the default value is "N" (i.e. do not sequentialize). -->
+        <!--
+        <sequentialize_table_notifications>Y</sequentialize_table_notifications>
+        -->
+
+        <!-- Optional. List of initialization parameters specific to the adapter. -->
+
+        <!-- Optional. Configuration file for the Adapter's own logging;
+             the path is relative to <install_dir>.
+             Logging is managed through log4j. -->
+        <param name="log_config">../adapters_log_conf.xml</param>
+        <param name="log_config_refresh_seconds">10</param>
+
+        <!-- Optional (specific for adapters that inherit from
+             com.lightstreamer.adapters.metadata.FileBasedProvider;
+             this is not the case for MixedMetadataAdapter).
+
+             search_dir: path of the directory containing all *.items and
+             *.schema files, relative to the config directory.
+             static: define whether to cache the files or refresh them any time
+             they are needed.
+             See the FileBasedProvider javadoc. -->
+        <!--
+        <param name="search_dir">.</param>
+        -->
+        <!--
+        <param name="static">Y</param>
+        -->
+
+        <!-- Optional (specific for adapters that inherit from
+             com.lightstreamer.adapters.metadata.FileBasedProvider or
+             com.lightstreamer.adapters.metadata.LiteralBasedProvider;
+             this is the case for MixedMetadataAdapter).
+
+             Define values to be returned in getAllowedMaxBandwidth(),
+             getAllowedMaxItemFrequency(), getAllowedBufferSize(),
+             getDistinctSnapshotLength() and getMinSourceFrequency()
+             methods, for any User and Item supplied
+             and optional comma-separated list of User names to be
+             allowed by the notifyUser() method.
+             See LiteralBasedProvider javadoc. -->
+        <!--
+        <param name="max_bandwidth">50</param>
+        -->
+        <!--
+        <param name="max_frequency">3</param>
+        -->
+        <!--
+        <param name="buffer_size">30</param>
+        -->
+        <!--
+        <param name="prefilter_frequency">5</param>
+        -->
+        <!--
+        <param name="allowed_users">user123,user456</param>
+        -->
+        <param name="distinct_snapshot_length">30</param>
+            <!-- The MixedMetadataAdapter overrides this and uses the configured
+                 value only for the Chat Demo items, 0 for the other items -->
+
+        <!-- Optional (specific for adapters that inherit from
+             com.lightstreamer.adapters.metadata.FileBasedProvider or
+             com.lightstreamer.adapters.metadata.LiteralBasedProvider;
+             this is the case for MixedMetadataAdapter).
+
+             Define how the modeMayBeAllowed method should behave, by
+             associating to each item the modes in which it can be managed
+             by the Server.
+             Each pair of parameters of the form "item_family_<n>" and
+             "modes_for_item_family_<n>" define respectively the item name
+             pattern (in java.util.regex.Pattern format) and the allowed
+             modes (in comma separated format) for a family of items.
+             Each item is assigned to the first family that matches its name.
+             If no families are specified at all, then modeMayBeAllowed
+             always returns true, though this is not recommended, because
+             the Server does not support more than one mode out of MERGE,
+             DISTINCT and COMMAND for the same item. In such a case, the
+             Server would just manage each item in the mode specified by the
+             first Client request it receives for the item and would be up to
+             the Clients to ensure that the same item cannot be requested in
+             two conflicting Modes.
+             See LiteralBasedProvider javadoc. -->
+
+        <!-- items supplied by the Server-supplied Monitoring Data Adapter -->
+        <param name="item_family_1">monitor_log_.*</param>
+        <param name="modes_for_item_family_1">DISTINCT</param>
+
+        <param name="item_family_2">monitor_.*</param>
+        <param name="modes_for_item_family_2">MERGE</param>
+
+        <!-- items supplied by the MY_ADAPTER_ONE -->
+        <param name="item_family_3">buddy_list</param>
+        <param name="modes_for_item_family_3">COMMAND</param>
+
+        <param name="item_family_4">im_.*</param>
+        <param name="modes_for_item_family_4">DISTINCT</param>
+
+        <!-- items supplied by the MY_ADAPER_TWO -->
+        <param name="item_family_7">item.*</param>
+        <param name="modes_for_item_family_7">MERGE</param>
+
+    </metadata_provider>
+
+
+    <!-- Mandatory. Define a Data Adapter.
+         The "name" attribute is optional and the default name is "DEFAULT";
+         if multiple Data Adapters are defined in the same Adapter Set,
+         then using the "name" attribute is needed to distinguish them. -->
+    <data_provider name="MY_ADAPTER_ONE">
+
+        <!-- Optional. Specify a directory other than "."
+             for this Adapter's own class and configuration files. -->
+        <install_dir>myadapter_one</install_dir>
+
+        <!-- Mandatory. Java class name of the adapter. -->
+        <adapter_class>myadapter_one.adapters.OneDataAdapter</adapter_class>
+
+        <!-- Optional. The same as for the Metadata Adapter; see above. -->
+        <!--
+        <classloader>dedicated</classloader>
+        -->
+
+        <!-- Optional. Requests the creation of a specific "DATA" thread pool,
+             expressly devoted to the management of table subscription and
+             unsubscription requests for all the tables based on this Data
+             Adapter. This involves the various calls to the Data and some calls
+             to the Metadata Adapter, like "getItems", "getSchema",
+             "getAllowedBufferSize" and similar (see the API documentation).
+
+             If not defined, these requests are managed by the thread pool
+             related with the Adapter Set, if, in turn, defined.
+             If defined, the <max_size> and <max_free> elements are mandatory,
+             with meaning similar to that of the global <server_pool_max_size>
+             and <server_pool_max_free> settings.
+             Using a specific thread pool is advisable if the implementation
+             of any of the involved Adapter methods introduces delays. -->
+        <!--
+        <data_adapter_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </data_adapter_pool>
+        -->
+
+        <!-- Optional. List of initialization parameters specific to the adapter. -->
+
+        <!-- Optional. Configuration file for the Adapter's own logging;
+             the path is relative to <install_dir>.
+             Leans on the Metadata Adapter for the configuration refresh.
+             Logging is managed through log4j. -->
+        <param name="log_config">../adapters_log_conf.xml</param>
+
+    </data_provider>
+
+
+    <!-- Mandatory. Define a Data Adapter. -->
+    <data_provider name="MONITOR">
+
+        <!-- Mandatory. Java class name of the adapter.
+             In this case, "MONITOR" is a special keyword that identifies the
+             Monitoring Data Adapter, which is embedded in Lightstreamer Server
+             and available out of the box. -->
+        <adapter_class>MONITOR</adapter_class>
+
+        <!-- Optional. See above.
+             But ignored for the special "MONITOR" adapter. -->
+        <!--
+        <classloader>dedicated</classloader>
+        -->
+
+        <!-- Optional. See above. -->
+        <!--
+        <data_adapter_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </data_adapter_pool>
+        -->
+
+        <!-- Optional. List of initialization parameters specific to the adapter. -->
+
+    </data_provider>
+
+
+    <!-- Mandatory. Define a Data Adapter. -->
+    <data_provider name="MY_ADAPTER_TWO">
+
+        <!-- Optional. Specify a directory other than "."
+             for this Adapter's own class and configuration files. -->
+        <install_dir>myadapter_two</install_dir>
+
+        <!-- Mandatory. Java class name of the adapter. -->
+        <adapter_class>myadapter_one.adapters.TwoDataAdapter</adapter_class>
+
+        <!-- Optional. See above. -->
+        <!--
+        <classloader>dedicated</classloader>
+        -->
+
+        <!-- Optional. See above. -->
+        <!--
+        <data_adapter_pool>
+            <max_size>100</max_size>
+            <max_free>10</max_free>
+        </data_adapter_pool>
+        -->
+
+        <!-- Optional. List of initialization parameters specific to the adapter. -->
+
+        <!-- Optional. Configuration file for the Adapter's own logging;
+             the path is relative to <install_dir>.
+             Leans on the Metadata Adapter for the configuration refresh.
+             Logging is managed through log4j. -->
+        <param name="log_config">../adapters_log_conf.xml</param>
+
+    </data_provider>
+
+</adapters_conf>
